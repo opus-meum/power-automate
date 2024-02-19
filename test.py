@@ -147,13 +147,13 @@ for i in range(len(df)):
     print(tmp)
 
     
-    tmp.to_csv(dir_+fn+'_Strategy_.csv', index=False)
+    tmp.to_csv(dir_+'Strategy_'+fn+'_.csv', index=False)
     print(tmp)
     add_ = tmp[['level'][-1]].to_frame().rename(columns={"level":'Strategy'}).tail(1)
     add_=pd.DataFrame(add_)
     print(add_['Strategy'].values[0])
    # tmp.tail(1)[['level']].rename(columns={"level": 'Strategy'}).to_csv(dir_+'Summary_'+fn+ '_.csv', index=False)    
-    add_.to_csv(dir_+fn+'_Summary.csv', index=False)   
+    add_.to_csv(dir_+'Summary_'+fn+'_.csv', index=False)   
     print(add_)
 
 
@@ -263,19 +263,19 @@ for i in range(len(df)):
     
 
 
-        tmp.to_csv(dir_+fn+'_Talent.csv', index=False)
+        tmp.to_csv(dir_+'_Talent'+fn+'_.csv', index=False)
         print(tmp)
         add_ = tmp[['level'][-1]].to_frame().rename(columns={"level":'Talent'}).tail(1)
         add_=pd.DataFrame(add_)
         print(add_['Talent'].values[0])
     
-        summary_ = pd.read_csv(dir_+fn+'_Summary.csv')
+        summary_ = pd.read_csv(dir_+'Summary'+fn+'_.csv')
         print(summary_)
         print(add_['Talent'].values[0])
     
         summary_['Talent'] = add_['Talent'].values[0]
         print(summary_)
-        summary_.to_csv(dir_+'Summary_' +fn+ '_.csv', index=False)
+        add_.to_csv(dir_+'Summary_'+fn+'_.csv', index=False)   
     
 
 #-----------------------------------------------------------------------------------------------
@@ -370,7 +370,7 @@ for i in range(len(df)):
             add_=pd.DataFrame(add_)
             print(add_['Processes'].values[0])
 
-            summary_ = pd.read_csv(dir_+fn+'_Summary.csv')
+            summary_ = pd.read_csv(dir_+'_Summary'+fn+'_.csv')
             print(summary_)
             summary_['Processes'] = add_['Processes'].values[0]
             print(summary_)
