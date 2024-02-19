@@ -536,7 +536,7 @@ for i in range(len(sentences_list)):
     fo_caps = file2[file2.isin(sentences_list[i])].groupby(['optimising']).size().sum()
     four2.append(fo_caps)
     fi_caps = file2[file2.isin(sentences_list[i])].groupby(['mature']).size().sum()
-                    five2.append(fi_caps)
+    five2.append(fi_caps)
 
 
 #combined_data = pd.concat([one, one_caps, one_imps], axis=1)
