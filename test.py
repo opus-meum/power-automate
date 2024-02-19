@@ -16,9 +16,9 @@ import glob
 import os
 
 #%%
-dir_ = '/Users/ehlke/Desktop/Capability_Assessment_Results/'
-dir2_= '/Users/ehlke/Desktop/'
-data = pd.read_csv(dir2_+'Capability Assessment Survey.csv').iloc[3]
+dir_ = 'results/'
+#dir2_= '/Users/ehlke/Desktop/'
+data = pd.read_csv('Capability Assessment Survey.csv').iloc[-1]
 #data = pd.read_csv(dir2_+'Capability Assessment Survey.csv')
 print(data)
 
