@@ -162,218 +162,218 @@ for i in range(len(df)):
 #-----------------------------------------------------------------------------------------------
 ####TALENT
     
-    file1 = pd.read_csv(dir_+'Data/CapA_01_equipping.csv')
-    
-    file2 = pd.read_csv(dir_+'Data/CapA_01_impactperformance.csv')
-    file3 = pd.read_csv(dir_+'Data/CapA_01_teamcomposition.csv')
+file1 = pd.read_csv(dir_+'Data/CapA_01_equipping.csv')
 
-    one=[]
-    two=[]
-    three=[]
-    four=[]
-    five=[]
+file2 = pd.read_csv(dir_+'Data/CapA_01_impactperformance.csv')
+file3 = pd.read_csv(dir_+'Data/CapA_01_teamcomposition.csv')
+
+one=[]
+two=[]
+three=[]
+four=[]
+five=[]
 
 
-    for i in range(len(sentences_list)):
-        oo = file1[file1.isin(sentences_list[i])].groupby(['nascent']).size().sum()
-        one.append(oo)
-        tw = file1[file1.isin(sentences_list[i])].groupby(['emerging']).size().sum()
-        two.append(tw)
-        th = file1[file1.isin(sentences_list[i])].groupby(['expanding']).size().sum()
-        three.append(th)
-        fo = file1[file1.isin(sentences_list[i])].groupby(['optimising']).size().sum()
-        four.append(fo)
-        fi = file1[file1.isin(sentences_list[i])].groupby(['mature']).size().sum()
-        five.append(fi)
+for i in range(len(sentences_list)):
+    oo = file1[file1.isin(sentences_list[i])].groupby(['nascent']).size().sum()
+    one.append(oo)
+    tw = file1[file1.isin(sentences_list[i])].groupby(['emerging']).size().sum()
+    two.append(tw)
+    th = file1[file1.isin(sentences_list[i])].groupby(['expanding']).size().sum()
+    three.append(th)
+    fo = file1[file1.isin(sentences_list[i])].groupby(['optimising']).size().sum()
+    four.append(fo)
+    fi = file1[file1.isin(sentences_list[i])].groupby(['mature']).size().sum()
+    five.append(fi)
 
 # Repeating the script for strategy_caps
-    one2=[]
-    two2=[]
-    three2=[]
-    four2=[]
-    five2=[]
+one2=[]
+two2=[]
+three2=[]
+four2=[]
+five2=[]
 
-    for i in range(len(sentences_list)):
-        oo_caps = file2[file2.isin(sentences_list[i])].groupby(['nascent']).size().sum()
-        one2.append(oo_caps)
-        tw_caps = file2[file2.isin(sentences_list[i])].groupby(['emerging']).size().sum()
-        two2.append(tw_caps)
-        th_caps = file2[file2.isin(sentences_list[i])].groupby(['expanding']).size().sum()
-        three2.append(th_caps)
-        fo_caps = file2[file2.isin(sentences_list[i])].groupby(['optimising']).size().sum()
-        four2.append(fo_caps)
-        fi_caps = file2[file2.isin(sentences_list[i])].groupby(['mature']).size().sum()
-        five2.append(fi_caps)
+for i in range(len(sentences_list)):
+    oo_caps = file2[file2.isin(sentences_list[i])].groupby(['nascent']).size().sum()
+    one2.append(oo_caps)
+    tw_caps = file2[file2.isin(sentences_list[i])].groupby(['emerging']).size().sum()
+    two2.append(tw_caps)
+    th_caps = file2[file2.isin(sentences_list[i])].groupby(['expanding']).size().sum()
+    three2.append(th_caps)
+    fo_caps = file2[file2.isin(sentences_list[i])].groupby(['optimising']).size().sum()
+    four2.append(fo_caps)
+    fi_caps = file2[file2.isin(sentences_list[i])].groupby(['mature']).size().sum()
+    five2.append(fi_caps)
 
-    one3=[]
-    two3=[]
-    three3=[]
-    four3=[]
-    five3=[]
+one3=[]
+two3=[]
+three3=[]
+four3=[]
+five3=[]
 
-    for i in range(len(sentences_list)):
-        oo_imps = file3[file3.isin(sentences_list[i])].groupby(['nascent']).size().sum()
-        one3.append(oo_imps)
-        tw_imps = file3[file3.isin(sentences_list[i])].groupby(['emerging']).size().sum()
-        two3.append(tw_imps)
-        th_imps = file3[file3.isin(sentences_list[i])].groupby(['expanding']).size().sum()
-        three3.append(th_imps)
-        fo_imps = file3[file3.isin(sentences_list[i])].groupby(['optimising']).size().sum()
-        four3.append(fo_imps)
-        fi_imps = file3[file3.isin(sentences_list[i])].groupby(['mature']).size().sum()
-        five3.append(fi_imps)
+for i in range(len(sentences_list)):
+    oo_imps = file3[file3.isin(sentences_list[i])].groupby(['nascent']).size().sum()
+    one3.append(oo_imps)
+    tw_imps = file3[file3.isin(sentences_list[i])].groupby(['emerging']).size().sum()
+    two3.append(tw_imps)
+    th_imps = file3[file3.isin(sentences_list[i])].groupby(['expanding']).size().sum()
+    three3.append(th_imps)
+    fo_imps = file3[file3.isin(sentences_list[i])].groupby(['optimising']).size().sum()
+    four3.append(fo_imps)
+    fi_imps = file3[file3.isin(sentences_list[i])].groupby(['mature']).size().sum()
+    five3.append(fi_imps)
 
 #combined_data = pd.concat([one, one_caps, one_imps], axis=1)
-    data_dict = {'dimension':['Equipping', 'Impact Performance', 'Team Composition'],'Nascent': [one,one2,one3], 'Emerging': [two,two2,two3], 'Expanding': [three,three2,three3],\
-              'Optimising': [four,four2,four3], 'Mature': [five,five2,five3]}
+data_dict = {'dimension':['Equipping', 'Impact Performance', 'Team Composition'],'Nascent': [one,one2,one3], 'Emerging': [two,two2,two3], 'Expanding': [three,three2,three3],\
+          'Optimising': [four,four2,four3], 'Mature': [five,five2,five3]}
 
-    df = pd.DataFrame(data_dict)
+df = pd.DataFrame(data_dict)
 
-    tst=[]
+tst=[]
 #fn=[]
-    save_=[]
-    summary = []
+save_=[]
+summary = []
 
 #for k in range(len(strategy_capp)):
 
-    for i in range(len(df)):
-        tmp = df.iloc[:,1:].apply(lambda x: x.str[i])
-        tst.append(tmp)
-   # filename = data.iloc[i, 6] + '_.csv'
-    #fn.append(filename)
-        total_row = tst[i].sum()
-        tmp = pd.concat([tst[i], pd.DataFrame([total_row])], ignore_index=True)
-        tmp.insert(0,'Dimension',['Equipping', 'Impact Performance', 'Team Composition','Total'])
+for i in range(len(df)):
+    tmp = df.iloc[:,1:].apply(lambda x: x.str[i])
+    tst.append(tmp)
+# filename = data.iloc[i, 6] + '_.csv'
+#fn.append(filename)
+    total_row = tst[i].sum()
+    tmp = pd.concat([tst[i], pd.DataFrame([total_row])], ignore_index=True)
+    tmp.insert(0,'Dimension',['Equipping', 'Impact Performance', 'Team Composition','Total'])
 
-        columns_greater_than_zero = tmp.iloc[:,1:].apply(lambda row: row.index[row.astype(float) > 0].tolist(), axis=1)
-        columns_greater_than_zero_df = columns_greater_than_zero.apply(pd.Series)
-        columns_greater_than_zero_df = columns_greater_than_zero_df.replace(word_to_number)
-        average_values = columns_greater_than_zero_df.mean(axis=1)
-        average_values = average_values.fillna(0)
+    columns_greater_than_zero = tmp.iloc[:,1:].apply(lambda row: row.index[row.astype(float) > 0].tolist(), axis=1)
+    columns_greater_than_zero_df = columns_greater_than_zero.apply(pd.Series)
+    columns_greater_than_zero_df = columns_greater_than_zero_df.replace(word_to_number)
+    average_values = columns_greater_than_zero_df.mean(axis=1)
+    average_values = average_values.fillna(0)
 
-        tmp['level'] = average_values
-        last_value_level = tmp['level'].iloc[-1]
-        tmp['level'].iloc[-1] = tmp['level'].mean()
+    tmp['level'] = average_values
+    last_value_level = tmp['level'].iloc[-1]
+    tmp['level'].iloc[-1] = tmp['level'].mean()
 
-        tmp['max'] = tmp['level'].round()
-        tmp['max'] = tmp['max'].replace(0, 1)
-        tmp['max_column'] = tmp['max'].map({v: k for k, v in word_to_number.items()})
-        
-        tmp['idx'] = tmp.index +1
-
-
-        tmp.to_csv(dir_+'_Talent'+fn+'_.csv', index=False)
-        print(tmp)
-        add_ = tmp[['level'][-1]].to_frame().rename(columns={"level":'Talent'}).tail(1)
-        add_=pd.DataFrame(add_)
-        print(add_['Talent'].values[0])
+    tmp['max'] = tmp['level'].round()
+    tmp['max'] = tmp['max'].replace(0, 1)
+    tmp['max_column'] = tmp['max'].map({v: k for k, v in word_to_number.items()})
     
-        summary_ = pd.read_csv(dir_+'Summary_'+fn+'_.csv')
-        print(summary_)
-        print(add_['Talent'].values[0])
-    
-        summary_['Talent'] = add_['Talent'].values[0]
-        print(summary_)
-        add_.to_csv(dir_+'Summary_'+fn+'_.csv', index=False)   
-    
+    tmp['idx'] = tmp.index +1
+
+
+    tmp.to_csv(dir_+'_Talent'+fn+'_.csv', index=False)
+    print(tmp)
+    add_ = tmp[['level'][-1]].to_frame().rename(columns={"level":'Talent'}).tail(1)
+    add_=pd.DataFrame(add_)
+    print(add_['Talent'].values[0])
+
+    summary_ = pd.read_csv(dir_+'Summary_'+fn+'_.csv')
+    print(summary_)
+    print(add_['Talent'].values[0])
+
+    summary_['Talent'] = add_['Talent'].values[0]
+    print(summary_)
+    add_.to_csv(dir_+'Summary_'+fn+'_.csv', index=False)   
+
 
 #-----------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------
 ####PROCESSES
-        file1 = pd.read_csv(dir_+'Data/CapA_02_processes.csv')
-        file2 = pd.read_csv(dir_+'Data/CapA_02_responsibilityframework.csv')
+file1 = pd.read_csv(dir_+'Data/CapA_02_processes.csv')
+file2 = pd.read_csv(dir_+'Data/CapA_02_responsibilityframework.csv')
 
 
-        one=[]
-        two=[]
-        three=[]
-        four=[]
-        five=[]
+one=[]
+two=[]
+three=[]
+four=[]
+five=[]
 
 
-        for i in range(len(sentences_list)):
-            oo = file1[file1.isin(sentences_list[i])].groupby(['nascent']).size().sum()
-            one.append(oo)
-            tw = file1[file1.isin(sentences_list[i])].groupby(['emerging']).size().sum()
-            two.append(tw)
-            th = file1[file1.isin(sentences_list[i])].groupby(['expanding']).size().sum()
-            three.append(th)
-            fo = file1[file1.isin(sentences_list[i])].groupby(['optimising']).size().sum()
-            four.append(fo)
-            fi = file1[file1.isin(sentences_list[i])].groupby(['mature']).size().sum()
-            five.append(fi)
+for i in range(len(sentences_list)):
+    oo = file1[file1.isin(sentences_list[i])].groupby(['nascent']).size().sum()
+    one.append(oo)
+    tw = file1[file1.isin(sentences_list[i])].groupby(['emerging']).size().sum()
+    two.append(tw)
+    th = file1[file1.isin(sentences_list[i])].groupby(['expanding']).size().sum()
+    three.append(th)
+    fo = file1[file1.isin(sentences_list[i])].groupby(['optimising']).size().sum()
+    four.append(fo)
+    fi = file1[file1.isin(sentences_list[i])].groupby(['mature']).size().sum()
+    five.append(fi)
 
-        one2=[]
-        two2=[]
-        three2=[]
-        four2=[]
-        five2=[]
+one2=[]
+two2=[]
+three2=[]
+four2=[]
+five2=[]
 
-        for i in range(len(sentences_list)):
-            oo_caps = file2[file2.isin(sentences_list[i])].groupby(['nascent']).size().sum()
-            one2.append(oo_caps)
-            tw_caps = file2[file2.isin(sentences_list[i])].groupby(['emerging']).size().sum()
-            two2.append(tw_caps)
-            th_caps = file2[file2.isin(sentences_list[i])].groupby(['expanding']).size().sum()
-            three2.append(th_caps)
-            fo_caps = file2[file2.isin(sentences_list[i])].groupby(['optimising']).size().sum()
-            four2.append(fo_caps)
-            fi_caps = file2[file2.isin(sentences_list[i])].groupby(['mature']).size().sum()
-            five2.append(fi_caps)
+for i in range(len(sentences_list)):
+    oo_caps = file2[file2.isin(sentences_list[i])].groupby(['nascent']).size().sum()
+    one2.append(oo_caps)
+    tw_caps = file2[file2.isin(sentences_list[i])].groupby(['emerging']).size().sum()
+    two2.append(tw_caps)
+    th_caps = file2[file2.isin(sentences_list[i])].groupby(['expanding']).size().sum()
+    three2.append(th_caps)
+    fo_caps = file2[file2.isin(sentences_list[i])].groupby(['optimising']).size().sum()
+    four2.append(fo_caps)
+    fi_caps = file2[file2.isin(sentences_list[i])].groupby(['mature']).size().sum()
+    five2.append(fi_caps)
 
 
 #combined_data = pd.concat([one, one_caps, one_imps], axis=1)
-        data_dict = {'dimension':['Processes', 'Responsibility \nFramework'],'Nascent': [one,one2], 'Emerging': [two,two2], 'Expanding': [three,three2],\
-              'Optimising': [four,four2], 'Mature': [five,five2]}
+data_dict = {'dimension':['Processes', 'Responsibility \nFramework'],'Nascent': [one,one2], 'Emerging': [two,two2], 'Expanding': [three,three2],\
+      'Optimising': [four,four2], 'Mature': [five,five2]}
 
-        df = pd.DataFrame(data_dict)
+df = pd.DataFrame(data_dict)
 
-        tst=[]
+tst=[]
 #fn=[]
-        save_=[]
+save_=[]
 
 #for k in range(len(strategy_capp)):
 
-        for i in range(len(df)):
-            tmp = df.iloc[:,1:].apply(lambda x: x.str[i])
-            tst.append(tmp)
-   # filename = data.iloc[i, 6] + '_.csv'
+for i in range(len(df)):
+    tmp = df.iloc[:,1:].apply(lambda x: x.str[i])
+    tst.append(tmp)
+# filename = data.iloc[i, 6] + '_.csv'
    # fn.append(filename)
    # print(fn)
-            total_row = tst[i].sum()
-            print(total_row)
-            tmp = pd.concat([tst[i], pd.DataFrame([total_row])], ignore_index=True)
-            tmp.insert(0,'Dimension',['Processes', 'Responsibility \nFramework','Total'])
+    total_row = tst[i].sum()
+    print(total_row)
+    tmp = pd.concat([tst[i], pd.DataFrame([total_row])], ignore_index=True)
+    tmp.insert(0,'Dimension',['Processes', 'Responsibility \nFramework','Total'])
 
-            columns_greater_than_zero = tmp.iloc[:,1:].apply(lambda row: row.index[row.astype(float) > 0].tolist(), axis=1)
-            columns_greater_than_zero_df = columns_greater_than_zero.apply(pd.Series)
-            columns_greater_than_zero_df = columns_greater_than_zero_df.replace(word_to_number)
-            average_values = columns_greater_than_zero_df.mean(axis=1)
-            average_values = average_values.fillna(0)
-            print(average_values)   
+    columns_greater_than_zero = tmp.iloc[:,1:].apply(lambda row: row.index[row.astype(float) > 0].tolist(), axis=1)
+    columns_greater_than_zero_df = columns_greater_than_zero.apply(pd.Series)
+    columns_greater_than_zero_df = columns_greater_than_zero_df.replace(word_to_number)
+    average_values = columns_greater_than_zero_df.mean(axis=1)
+    average_values = average_values.fillna(0)
+    print(average_values)   
 
-            tmp['level'] = average_values
-            last_value_level = tmp['level'].iloc[-1]
-            tmp['level'].iloc[-1] = tmp['level'].mean()
+    tmp['level'] = average_values
+    last_value_level = tmp['level'].iloc[-1]
+    tmp['level'].iloc[-1] = tmp['level'].mean()
             
-            tmp['max'] = tmp['level'].round()
-            tmp['max'] = tmp['max'].replace(0, 1)
-            tmp['max_column'] = tmp['max'].map({v: k for k, v in word_to_number.items()})
+    tmp['max'] = tmp['level'].round()
+    tmp['max'] = tmp['max'].replace(0, 1)
+    tmp['max_column'] = tmp['max'].map({v: k for k, v in word_to_number.items()})
 
-            tmp['idx'] = tmp.index +1
+    tmp['idx'] = tmp.index +1
 
-            tmp.to_csv(dir_+'Processes_' +fn+ '_.csv', index=False)
-            print(tmp)
-            add_ = tmp[['level'][-1]].to_frame().rename(columns={"level":'Processes'}).tail(1)
-            add_=pd.DataFrame(add_)
-            print(add_['Processes'].values[0])
+    tmp.to_csv(dir_+'Processes_' +fn+ '_.csv', index=False)
+    print(tmp)
+    add_ = tmp[['level'][-1]].to_frame().rename(columns={"level":'Processes'}).tail(1)
+    add_=pd.DataFrame(add_)
+    print(add_['Processes'].values[0])
 
-            summary_ = pd.read_csv(dir_+'Summary_'+fn+'_.csv')
-            print(summary_)
-            summary_['Processes'] = add_['Processes'].values[0]
-            print(summary_)
-            summary_.to_csv(dir_+'Summary_' +fn+ '_.csv', index=False)
+    summary_ = pd.read_csv(dir_+'Summary_'+fn+'_.csv')
+    print(summary_)
+    summary_['Processes'] = add_['Processes'].values[0]
+    print(summary_)
+    summary_.to_csv(dir_+'Summary_' +fn+ '_.csv', index=False)
 
 
 
@@ -381,216 +381,216 @@ for i in range(len(df)):
 #-----------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------
 ####DATA
-            file1 = pd.read_csv(dir_+'Data/CapA_03_dataaccess.csv')
-            file2 = pd.read_csv(dir_+'Data/CapA_03_datacollection.csv')
-            file3 = pd.read_csv(dir_+'Data/CapA_03_dataquality.csv')
+file1 = pd.read_csv(dir_+'Data/CapA_03_dataaccess.csv')
+file2 = pd.read_csv(dir_+'Data/CapA_03_datacollection.csv')
+file3 = pd.read_csv(dir_+'Data/CapA_03_dataquality.csv')
 
 
-            one=[]
-            two=[]
-            three=[]
-            four=[]
-            five=[]
+one=[]
+two=[]
+three=[]
+four=[]
+five=[]
 
 
-            for i in range(len(sentences_list)):
-                oo = file1[file1.isin(sentences_list[i])].groupby(['nascent']).size().sum()
-                one.append(oo)
-                tw = file1[file1.isin(sentences_list[i])].groupby(['emerging']).size().sum()
-                two.append(tw)
-                th = file1[file1.isin(sentences_list[i])].groupby(['expanding']).size().sum()
-                three.append(th)
-                fo = file1[file1.isin(sentences_list[i])].groupby(['optimising']).size().sum()
-                four.append(fo)
-                fi = file1[file1.isin(sentences_list[i])].groupby(['mature']).size().sum()
-                five.append(fi)
+for i in range(len(sentences_list)):
+    oo = file1[file1.isin(sentences_list[i])].groupby(['nascent']).size().sum()
+    one.append(oo)
+    tw = file1[file1.isin(sentences_list[i])].groupby(['emerging']).size().sum()
+    two.append(tw)
+    th = file1[file1.isin(sentences_list[i])].groupby(['expanding']).size().sum()
+    three.append(th)
+    fo = file1[file1.isin(sentences_list[i])].groupby(['optimising']).size().sum()
+    four.append(fo)
+    fi = file1[file1.isin(sentences_list[i])].groupby(['mature']).size().sum()
+    five.append(fi)
 
-            one2=[]
-            two2=[]
-            three2=[]
-            four2=[]
-            five2=[]
+one2=[]
+two2=[]
+three2=[]
+four2=[]
+five2=[]
 
-            for i in range(len(sentences_list)):
-                oo_caps = file2[file2.isin(sentences_list[i])].groupby(['nascent']).size().sum()
-                one2.append(oo_caps)
-                tw_caps = file2[file2.isin(sentences_list[i])].groupby(['emerging']).size().sum()
-                two2.append(tw_caps)
-                th_caps = file2[file2.isin(sentences_list[i])].groupby(['expanding']).size().sum()
-                three2.append(th_caps)
-                fo_caps = file2[file2.isin(sentences_list[i])].groupby(['optimising']).size().sum()
-                four2.append(fo_caps)
-                fi_caps = file2[file2.isin(sentences_list[i])].groupby(['mature']).size().sum()
-                five2.append(fi_caps)
+for i in range(len(sentences_list)):
+    oo_caps = file2[file2.isin(sentences_list[i])].groupby(['nascent']).size().sum()
+    one2.append(oo_caps)
+    tw_caps = file2[file2.isin(sentences_list[i])].groupby(['emerging']).size().sum()
+    two2.append(tw_caps)
+    th_caps = file2[file2.isin(sentences_list[i])].groupby(['expanding']).size().sum()
+    three2.append(th_caps)
+    fo_caps = file2[file2.isin(sentences_list[i])].groupby(['optimising']).size().sum()
+    four2.append(fo_caps)
+    fi_caps = file2[file2.isin(sentences_list[i])].groupby(['mature']).size().sum()
+    five2.append(fi_caps)
 
-            one3=[]
-            two3=[]
-            three3=[]
-            four3=[]
-            five3=[]
+one3=[]
+two3=[]
+three3=[]
+four3=[]
+five3=[]
 
-            for i in range(len(sentences_list)):
-                oo_imps = file3[file3.isin(sentences_list[i])].groupby(['nascent']).size().sum()
-                one3.append(oo_imps)
-                tw_imps = file3[file3.isin(sentences_list[i])].groupby(['emerging']).size().sum()
-                two3.append(tw_imps)
-                th_imps = file3[file3.isin(sentences_list[i])].groupby(['expanding']).size().sum()
-                three3.append(th_imps)
-                fo_imps = file3[file3.isin(sentences_list[i])].groupby(['optimising']).size().sum()
-                four3.append(fo_imps)
-                fi_imps = file3[file3.isin(sentences_list[i])].groupby(['mature']).size().sum()
-                five3.append(fi_imps)
+for i in range(len(sentences_list)):
+    oo_imps = file3[file3.isin(sentences_list[i])].groupby(['nascent']).size().sum()
+    one3.append(oo_imps)
+    tw_imps = file3[file3.isin(sentences_list[i])].groupby(['emerging']).size().sum()
+    two3.append(tw_imps)
+    th_imps = file3[file3.isin(sentences_list[i])].groupby(['expanding']).size().sum()
+    three3.append(th_imps)
+    fo_imps = file3[file3.isin(sentences_list[i])].groupby(['optimising']).size().sum()
+    four3.append(fo_imps)
+    fi_imps = file3[file3.isin(sentences_list[i])].groupby(['mature']).size().sum()
+    five3.append(fi_imps)
 
 
 #combined_data = pd.concat([one, one_caps, one_imps], axis=1)
-            data_dict = {'dimension':['Data Access', 'Data Collection', 'Data Quality'],'Nascent': [one,one2,one3], 'Emerging': [two,two2,two3], 'Expanding': [three,three2,three3],\
-              'Optimising': [four,four2,four3], 'Mature': [five,five2,five3]}
+data_dict = {'dimension':['Data Access', 'Data Collection', 'Data Quality'],'Nascent': [one,one2,one3], 'Emerging': [two,two2,two3], 'Expanding': [three,three2,three3],\
+  'Optimising': [four,four2,four3], 'Mature': [five,five2,five3]}
 
-            df = pd.DataFrame(data_dict)
+df = pd.DataFrame(data_dict)
 
-            tst=[]
+tst=[]
 #fn=[]
-            save_=[]
+save_=[]
 
 #for k in range(len(strategy_capp)):
 
-            for i in range(len(df)):
-                tmp = df.iloc[:,1:].apply(lambda x: x.str[i])
-                tst.append(tmp)
-   # filename = data.iloc[i, 6] + '_.csv'
-   # fn.append(filename)
-                total_row = tst[i].sum()
-                print(total_row)
-                tmp = pd.concat([tst[i], pd.DataFrame([total_row])], ignore_index=True)
-                tmp.insert(0,'Dimension',['Data Access', 'Data Collection', 'Data Quality','Total'])
-                print(tmp)
+for i in range(len(df)):
+    tmp = df.iloc[:,1:].apply(lambda x: x.str[i])
+    tst.append(tmp)
+# filename = data.iloc[i, 6] + '_.csv'
+# fn.append(filename)
+    total_row = tst[i].sum()
+    print(total_row)
+    tmp = pd.concat([tst[i], pd.DataFrame([total_row])], ignore_index=True)
+    tmp.insert(0,'Dimension',['Data Access', 'Data Collection', 'Data Quality','Total'])
+    print(tmp)
 
-                columns_greater_than_zero = tmp.iloc[:,1:].apply(lambda row: row.index[row.astype(float) > 0].tolist(), axis=1)
-                columns_greater_than_zero_df = columns_greater_than_zero.apply(pd.Series)
-                columns_greater_than_zero_df = columns_greater_than_zero_df.replace(word_to_number)
-                average_values = columns_greater_than_zero_df.mean(axis=1)
-                average_values = average_values.fillna(0)
-                print(average_values)   
-                tmp['level'] = average_values
-           
-                last_value_level = tmp['level'].iloc[-1]
-                tmp['level'].iloc[-1] = tmp['level'].mean()
-            
-                tmp['max'] = tmp['level'].round()
-                tmp['max'] = tmp['max'].replace(0, 1)
-                tmp['max_column'] = tmp['max'].map({v: k for k, v in word_to_number.items()})
+    columns_greater_than_zero = tmp.iloc[:,1:].apply(lambda row: row.index[row.astype(float) > 0].tolist(), axis=1)
+    columns_greater_than_zero_df = columns_greater_than_zero.apply(pd.Series)
+    columns_greater_than_zero_df = columns_greater_than_zero_df.replace(word_to_number)
+    average_values = columns_greater_than_zero_df.mean(axis=1)
+    average_values = average_values.fillna(0)
+    print(average_values)   
+    tmp['level'] = average_values
 
-                tmp['idx'] = tmp.index +1
+    last_value_level = tmp['level'].iloc[-1]
+    tmp['level'].iloc[-1] = tmp['level'].mean()
 
-                tmp.to_csv(dir_+'Data_' +fn+ '_.csv', index=False)
+    tmp['max'] = tmp['level'].round()
+    tmp['max'] = tmp['max'].replace(0, 1)
+    tmp['max_column'] = tmp['max'].map({v: k for k, v in word_to_number.items()})
 
-                add_ = tmp[['level'][-1]].to_frame().rename(columns={"level":'Data'}).tail(1)
-                add_=pd.DataFrame(add_)
-                print(add_['Data'].values[0])
+    tmp['idx'] = tmp.index +1
 
-                summary_ = pd.read_csv(dir_+'Summary_'+fn+ '_.csv')
-                print(summary_)
-                summary_['Data'] = add_['Data'].values[0]
-                print(summary_)
-                summary_.to_csv(dir_+'Summary_' +fn+ '_.csv', index=False)
+    tmp.to_csv(dir_+'Data_' +fn+ '_.csv', index=False)
+
+    add_ = tmp[['level'][-1]].to_frame().rename(columns={"level":'Data'}).tail(1)
+    add_=pd.DataFrame(add_)
+    print(add_['Data'].values[0])
+
+    summary_ = pd.read_csv(dir_+'Summary_'+fn+ '_.csv')
+    print(summary_)
+    summary_['Data'] = add_['Data'].values[0]
+    print(summary_)
+    summary_.to_csv(dir_+'Summary_' +fn+ '_.csv', index=False)
 
 #-----------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------
 ####REPORTING  
-                file1 = pd.read_csv(dir_+'Data/CapA_05_framework.csv')
-                file2 = pd.read_csv(dir_+'Data/CapA_05_standards.csv')
+file1 = pd.read_csv(dir_+'Data/CapA_05_framework.csv')
+file2 = pd.read_csv(dir_+'Data/CapA_05_standards.csv')
 
-                one=[]
-                two=[]
-                three=[]
-                four=[]
-                five=[]
+one=[]
+two=[]
+three=[]
+four=[]
+five=[]
 
 
-                for i in range(len(sentences_list)):
-                    oo = file1[file1.isin(sentences_list[i])].groupby(['nascent']).size().sum()
-                    one.append(oo)
-                    tw = file1[file1.isin(sentences_list[i])].groupby(['emerging']).size().sum()
-                    two.append(tw)
-                    th = file1[file1.isin(sentences_list[i])].groupby(['expanding']).size().sum()
-                    three.append(th)
-                    fo = file1[file1.isin(sentences_list[i])].groupby(['optimising']).size().sum()
-                    four.append(fo)
-                    fi = file1[file1.isin(sentences_list[i])].groupby(['mature']).size().sum()
-                    five.append(fi)
+for i in range(len(sentences_list)):
+    oo = file1[file1.isin(sentences_list[i])].groupby(['nascent']).size().sum()
+    one.append(oo)
+    tw = file1[file1.isin(sentences_list[i])].groupby(['emerging']).size().sum()
+    two.append(tw)
+    th = file1[file1.isin(sentences_list[i])].groupby(['expanding']).size().sum()
+    three.append(th)
+    fo = file1[file1.isin(sentences_list[i])].groupby(['optimising']).size().sum()
+    four.append(fo)
+    fi = file1[file1.isin(sentences_list[i])].groupby(['mature']).size().sum()
+    five.append(fi)
 
-                one2=[]
-                two2=[]
-                three2=[]
-                four2=[]
-                five2=[]
+one2=[]
+two2=[]
+three2=[]
+four2=[]
+five2=[]
 
-                for i in range(len(sentences_list)):
-                    oo_caps = file2[file2.isin(sentences_list[i])].groupby(['nascent']).size().sum()
-                    one2.append(oo_caps)
-                    tw_caps = file2[file2.isin(sentences_list[i])].groupby(['emerging']).size().sum()
-                    two2.append(tw_caps)
-                    th_caps = file2[file2.isin(sentences_list[i])].groupby(['expanding']).size().sum()
-                    three2.append(th_caps)
-                    fo_caps = file2[file2.isin(sentences_list[i])].groupby(['optimising']).size().sum()
-                    four2.append(fo_caps)
-                    fi_caps = file2[file2.isin(sentences_list[i])].groupby(['mature']).size().sum()
+for i in range(len(sentences_list)):
+    oo_caps = file2[file2.isin(sentences_list[i])].groupby(['nascent']).size().sum()
+    one2.append(oo_caps)
+    tw_caps = file2[file2.isin(sentences_list[i])].groupby(['emerging']).size().sum()
+    two2.append(tw_caps)
+    th_caps = file2[file2.isin(sentences_list[i])].groupby(['expanding']).size().sum()
+    three2.append(th_caps)
+    fo_caps = file2[file2.isin(sentences_list[i])].groupby(['optimising']).size().sum()
+    four2.append(fo_caps)
+    fi_caps = file2[file2.isin(sentences_list[i])].groupby(['mature']).size().sum()
                     five2.append(fi_caps)
 
 
 #combined_data = pd.concat([one, one_caps, one_imps], axis=1)
-                data_dict = {'dimension':['Reporting Framework', 'Reporting Standards'],'Nascent': [one,one2], 'Emerging': [two,two2], 'Expanding': [three,three2],\
-              'Optimising': [four,four2], 'Mature': [five,five2]}
+data_dict = {'dimension':['Reporting Framework', 'Reporting Standards'],'Nascent': [one,one2], 'Emerging': [two,two2], 'Expanding': [three,three2],\
+'Optimising': [four,four2], 'Mature': [five,five2]}
 
-                df = pd.DataFrame(data_dict)
+df = pd.DataFrame(data_dict)
 
-                tst=[]
+tst=[]
 #fn=[]
-                save_=[]
+save_=[]
 
 #for k in range(len(strategy_capp)):
 
-                for i in range(len(df)):
-                    tmp = df.iloc[:,1:].apply(lambda x: x.str[i])
-                    tst.append(tmp)
-    #filename = data.iloc[i, 6] + '_.csv'
+for i in range(len(df)):
+    tmp = df.iloc[:,1:].apply(lambda x: x.str[i])
+    tst.append(tmp)
+#filename = data.iloc[i, 6] + '_.csv'
     #fn.append(filename)
-                    total_row = tst[i].sum()
-                    print(total_row)
-                    tmp = pd.concat([tst[i], pd.DataFrame([total_row])], ignore_index=True)
-                    tmp.insert(0,'Dimension',['Reporting Framework', 'Reporting Standards','Total'])
-                    print(tmp)
+    total_row = tst[i].sum()
+    print(total_row)
+    tmp = pd.concat([tst[i], pd.DataFrame([total_row])], ignore_index=True)
+    tmp.insert(0,'Dimension',['Reporting Framework', 'Reporting Standards','Total'])
+    print(tmp)
 
-                    columns_greater_than_zero = tmp.iloc[:,1:].apply(lambda row: row.index[row.astype(float) > 0].tolist(), axis=1)
-                    columns_greater_than_zero_df = columns_greater_than_zero.apply(pd.Series)
-                    columns_greater_than_zero_df = columns_greater_than_zero_df.replace(word_to_number)
-                    average_values = columns_greater_than_zero_df.mean(axis=1)
-                    average_values = average_values.fillna(0)
-                    print(average_values)   
+    columns_greater_than_zero = tmp.iloc[:,1:].apply(lambda row: row.index[row.astype(float) > 0].tolist(), axis=1)
+    columns_greater_than_zero_df = columns_greater_than_zero.apply(pd.Series)
+    columns_greater_than_zero_df = columns_greater_than_zero_df.replace(word_to_number)
+    average_values = columns_greater_than_zero_df.mean(axis=1)
+    average_values = average_values.fillna(0)
+    print(average_values)   
 
-                    tmp['level'] = average_values
-                    last_value_level = tmp['level'].iloc[-1]
-                    tmp['level'].iloc[-1] = tmp['level'].mean()
+    tmp['level'] = average_values
+    last_value_level = tmp['level'].iloc[-1]
+    tmp['level'].iloc[-1] = tmp['level'].mean()
 
-                    tmp['max'] = tmp['level'].round()
-                    tmp['max'] = tmp['max'].replace(0, 1)
-                    tmp['max_column'] = tmp['max'].map({v: k for k, v in word_to_number.items()})
+    tmp['max'] = tmp['level'].round()
+    tmp['max'] = tmp['max'].replace(0, 1)
+    tmp['max_column'] = tmp['max'].map({v: k for k, v in word_to_number.items()})
 
-                    tmp['idx'] = tmp.index +1
+    tmp['idx'] = tmp.index +1
 
-                    tmp.to_csv(dir_+'Reporting_' +fn+ '_.csv', index=False)
+    tmp.to_csv(dir_+'Reporting_' +fn+ '_.csv', index=False)
 
-                    print(tmp)
-                    add_ = tmp[['level'][-1]].to_frame().rename(columns={"level":'Reporting'}).tail(1)
-                    add_=pd.DataFrame(add_)
-                    print(add_['Reporting'].values[0])
+    print(tmp)
+    add_ = tmp[['level'][-1]].to_frame().rename(columns={"level":'Reporting'}).tail(1)
+    add_=pd.DataFrame(add_)
+    print(add_['Reporting'].values[0])
 
-                    summary_ = pd.read_csv(dir_+'Summary_'+fn+ '_.csv')
-                    print(summary_)
-                    summary_['Reporting'] = add_['Reporting'].values[0]
-                    print(summary_)
-                    summary_.to_csv(dir_+'Summary_' +fn+ '_.csv', index=False)
+    summary_ = pd.read_csv(dir_+'Summary_'+fn+ '_.csv')
+    print(summary_)
+    summary_['Reporting'] = add_['Reporting'].values[0]
+    print(summary_)
+    summary_.to_csv(dir_+'Summary_' +fn+ '_.csv', index=False)
 
 
 #-----------------------------------------------------------------------------------------------
@@ -598,83 +598,83 @@ for i in range(len(df)):
 #-----------------------------------------------------------------------------------------------
 ####TECHNOLOGY  
 
-                    file1 = pd.read_csv(dir_+'Data/CapA_06_technology.csv')
+file1 = pd.read_csv(dir_+'Data/CapA_06_technology.csv')
 
 
-                    one=[]
-                    two=[]
-                    three=[]
-                    four=[]
-                    five=[]
+one=[]
+two=[]
+three=[]
+four=[]
+five=[]
 
 
-                    for i in range(len(sentences_list)):
-                        oo = file1[file1.isin(sentences_list[i])].groupby(['nascent']).size().sum()
-                        one.append(oo)
-                        tw = file1[file1.isin(sentences_list[i])].groupby(['emerging']).size().sum()
-                        two.append(tw)
-                        th = file1[file1.isin(sentences_list[i])].groupby(['expanding']).size().sum()
-                        three.append(th)
-                        fo = file1[file1.isin(sentences_list[i])].groupby(['optimising']).size().sum()
-                        four.append(fo)
-                        fi = file1[file1.isin(sentences_list[i])].groupby(['mature']).size().sum()
-                        five.append(fi)
+for i in range(len(sentences_list)):
+    oo = file1[file1.isin(sentences_list[i])].groupby(['nascent']).size().sum()
+    one.append(oo)
+    tw = file1[file1.isin(sentences_list[i])].groupby(['emerging']).size().sum()
+    two.append(tw)
+    th = file1[file1.isin(sentences_list[i])].groupby(['expanding']).size().sum()
+    three.append(th)
+    fo = file1[file1.isin(sentences_list[i])].groupby(['optimising']).size().sum()
+    four.append(fo)
+    fi = file1[file1.isin(sentences_list[i])].groupby(['mature']).size().sum()
+    five.append(fi)
 
 
 
-                #combined_data = pd.concat([one, one_caps, one_imps], axis=1)
-                    data_dict = {'dimension':['Techology'],'Nascent': [one], 'Emerging': [two], 'Expanding': [three],\
-                            'Optimising': [four], 'Mature': [five]}
+#combined_data = pd.concat([one, one_caps, one_imps], axis=1)
+data_dict = {'dimension':['Techology'],'Nascent': [one], 'Emerging': [two], 'Expanding': [three],\
+        'Optimising': [four], 'Mature': [five]}
 
-                    df = pd.DataFrame(data_dict)
-                    print(len(data))
+df = pd.DataFrame(data_dict)
+print(len(data))
 
-                    tst=[]
-                #fn=[]
-                    save_=[]
+tst=[]
+#fn=[]
+save_=[]
 
 #for k in range(len(strategy_capp)):
 
-                    for i in range(len(data)):
-                        tmp = df.iloc[:,1:].apply(lambda x: x.str[i])
-                        tst.append(tmp)
-                    #filename = data.iloc[i, 6] + '_.csv'
-                    #fn.append(filename)
-                        total_row = tst[i].sum()
-                        print(total_row)
-                        tmp = pd.concat([tst[i], pd.DataFrame([total_row])], ignore_index=True)
-                        tmp.insert(0,'Dimension',['Techology','Total'])
+for i in range(len(data)):
+    tmp = df.iloc[:,1:].apply(lambda x: x.str[i])
+    tst.append(tmp)
+#filename = data.iloc[i, 6] + '_.csv'
+#fn.append(filename)
+    total_row = tst[i].sum()
+    print(total_row)
+    tmp = pd.concat([tst[i], pd.DataFrame([total_row])], ignore_index=True)
+    tmp.insert(0,'Dimension',['Techology','Total'])
 
-                        columns_greater_than_zero = tmp.iloc[:,1:].apply(lambda row: row.index[row.astype(float) > 0].tolist(), axis=1)
-                        columns_greater_than_zero_df = columns_greater_than_zero.apply(pd.Series)
-                        columns_greater_than_zero_df = columns_greater_than_zero_df.replace(word_to_number)
-                        average_values = columns_greater_than_zero_df.mean(axis=1)
-                        average_values = average_values.fillna(0)
-                        print(average_values)   
+    columns_greater_than_zero = tmp.iloc[:,1:].apply(lambda row: row.index[row.astype(float) > 0].tolist(), axis=1)
+    columns_greater_than_zero_df = columns_greater_than_zero.apply(pd.Series)
+    columns_greater_than_zero_df = columns_greater_than_zero_df.replace(word_to_number)
+    average_values = columns_greater_than_zero_df.mean(axis=1)
+    average_values = average_values.fillna(0)
+    print(average_values)   
 
-                        tmp['level'] = average_values
-                        last_value_level = tmp['level'].iloc[-1]
-                        tmp['level'].iloc[-1] = tmp['level'].mean()
+    tmp['level'] = average_values
+    last_value_level = tmp['level'].iloc[-1]
+    tmp['level'].iloc[-1] = tmp['level'].mean()
 
-                        tmp['max'] = tmp['level'].round()
-                        tmp['max'] = tmp['max'].replace(0, 1)
-                        tmp['max_column'] = tmp['max'].map({v: k for k, v in word_to_number.items()})
+    tmp['max'] = tmp['level'].round()
+    tmp['max'] = tmp['max'].replace(0, 1)
+    tmp['max_column'] = tmp['max'].map({v: k for k, v in word_to_number.items()})
 
-                        tmp['idx'] = tmp.index +1
+    tmp['idx'] = tmp.index +1
 
-                        tmp.to_csv(dir_+'Technology_' +fn+ '_.csv', index=False)
+    tmp.to_csv(dir_+'Technology_' +fn+ '_.csv', index=False)
 
-                        print(tmp)
-    
-                        add_ = tmp[['level'][-1]].to_frame().rename(columns={"level":'Technology'}).tail(1)
-                        add_=pd.DataFrame(add_)
-                        print(add_['Technology'].values[0])
-                    
-                        summary_ = pd.read_csv(dir_+'Summary_'+fn+ '_.csv')
-                        print(summary_)
-                        summary_['Technology'] = add_['Technology'].values[0]
-                        print(summary_)
-                        summary_.to_csv(dir_+'Summary_' +fn+ '_.csv', index=False)
+    print(tmp)
+
+    add_ = tmp[['level'][-1]].to_frame().rename(columns={"level":'Technology'}).tail(1)
+    add_=pd.DataFrame(add_)
+    print(add_['Technology'].values[0])
+
+    summary_ = pd.read_csv(dir_+'Summary_'+fn+ '_.csv')
+    print(summary_)
+    summary_['Technology'] = add_['Technology'].values[0]
+    print(summary_)
+    summary_.to_csv(dir_+'Summary_' +fn+ '_.csv', index=False)
 
 
 #-----------------------------------------------------------------------------------------------
@@ -682,137 +682,137 @@ for i in range(len(df)):
 #-----------------------------------------------------------------------------------------------
 ####MEASUREMENT
 
-                        file1 = pd.read_csv(dir_+'Data/CapA_04_IMF.csv')
-                        file2 = pd.read_csv(dir_+'Data/CapA_04_TT.csv')
-                        file3 = pd.read_csv(dir_+'Data/CapA_04_evaluation.csv')
-                        file4 = pd.read_csv(dir_+'Data/CapA_04_rki.csv')
+file1 = pd.read_csv(dir_+'Data/CapA_04_IMF.csv')
+file2 = pd.read_csv(dir_+'Data/CapA_04_TT.csv')
+file3 = pd.read_csv(dir_+'Data/CapA_04_evaluation.csv')
+file4 = pd.read_csv(dir_+'Data/CapA_04_rki.csv')
 
 
-                        one=[]
-                        two=[]
-                        three=[]
-                        four=[]
-                        five=[]
+one=[]
+two=[]
+three=[]
+four=[]
+five=[]
 
 
-                        for i in range(len(sentences_list)):
-                            oo = file1[file1.isin(sentences_list[i])].groupby(['nascent']).size().sum()
-                            one.append(oo)
-                            tw = file1[file1.isin(sentences_list[i])].groupby(['emerging']).size().sum()
-                            two.append(tw)
-                            th = file1[file1.isin(sentences_list[i])].groupby(['expanding']).size().sum()
-                            three.append(th)
-                            fo = file1[file1.isin(sentences_list[i])].groupby(['optimising']).size().sum()
-                            four.append(fo)
-                            fi = file1[file1.isin(sentences_list[i])].groupby(['mature']).size().sum()
-                            five.append(fi)
+for i in range(len(sentences_list)):
+    oo = file1[file1.isin(sentences_list[i])].groupby(['nascent']).size().sum()
+    one.append(oo)
+    tw = file1[file1.isin(sentences_list[i])].groupby(['emerging']).size().sum()
+    two.append(tw)
+    th = file1[file1.isin(sentences_list[i])].groupby(['expanding']).size().sum()
+    three.append(th)
+    fo = file1[file1.isin(sentences_list[i])].groupby(['optimising']).size().sum()
+    four.append(fo)
+    fi = file1[file1.isin(sentences_list[i])].groupby(['mature']).size().sum()
+    five.append(fi)
 
-                        one2=[]
-                        two2=[]
-                        three2=[]
-                        four2=[]
-                        five2=[]
+one2=[]
+two2=[]
+three2=[]
+four2=[]
+five2=[]
 
-                        for i in range(len(sentences_list)):
-                            oo_caps = file2[file2.isin(sentences_list[i])].groupby(['nascent']).size().sum()
-                            one2.append(oo_caps)
-                            tw_caps = file2[file2.isin(sentences_list[i])].groupby(['emerging']).size().sum()
-                            two2.append(tw_caps)
-                            th_caps = file2[file2.isin(sentences_list[i])].groupby(['expanding']).size().sum()
-                            three2.append(th_caps)
-                            fo_caps = file2[file2.isin(sentences_list[i])].groupby(['optimising']).size().sum()
-                            four2.append(fo_caps)
-                            fi_caps = file2[file2.isin(sentences_list[i])].groupby(['mature']).size().sum()
-                            five2.append(fi_caps)
+for i in range(len(sentences_list)):
+    oo_caps = file2[file2.isin(sentences_list[i])].groupby(['nascent']).size().sum()
+    one2.append(oo_caps)
+    tw_caps = file2[file2.isin(sentences_list[i])].groupby(['emerging']).size().sum()
+    two2.append(tw_caps)
+    th_caps = file2[file2.isin(sentences_list[i])].groupby(['expanding']).size().sum()
+    three2.append(th_caps)
+    fo_caps = file2[file2.isin(sentences_list[i])].groupby(['optimising']).size().sum()
+    four2.append(fo_caps)
+    fi_caps = file2[file2.isin(sentences_list[i])].groupby(['mature']).size().sum()
+    five2.append(fi_caps)
 
-                        one3=[]
-                        two3=[]
-                        three3=[]
-                        four3=[]
-                        five3=[]
+one3=[]
+two3=[]
+three3=[]
+four3=[]
+five3=[]
 
-                        for i in range(len(sentences_list)):
-                            oo_imps = file3[file3.isin(sentences_list[i])].groupby(['nascent']).size().sum()
-                            one3.append(oo_imps)
-                            tw_imps = file3[file3.isin(sentences_list[i])].groupby(['emerging']).size().sum()
-                            two3.append(tw_imps)
-                            th_imps = file3[file3.isin(sentences_list[i])].groupby(['expanding']).size().sum()
-                            three3.append(th_imps)
-                            fo_imps = file3[file3.isin(sentences_list[i])].groupby(['optimising']).size().sum()
-                            four3.append(fo_imps)
-                            fi_imps = file3[file3.isin(sentences_list[i])].groupby(['mature']).size().sum()
-                            five3.append(fi_imps)
+for i in range(len(sentences_list)):
+    oo_imps = file3[file3.isin(sentences_list[i])].groupby(['nascent']).size().sum()
+    one3.append(oo_imps)
+    tw_imps = file3[file3.isin(sentences_list[i])].groupby(['emerging']).size().sum()
+    two3.append(tw_imps)
+    th_imps = file3[file3.isin(sentences_list[i])].groupby(['expanding']).size().sum()
+    three3.append(th_imps)
+    fo_imps = file3[file3.isin(sentences_list[i])].groupby(['optimising']).size().sum()
+    four3.append(fo_imps)
+    fi_imps = file3[file3.isin(sentences_list[i])].groupby(['mature']).size().sum()
+    five3.append(fi_imps)
 
-                        one4=[]
-                        two4=[]
-                        three4=[]
-                        four4=[]
-                        five4=[]
+one4=[]
+two4=[]
+three4=[]
+four4=[]
+five4=[]
 
-                        for i in range(len(sentences_list)):
-                            oo_imps = file4[file4.isin(sentences_list[i])].groupby(['nascent']).size().sum()
-                            one4.append(oo_imps)
-                            tw_imps = file4[file4.isin(sentences_list[i])].groupby(['emerging']).size().sum()
-                            two4.append(tw_imps)
-                            th_imps = file4[file4.isin(sentences_list[i])].groupby(['expanding']).size().sum()
-                            three4.append(th_imps)
-                            fo_imps = file4[file4.isin(sentences_list[i])].groupby(['optimising']).size().sum()
-                            four4.append(fo_imps)
-                            fi_imps = file4[file4.isin(sentences_list[i])].groupby(['mature']).size().sum()
-                            five4.append(fi_imps)
+for i in range(len(sentences_list)):
+    oo_imps = file4[file4.isin(sentences_list[i])].groupby(['nascent']).size().sum()
+    one4.append(oo_imps)
+    tw_imps = file4[file4.isin(sentences_list[i])].groupby(['emerging']).size().sum()
+    two4.append(tw_imps)
+    th_imps = file4[file4.isin(sentences_list[i])].groupby(['expanding']).size().sum()
+    three4.append(th_imps)
+    fo_imps = file4[file4.isin(sentences_list[i])].groupby(['optimising']).size().sum()
+    four4.append(fo_imps)
+    fi_imps = file4[file4.isin(sentences_list[i])].groupby(['mature']).size().sum()
+    five4.append(fi_imps)
 
 
-                        #combined_data = pd.concat([one, one_caps, one_imps], axis=1)
-                        data_dict = {'dimension':['IMF', 'Tools & Templates', 'Evaulation', 'Risks, Knowledge,\n& Insights'],'Nascent': [one,one2,one3,one4], 'Emerging': [two,two2,two3,two4], 'Expanding': [three,three2,three3,three4],\
-                                    'Optimising': [four,four2,four3,four4], 'Mature': [five,five,five3,five4]}
+#combined_data = pd.concat([one, one_caps, one_imps], axis=1)
+data_dict = {'dimension':['IMF', 'Tools & Templates', 'Evaulation', 'Risks, Knowledge,\n& Insights'],'Nascent': [one,one2,one3,one4], 'Emerging': [two,two2,two3,two4], 'Expanding': [three,three2,three3,three4],\
+            'Optimising': [four,four2,four3,four4], 'Mature': [five,five,five3,five4]}
 
-                        df = pd.DataFrame(data_dict)
-                        print(df)
+df = pd.DataFrame(data_dict)
+print(df)
 
-                        tst=[]
-                        #fn=[]
-                        save_=[]
+tst=[]
+#fn=[]
+save_=[]
 
-                    #for k in range(len(strategy_capp)):
+#for k in range(len(strategy_capp)):
 
-                        for i in range(len(df)):
-                            tmp = df.iloc[:,1:].apply(lambda x: x.str[i])
-                            tst.append(tmp)
-                        # filename = data.iloc[i, 6] + '_.csv'
-                            #print(filename)
-                        # fn.append(filename)
-                        #print(fn)
-                            total_row = tst[i].sum()
+for i in range(len(df)):
+    tmp = df.iloc[:,1:].apply(lambda x: x.str[i])
+    tst.append(tmp)
+# filename = data.iloc[i, 6] + '_.csv'
+    #print(filename)
+# fn.append(filename)
+#print(fn)
+    total_row = tst[i].sum()
 
-                            print(total_row)
-                            tmp = pd.concat([tst[i], pd.DataFrame([total_row])], ignore_index=True)
-                            tmp.insert(0,'Dimension',['IMF', 'Tools & Templates', 'Evaulation', 'Risks, Knowledge,\n& Insights','Total'])
-                            columns_greater_than_zero = tmp.iloc[:,1:].apply(lambda row: row.index[row.astype(float) > 0].tolist(), axis=1)
-                            columns_greater_than_zero_df = columns_greater_than_zero.apply(pd.Series)
-                            columns_greater_than_zero_df = columns_greater_than_zero_df.replace(word_to_number)
-                            average_values = columns_greater_than_zero_df.mean(axis=1)
-                            average_values = average_values.fillna(0)
-                            print(average_values)   
+    print(total_row)
+    tmp = pd.concat([tst[i], pd.DataFrame([total_row])], ignore_index=True)
+    tmp.insert(0,'Dimension',['IMF', 'Tools & Templates', 'Evaulation', 'Risks, Knowledge,\n& Insights','Total'])
+    columns_greater_than_zero = tmp.iloc[:,1:].apply(lambda row: row.index[row.astype(float) > 0].tolist(), axis=1)
+    columns_greater_than_zero_df = columns_greater_than_zero.apply(pd.Series)
+    columns_greater_than_zero_df = columns_greater_than_zero_df.replace(word_to_number)
+    average_values = columns_greater_than_zero_df.mean(axis=1)
+    average_values = average_values.fillna(0)
+    print(average_values)   
 
-                            tmp['level'] = average_values
-                            last_value_level = tmp['level'].iloc[-1]
-                            tmp['level'].iloc[-1] = tmp['level'].mean()
+    tmp['level'] = average_values
+    last_value_level = tmp['level'].iloc[-1]
+    tmp['level'].iloc[-1] = tmp['level'].mean()
 
-                            tmp['max'] = tmp['level'].round()
-                            tmp['max'] = tmp['max'].replace(0, 1)
-                            tmp['max_column'] = tmp['max'].map({v: k for k, v in word_to_number.items()})
+    tmp['max'] = tmp['level'].round()
+    tmp['max'] = tmp['max'].replace(0, 1)
+    tmp['max_column'] = tmp['max'].map({v: k for k, v in word_to_number.items()})
 
-                            tmp['idx'] = tmp.index +1
-                            
-                            tmp.to_csv(dir_+'Measurement_' +fn+ '_.csv', index=False)
+    tmp['idx'] = tmp.index +1
+    
+    tmp.to_csv(dir_+'Measurement_' +fn+ '_.csv', index=False)
 
-                            add_ = tmp[['level'][-1]].to_frame().rename(columns={"level":'Measurement'}).tail(1)
-                            add_=pd.DataFrame(add_)
-                            print(add_['Measurement'].values[0])
+    add_ = tmp[['level'][-1]].to_frame().rename(columns={"level":'Measurement'}).tail(1)
+    add_=pd.DataFrame(add_)
+    print(add_['Measurement'].values[0])
 
-                            summary_ = pd.read_csv(dir_+'Summary_'+fn+ '_.csv')
-                            print(summary_)
-                            summary_['Measurement'] = add_['Measurement'].values[0]
-                            print(summary_)
-                            summary_.to_csv(dir_+'Summary_' +fn+ '_.csv', index=False)
+    summary_ = pd.read_csv(dir_+'Summary_'+fn+ '_.csv')
+    print(summary_)
+    summary_['Measurement'] = add_['Measurement'].values[0]
+    print(summary_)
+    summary_.to_csv(dir_+'Summary_' +fn+ '_.csv', index=False)
                             
