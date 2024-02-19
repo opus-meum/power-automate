@@ -17,7 +17,10 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        # Add any other setup steps here
+        python -m pip install pandas
+        python -m pip install matplotlib.pyplot
+        python -m pip install numpy
+        
     - name: Run script
       run: | 
         python test.py
