@@ -260,7 +260,6 @@ for i in range(len(df)):
         tmp['max_column'] = tmp['max'].map({v: k for k, v in word_to_number.items()})
         
         tmp['idx'] = tmp.index +1
-    
 
 
         tmp.to_csv(dir_+'_Talent'+fn+'_.csv', index=False)
@@ -269,7 +268,7 @@ for i in range(len(df)):
         add_=pd.DataFrame(add_)
         print(add_['Talent'].values[0])
     
-        summary_ = pd.read_csv(dir_+'Summary'+fn+'_.csv')
+        summary_ = pd.read_csv(dir_+'Summary_'+fn+'_.csv')
         print(summary_)
         print(add_['Talent'].values[0])
     
@@ -370,7 +369,7 @@ for i in range(len(df)):
             add_=pd.DataFrame(add_)
             print(add_['Processes'].values[0])
 
-            summary_ = pd.read_csv(dir_+'_Summary'+fn+'_.csv')
+            summary_ = pd.read_csv(dir_+'Summary_'+fn+'_.csv')
             print(summary_)
             summary_['Processes'] = add_['Processes'].values[0]
             print(summary_)
