@@ -24,4 +24,4 @@ jobs:
     - name: Run script
       run: | 
         python test.py
-        python power-automate/capability-assessment.py
+        python capability-assessment.py
