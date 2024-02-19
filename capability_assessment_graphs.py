@@ -12,11 +12,11 @@ import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 import pandas as pd
 
-dir2_= '/Users/ehlke/Desktop/'
-data = pd.read_csv(dir2_+'Capability Assessment Survey.csv').iloc[2]
+#dir2_= '/Users/ehlke/Desktop/'
+data = pd.read_csv('Capability Assessment Survey.csv').iloc[-1]
 company = data.iloc[6]
 
-dir_ = '/Users/ehlke/Desktop/Capability_Assessment_Results/'
+dir_ = 'results/'
 df = pd.read_csv(dir_+'Summary_'+company+'_.csv')
 print(df)
 
