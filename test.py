@@ -242,9 +242,7 @@ for i in range(len(df)):
    # filename = data.iloc[i, 6] + '_.csv'
     #fn.append(filename)
         total_row = tst[i].sum()
-        tmp = tst[i].append(total_row, ignore_index=False)
-        print(tmp)
-        ddddd
+        tmp = pd.concat([tst[i], pd.DataFrame([total_row])], ignore_index=True)
         tmp.insert(0,'Dimension',['Equipping', 'Impact Performance', 'Team Composition','Total'])
 
         columns_greater_than_zero = tmp.iloc[:,1:].apply(lambda row: row.index[row.astype(float) > 0].tolist(), axis=1)
@@ -346,7 +344,7 @@ for i in range(len(df)):
    # print(fn)
             total_row = tst[i].sum()
             print(total_row)
-            tmp = tst[i].append(total_row, ignore_index=True)
+            tmp = pd.concat([tst[i], pd.DataFrame([total_row])], ignore_index=True)
             tmp.insert(0,'Dimension',['Processes', 'Responsibility \nFramework','Total'])
 
             columns_greater_than_zero = tmp.iloc[:,1:].apply(lambda row: row.index[row.astype(float) > 0].tolist(), axis=1)
@@ -464,7 +462,7 @@ for i in range(len(df)):
    # fn.append(filename)
                 total_row = tst[i].sum()
                 print(total_row)
-                tmp = tst[i].append(total_row, ignore_index=True)
+                tmp = pd.concat([tst[i], pd.DataFrame([total_row])], ignore_index=True)
                 tmp.insert(0,'Dimension',['Data Access', 'Data Collection', 'Data Quality','Total'])
                 print(tmp)
 
@@ -561,7 +559,7 @@ for i in range(len(df)):
     #fn.append(filename)
                     total_row = tst[i].sum()
                     print(total_row)
-                    tmp = tst[i].append(total_row, ignore_index=True)
+                    tmp = pd.concat([tst[i], pd.DataFrame([total_row])], ignore_index=True)
                     tmp.insert(0,'Dimension',['Reporting Framework', 'Reporting Standards','Total'])
                     print(tmp)
 
@@ -645,7 +643,7 @@ for i in range(len(df)):
                     #fn.append(filename)
                         total_row = tst[i].sum()
                         print(total_row)
-                        tmp = tst[i].append(total_row, ignore_index=True)
+                        tmp = pd.concat([tst[i], pd.DataFrame([total_row])], ignore_index=True)
                         tmp.insert(0,'Dimension',['Techology','Total'])
 
                         columns_greater_than_zero = tmp.iloc[:,1:].apply(lambda row: row.index[row.astype(float) > 0].tolist(), axis=1)
@@ -788,7 +786,7 @@ for i in range(len(df)):
                             total_row = tst[i].sum()
 
                             print(total_row)
-                            tmp = tst[i].append(total_row, ignore_index=True)
+                            tmp = pd.concat([tst[i], pd.DataFrame([total_row])], ignore_index=True)
                             tmp.insert(0,'Dimension',['IMF', 'Tools & Templates', 'Evaulation', 'Risks, Knowledge,\n& Insights','Total'])
                             columns_greater_than_zero = tmp.iloc[:,1:].apply(lambda row: row.index[row.astype(float) > 0].tolist(), axis=1)
                             columns_greater_than_zero_df = columns_greater_than_zero.apply(pd.Series)
