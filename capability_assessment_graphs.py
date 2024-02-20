@@ -823,7 +823,7 @@ from email import encoders
 
 sender_email = "ehlke.hepworth@relativ.co.za"
 receiver_email = "ehlke.hepworth@outlook.com"
-password = input("Type your password and press enter: ")
+password = input("0)K3x#5KJQ*Pnu4H0I1nw0tc ")
 
 msg = MIMEMultipart()
 msg['From'] = sender_email
