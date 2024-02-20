@@ -51,11 +51,12 @@ jobs:
         run: |
           python -c "
           import os
+          import base64
           from sendgrid import SendGridAPIClient
-          from sendgrid.helpers.mail import Mail
+          from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition
           
           message = Mail(
-              from_email='ehlke.hepworth@relativ.com',
+              from_email='ehlke.hepworth@relativ.co.za',
               to_emails='ehlke.hepworth@outlook.com',
               subject='Your Report',
               html_content='<strong>Report attached.</strong>'
@@ -66,14 +67,14 @@ jobs:
               data = f.read()
               f.close()
           encoded_file = base64.b64encode(data).decode()
-          
+
           attachment = Attachment()
           attachment.file_content = FileContent(encoded_file)
-          attachment.file_type = FileType('application/pdf')
-          attachment.file_name = FileName('report.pdf')
+          attachment.file_type = FileType('application/vnd.openxmlformats-officedocument.presentationml.presentation')
+          attachment.file_name = FileName('Capability Assessment Report.pptx')
           attachment.disposition = Disposition('attachment')
-          message.attachment = attachment
-          
+          message.add_attachment(attachment)
+
           try:
               sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
               response = sg.send(message)
@@ -81,6 +82,6 @@ jobs:
               print(response.body)
               print(response.headers)
           except Exception as e:
-              print(e.message)
+              print(str(e))
           "
   
