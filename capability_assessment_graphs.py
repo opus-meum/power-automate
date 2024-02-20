@@ -812,7 +812,7 @@ height = Inches(3.65)
 slide.shapes.add_picture(dir_+'CapAss.png', left, top, width, height)
 
       
-prs.save('Capability Assessment Report - '+company+'_.pptx')
+prs.save('Capability Assessment Report.pptx')
 """
 import requests
 
