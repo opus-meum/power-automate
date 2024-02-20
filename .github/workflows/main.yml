@@ -26,7 +26,7 @@ jobs:
         
     - name: Run script
       env:
-        REPORT_SECRET: ${{ secrets.REPORT_SECRET }}
+        SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
       run: | 
         python test.py
         python capability_assessment_graphs.py
