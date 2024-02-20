@@ -846,14 +846,34 @@ message = Mail(
     
     # Add the attachment to the message
 message.attachment = attachment
-    
+
+sg = sendgrid.SendGridAPIClient(apikey='SENDGRID_API_KEY')
+
+full_email = sendgrid.helpers.mail.Mail(from_email, subject,
+                                            to_email, message)
+
 try:
-          sendgrid_api_key = os.environ.get('SENDGRID_API_KEY')
-          sg = SendGridAPIClient(sendgrid_api_key)
-          response = sg.send(message)
-          print(f"Email sent. Status code: {response.status_code}")
-except Exception as e:
-          print(f"Failed to send email: {e}")
+          response = sg.client.mail.send.post(request_body=full_email.get())
+except HTTPError as err:
+      # Probably a bad API key. Possible other causes could include sendgrid's
+      # API being unavailable, or any other errors that come from the
+      # api.sendgrid.com/mail/send endpoint.
+      # Docs:
+      # https://sendgrid.com/docs/API_Reference/Web_API_v3/Mail/index.html
+      # https://sendgrid.com/docs/API_Reference/Web_API_v3/Mail/errors.html
+      # Common probable occurrences:
+      # 401 unauthorized, 403 forbidden, 413 payload too large, 429 too many
+      # requests, 500 server unavailable, 503 v3 api unavailable.
+      # also, 200 OK and 202 ACCEPTED
+      response = err
+    
+#try:
+#          sendgrid_api_key = os.environ.get('SENDGRID_API_KEY')
+#          sg = SendGridAPIClient(sendgrid_api_key)
+#          response = sg.send(message)
+#          print(f"Email sent. Status code: {response.status_code}")
+#except Exception as e:
+#          print(f"Failed to send email: {e}")
 
           
 """
