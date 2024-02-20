@@ -19,6 +19,7 @@ company = data.iloc[6]
 dir_ = 'results/'
 df = pd.read_csv(dir_+'Summary_'+company+'_.csv')
 print(df)
+ddddd
 
 fig1, ax = plt.subplots(1, figsize =(17, 10))
 
