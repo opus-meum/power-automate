@@ -262,7 +262,7 @@ for i in range(len(df)):
     tmp['idx'] = tmp.index +1
 
 
-    tmp.to_csv(dir_+'_Talent'+fn+'_.csv', index=False)
+    tmp.to_csv(dir_+'Talent_'+fn+'_.csv', index=False)
     print(tmp)
     add_ = tmp[['level'][-1]].to_frame().rename(columns={"level":'Talent'}).tail(1)
     add_=pd.DataFrame(add_)
