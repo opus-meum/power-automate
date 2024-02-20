@@ -30,6 +30,12 @@ jobs:
           python test.py
           python capability_assessment_graphs.py
 
+      - name: Commit and push if changed
+        run: |
+          git add 'Capability Assessment Report.pptx'  # Adjust the path as needed
+          git commit -m "Automatically generated PPTX report" || exit 0  # This will not fail if there's nothing to commit
+          git push
+
       - name: Send email with SendGrid
         env:
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
