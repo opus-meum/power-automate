@@ -20,7 +20,7 @@ jobs:
         python -m pip install pandas
         python -m pip install matplotlib
         python -m pip install numpy
-        python -m pip install pptx
+        python -m pip install python-pptx
         python -m pip install seaborn
         
     - name: Run script
