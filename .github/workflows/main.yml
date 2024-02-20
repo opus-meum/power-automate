@@ -22,6 +22,7 @@ jobs:
         python -m pip install numpy
         python -m pip install python-pptx
         python -m pip install seaborn
+        python -m pip install os
         
     - name: Run script
       env:
