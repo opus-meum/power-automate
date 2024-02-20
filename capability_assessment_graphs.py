@@ -816,6 +816,7 @@ prs.save('Capability Assessment Report - '+company+'_.pptx')
 
 import os
 import base64
+import sendgrid
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition
 
