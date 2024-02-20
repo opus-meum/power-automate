@@ -818,7 +818,7 @@ import os
 import base64
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition
-print(os.environ.get('REPORT_SECRET'))
+
 def send_email_with_pptx_attachment():
     # Assuming 'presentation.pptx' is the PowerPoint file you want to send
     pptx_file_path = 'Capability Assessment Report - '+company+'_.pptx'
@@ -849,8 +849,10 @@ def send_email_with_pptx_attachment():
     message.attachment = attachment
     
     try:
-        sendgrid_api_key = os.environ.get('REPORT_SECRET')
+        sendgrid_api_key = '0)K3x#5KJQ*Pnu4H0I1nw0tc '  # Replace with your actual SendGrid API key
         sg = SendGridAPIClient(sendgrid_api_key)
+        #sendgrid_api_key = os.environ.get('REPORT_SECRET')
+        #sg = SendGridAPIClient(sendgrid_api_key)
         response = sg.send(message)
         print(f"Email sent. Status code: {response.status_code}")
     except Exception as e:
