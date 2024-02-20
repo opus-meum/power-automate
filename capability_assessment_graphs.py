@@ -812,7 +812,7 @@ height = Inches(3.65)
 slide.shapes.add_picture(dir_+'CapAss.png', left, top, width, height)
 
       
-prs.save('Capability Assessment_'+company+'_.pptx')
+prs.save('Capability Assessment Report - '+company+'_.pptx')
 
 import smtplib
 from email.mime.multipart import MIMEMultipart
@@ -839,7 +839,7 @@ msg['Subject'] = "Capability Assessment Report"
 msg.attach(MIMEApplication(_data="Dear"+company+ ", \
                            \nPlease find attached your capability assessment report.", _subtype="plain"))
 
-file_path = 'Capability Assessment_Report_'+company+'_.pptx'
+file_path = 'Capability Assessment Report - '+company+'_.pptx'
 
 with open(file_path, "rb") as f:
     file_attachment = MIMEBase('application', 'octet-stream')
