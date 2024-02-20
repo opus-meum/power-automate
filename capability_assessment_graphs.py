@@ -815,21 +815,38 @@ slide.shapes.add_picture(dir_+'CapAss.png', left, top, width, height)
 prs.save('Capability Assessment Report - '+company+'_.pptx')
 
 import os
+import base64
 from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail
+from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition
 
-def send_email_with_report():
-    # Assuming 'report.txt' is the report file you want to send
-    report_file_path = 'Capability Assessment Report - '+company+'_.pptx'
-    with open(report_file_path, 'r') as file:
-        report_content = file.read()
-
+def send_email_with_pptx_attachment():
+    # Assuming 'presentation.pptx' is the PowerPoint file you want to send
+    pptx_file_path = 'Capability Assessment Report - '+company+'_.pptx'
+    
+    # Read the .pptx file in binary mode
+    with open(pptx_file_path, 'rb') as f:
+        pptx_data = f.read()
+    
+    # Encode the .pptx file data in base64
+    encoded_pptx = base64.b64encode(pptx_data).decode()
+    
+    # Create the attachment
+    attachment = Attachment()
+    attachment.file_content = FileContent(encoded_pptx)
+    attachment.file_type = FileType('application/vnd.openxmlformats-officedocument.presentationml.presentation')
+    attachment.file_name = FileName('Capability Assessment Report - '+company+'_.pptx')
+    attachment.disposition = Disposition('attachment')
+    
     message = Mail(
         from_email='ehlke.hepworth@outlook.com',
         to_emails='ehlke@relativimpact.com',
-        subject='Your Report',
-        plain_text_content='Here is the report you requested:\n\n' + report_content
+        subject='Capability Assessment Report',
+        plain_text_content="Dear "+company+", \
+      \n Please find attached your Capability Assessment Report."
     )
+    
+    # Add the attachment to the message
+    message.attachment = attachment
     
     try:
         sendgrid_api_key = os.environ.get('REPORT_SECRET')
@@ -840,7 +857,7 @@ def send_email_with_report():
         print(f"Failed to send email: {e}")
 
 if __name__ == "__main__":
-    send_email_with_report()
+    send_email_with_pptx_attachment()
           
 """
 import smtplib
