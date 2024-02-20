@@ -813,7 +813,7 @@ slide.shapes.add_picture(dir_+'CapAss.png', left, top, width, height)
 
       
 prs.save('Capability Assessment Report - '+company+'_.pptx')
-
+"""
 import requests
 
 def send_email_with_mailgun():
@@ -852,7 +852,7 @@ def send_email_with_mailgun():
 
 if __name__ == "__main__":
     send_email_with_mailgun()
-
+"""
 """
 import os
 import base64
