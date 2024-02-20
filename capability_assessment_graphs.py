@@ -849,10 +849,8 @@ def send_email_with_pptx_attachment():
     message.attachment = attachment
     
     try:
-        sendgrid_api_key = '0)K3x#5KJQ*Pnu4H0I1nw0tc '  # Replace with your actual SendGrid API key
+        sendgrid_api_key = os.environ.get('SENDGRID_API_KEY')
         sg = SendGridAPIClient(sendgrid_api_key)
-        #sendgrid_api_key = os.environ.get('REPORT_SECRET')
-        #sg = SendGridAPIClient(sendgrid_api_key)
         response = sg.send(message)
         print(f"Email sent. Status code: {response.status_code}")
     except Exception as e:
