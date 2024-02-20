@@ -156,17 +156,6 @@ for i in range(len(df)):
     add_.to_csv(dir_+'Summary_'+fn+'_.csv', index=False)   
     print(add_)
 
-    summary_ = pd.read_csv(dir_+'Summary_'+fn+'_.csv')
-    print(summary_)
-    print(add_['Strategy'].values[0])
-
-    summary_['Strategy'] = add_['Strategy'].values[0]
-    print(summary_)
-    add_.to_csv(dir_+'Summary_'+fn+'_.csv', index=False)
-    print(add_)
-    ddddd
-
-
 
 #-----------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------
@@ -285,7 +274,7 @@ for i in range(len(df)):
 
     summary_['Talent'] = add_['Talent'].values[0]
     print(summary_)
-    add_.to_csv(dir_+'Summary_'+fn+'_.csv', index=False)   
+    summary_.to_csv(dir_+'Summary_' +fn+ '_.csv', index=False)
 
 
 #-----------------------------------------------------------------------------------------------
