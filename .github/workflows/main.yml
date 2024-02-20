@@ -24,4 +24,4 @@ jobs:
     - name: Run script
       run: | 
         python test.py
-        python capability-assessment.py
+        python capability_assessment_graphs.py
