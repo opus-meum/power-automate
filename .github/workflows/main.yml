@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   run-script:
     runs-on: ubuntu-latest
@@ -30,13 +33,19 @@ jobs:
           python test.py
           python capability_assessment_graphs.py
 
-      - name: Commit and push if changed
+      - name: Configure git
         run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
-          git add 'Capability Assessment Report.pptx'  # Adjust the path as needed
-          git commit -m "Automatically generated PPTX report" || exit 0  # This will not fail if there's nothing to commit
-          git push
+      - name: Commit and push changes
+        env:
+          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # Use your secret name
+        run: |
+          git add .
+          git commit -m "Automatically generated PPTX report" -a || echo "No changes to commit"
+          git push https://${MY_GITHUB_TOKEN}@github.com/ehlke-hepworth/power-automate.git
+   
+
 
       - name: Send email with SendGrid
         env:
