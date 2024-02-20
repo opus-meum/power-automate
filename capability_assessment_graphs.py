@@ -702,7 +702,7 @@ def create_plot_and_add_to_ppt(category, company, dir_, prs, slide_index):
    plt.gca().yaxis.label.set_color('#333333')
    plt.gca().tick_params(colors='#333333')
 
-   img_path = f'/Users/ehlke/Desktop/{category}.png'
+   img_path = f'{category}.png'
    plt.savefig(img_path, dpi=300, bbox_inches='tight')
 
    # Add the image to the slide
@@ -714,7 +714,7 @@ def create_plot_and_add_to_ppt(category, company, dir_, prs, slide_index):
    slide.shapes.add_picture(img_path, left, top, width, height)
 
    # Load the presentation
-prs = Presentation('/Users/ehlke/Desktop/Capability Assessment Report Template.pptx')  
+prs = Presentation('Capability Assessment Report Template.pptx')  
 #company='Ehlke-Hepworth'
 date_ = 'February 2024'
 relativ = 'Relativ Impact'
@@ -786,12 +786,8 @@ for slide in prs.slides:
             for run in paragraph.runs:
                run.font.weight = 'light'
 
-
-
-
-
    # Call the function for each category
-dir_ = '/Users/ehlke/Desktop/Capability_Assessment_Results/'
+dir_ = 'results/'
       #company='Ehlke-Hepworth'
 categories = ['Strategy', 'Talent', 'Processes', 'Data', 'Measurement', 'Reporting', 'Technology']
 slide_indices = [11, 15, 20, 24, 28, 33, 37]  # Add more slide indices as needed
@@ -816,6 +812,6 @@ height = Inches(3.65)
 slide.shapes.add_picture(dir_+'CapAss.png', left, top, width, height)
 
       
-prs.save('/Users/ehlke/Desktop/test/Capability Assessment_'+company+'_.pptx')
+prs.save('Capability Assessment_'+company+'_.pptx')
 
    #capability_report(company=company)
