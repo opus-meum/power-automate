@@ -814,6 +814,46 @@ slide.shapes.add_picture(dir_+'CapAss.png', left, top, width, height)
       
 prs.save('Capability Assessment Report - '+company+'_.pptx')
 
+import requests
+
+def send_email_with_mailgun():
+    api_url = "https://api.mailgun.net/v3/sandboxa4963a3cb5084c78b4610616743f57d1.mailgun.org/messages"
+    api_key = "7e638864a42f7ec10563e8467b3f08c7-408f32f3-85277eb8"
+    from_email = "ehlke.hepworth@outlook.com"
+    to_email = "ehlke@relativimpact.com"
+    subject = "Capability Assessment Report"
+    body_text = "Please find attached your Capability Assessment Report"
+    attachment_path = "Capability Assessment Report - "+company+"_.pptx"
+
+    # Prepare the data for the API request
+    data = {
+        "from": from_email,
+        "to": to_email,
+        "subject": subject,
+        "text": body_text,
+    }
+    files = {
+        "attachment": (attachment_path, open(attachment_path, "rb").read()),
+    }
+
+    # Make the request to Mailgun to send the email
+    response = requests.post(
+        api_url,
+        auth=("api", api_key),
+        data=data,
+        files=files
+    )
+
+    # Check the response
+    if response.status_code == 200:
+        print("Email sent successfully!")
+    else:
+        print(f"Failed to send email: {response.text}")
+
+if __name__ == "__main__":
+    send_email_with_mailgun()
+
+"""
 import os
 import base64
 import sendgrid
@@ -831,6 +871,7 @@ mail = Mail(from_email, to_email, subject, content)
 
 mail_json = mail.get()
 response = my_sg.client.mail.send.post(request_body=mail_json)
+"""
 """
     # Assuming 'presentation.pptx' is the PowerPoint file you want to send
 pptx_file_path = 'Capability Assessment Report - '+company+'_.pptx'
