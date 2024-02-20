@@ -11,8 +11,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 import pandas as pd
+import os
 
-#dir2_= '/Users/ehlke/Desktop/'
 data = pd.read_csv('Capability Assessment Survey.csv').iloc[-1]
 company = data.iloc[6]
 
