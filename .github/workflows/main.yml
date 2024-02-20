@@ -22,7 +22,6 @@ jobs:
         python -m pip install numpy
         python -m pip install python-pptx
         python -m pip install seaborn
-        python -m pip install smtplib
         python -m pip install email
         
     - name: Run script
