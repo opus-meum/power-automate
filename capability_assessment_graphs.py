@@ -821,8 +821,8 @@ from email.mime.application import MIMEApplication
 from email.message import EmailMessage
 from email import encoders
 
-sender_email = "ehlke.hepworth@outlook.com"
-receiver_email = "ehlke.hepworth@relativ.co.za"
+sender_email = "ehlke.hepworth@relativ.co.za"
+receiver_email = "ehlke.hepworth@outlook.com"
 password = os.getenv('REPORT_SECRET')
 if not password:
     raise ValueError("Password not found in environment variables")
