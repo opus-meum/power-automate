@@ -820,11 +820,11 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-sender_email = "ehlke@relativimpact.com"
-sender_password = "0)K3x#5KJQ*Pnu4H0I1nw0tc "
+sender_email = "ehlke.hepworth@outlook.com"
+sender_password = "Ehlke3145431!"
 
 # Email details
-receiver_email = "ehlke.hepworth@outlook.com"
+receiver_email = "ehlke.hepworth@relativ.com"
 subject = "Test Email from Python"
 body = """
 This is a test email sent from a Python script!
