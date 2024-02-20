@@ -162,7 +162,9 @@ for i in range(len(df)):
 
     summary_['Strategy'] = add_['Strategy'].values[0]
     print(summary_)
-    add_.to_csv(dir_+'Summary_'+fn+'_.csv', index=False)   
+    add_.to_csv(dir_+'Summary_'+fn+'_.csv', index=False)
+    print(add_)
+    ddddd
 
 
 
