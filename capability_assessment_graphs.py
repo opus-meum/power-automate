@@ -821,7 +821,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 sender_email = "ehlke@relativimpact.com"
-sender_password = "0)K3x#5KJQ*Pnu4H0I1nw0tc"
+sender_password = "0)K3x#5KJQ*Pnu4H0I1nw0tc "
 
 # Email details
 receiver_email = "ehlke.hepworth@outlook.com"
