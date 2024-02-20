@@ -4,7 +4,12 @@ Created on Mon Dec 04 2023
 
 @authori ehlke_hepworth
 """
+import os
 
+password = os.getenv('REPORT_SECRET')
+if not password:
+    raise ValueError("Password not found in environment variables")
+    
 #%% STRATEGY
 
 import pandas as pd
