@@ -820,9 +820,8 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-# Email account credentials
 sender_email = "ehlke@relativimpact.com"
-sender_password = "0)K3x#5KJQ*Pnu4H0I1nw0tc "
+sender_password = "0)K3x#5KJQ*Pnu4H0I1nw0tc"
 
 # Email details
 receiver_email = "ehlke.hepworth@outlook.com"
@@ -841,8 +840,11 @@ message["Subject"] = subject
 message.attach(MIMEText(body, "plain"))
 
 try:
-    # Connect to Gmail's SMTP server
-    with smtplib.SMTP_SSL("smtp.office365.com", 587) as server:
+    # Connect to Office 365 SMTP server
+    with smtplib.SMTP("smtp.office365.com", 587) as server:
+        server.ehlo()  # Can be omitted
+        server.starttls()  # Secure the connection
+        server.ehlo()  # Can be omitted
         server.login(sender_email, sender_password)
         server.sendmail(sender_email, receiver_email, message.as_string())
     print("Email sent successfully!")
