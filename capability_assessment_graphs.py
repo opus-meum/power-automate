@@ -819,45 +819,42 @@ import base64
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition
 
-def send_email_with_pptx_attachment():
     # Assuming 'presentation.pptx' is the PowerPoint file you want to send
-    pptx_file_path = 'Capability Assessment Report - '+company+'_.pptx'
+pptx_file_path = 'Capability Assessment Report - '+company+'_.pptx'
     
-    # Read the .pptx file in binary mode
-    with open(pptx_file_path, 'rb') as f:
-        pptx_data = f.read()
-    
+# Read the .pptx file in binary mode
+with open(pptx_file_path, 'rb') as f:
+          pptx_data = f.read()
+
     # Encode the .pptx file data in base64
-    encoded_pptx = base64.b64encode(pptx_data).decode()
+encoded_pptx = base64.b64encode(pptx_data).decode()
     
-    # Create the attachment
-    attachment = Attachment()
-    attachment.file_content = FileContent(encoded_pptx)
-    attachment.file_type = FileType('application/vnd.openxmlformats-officedocument.presentationml.presentation')
-    attachment.file_name = FileName('Capability Assessment Report - '+company+'_.pptx')
-    attachment.disposition = Disposition('attachment')
-    
-    message = Mail(
-        from_email='ehlke.hepworth@outlook.com',
-        to_emails='ehlke@relativimpact.com',
-        subject='Capability Assessment Report',
-        plain_text_content="Dear "+company+", \
-      \n Please find attached your Capability Assessment Report."
-    )
+# Create the attachment
+attachment = Attachment()
+attachment.file_content = FileContent(encoded_pptx)
+attachment.file_type = FileType('application/vnd.openxmlformats-officedocument.presentationml.presentation')
+attachment.file_name = FileName('Capability Assessment Report - '+company+'_.pptx')
+attachment.disposition = Disposition('attachment')
+
+message = Mail(
+          from_email='ehlke.hepworth@outlook.com',
+          to_emails='ehlke@relativimpact.com',
+          subject='Capability Assessment Report',
+          plain_text_content="Dear "+company+", \
+          \n Please find attached your Capability Assessment Report."
+)
     
     # Add the attachment to the message
-    message.attachment = attachment
+message.attachment = attachment
     
-    try:
-        sendgrid_api_key = os.environ.get('SENDGRID_API_KEY')
-        sg = SendGridAPIClient(sendgrid_api_key)
-        response = sg.send(message)
-        print(f"Email sent. Status code: {response.status_code}")
-    except Exception as e:
-        print(f"Failed to send email: {e}")
+try:
+          sendgrid_api_key = os.environ.get('SENDGRID_API_KEY')
+          sg = SendGridAPIClient(sendgrid_api_key)
+          response = sg.send(message)
+          print(f"Email sent. Status code: {response.status_code}")
+except Exception as e:
+          print(f"Failed to send email: {e}")
 
-if __name__ == "__main__":
-    send_email_with_pptx_attachment()
           
 """
 import smtplib
