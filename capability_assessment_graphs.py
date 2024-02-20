@@ -815,42 +815,6 @@ slide.shapes.add_picture(dir_+'CapAss.png', left, top, width, height)
 prs.save('Capability Assessment Report.pptx')
 
 
-
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-
-sender_email = "ehlke.hepworth@outlook.com"
-sender_password = "Ehlke3145431!"
-
-# Email details
-receiver_email = "ehlke.hepworth@relativ.com"
-subject = "Test Email from Python"
-body = """
-This is a test email sent from a Python script!
-"""
-
-# Create a multipart message
-message = MIMEMultipart()
-message["From"] = sender_email
-message["To"] = receiver_email
-message["Subject"] = subject
-
-# Add body to email
-message.attach(MIMEText(body, "plain"))
-
-try:
-    # Connect to Office 365 SMTP server
-    with smtplib.SMTP("smtp.office365.com", 587) as server:
-        server.ehlo()  # Can be omitted
-        server.starttls()  # Secure the connection
-        server.ehlo()  # Can be omitted
-        server.login(sender_email, sender_password)
-        server.sendmail(sender_email, receiver_email, message.as_string())
-    print("Email sent successfully!")
-except Exception as e:
-    print(f"Failed to send email: {e}")
-
 """
 import smtplib
 from email.mime.multipart import MIMEMultipart
