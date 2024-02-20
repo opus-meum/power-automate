@@ -45,7 +45,7 @@ jobs:
           from sendgrid import SendGridAPIClient
           from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition
           import base64
-          file_path = 'Capability Assessment Report - "+company+"_.pptx'  # Adjust this to the path where your script saves the .pptx file
+          file_path = 'Capability Assessment Report.pptx'  # Adjust this to the path where your script saves the .pptx file
           with open(file_path, 'rb') as f:
             data = f.read()
             encoded = base64.b64encode(data).decode()
