@@ -818,8 +818,20 @@ import os
 import base64
 import sendgrid
 from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition
+from sendgrid.helpers.mail import Mail, Email, To, Content
 
+my_sg = sendgrid.SendGridAPIClient(api_key = os.environ.get('SENDGRID_API_KEY'))
+
+from_email = Email("ehlke.hepworth@outlook.com") 
+to_email = To("ehlke@relativimpact.com")
+subject = "Capability Assessment Report"
+content = Content("text/plain", "Please find attached your Capability Assessment Report")
+
+mail = Mail(from_email, to_email, subject, content)
+
+mail_json = mail.get()
+response = my_sg.client.mail.send.post(request_body=mail_json)
+"""
     # Assuming 'presentation.pptx' is the PowerPoint file you want to send
 pptx_file_path = 'Capability Assessment Report - '+company+'_.pptx'
     
@@ -867,7 +879,7 @@ except HTTPError as err:
       # requests, 500 server unavailable, 503 v3 api unavailable.
       # also, 200 OK and 202 ACCEPTED
       response = err
-    
+"""    
 #try:
 #          sendgrid_api_key = os.environ.get('SENDGRID_API_KEY')
 #          sg = SendGridAPIClient(sendgrid_api_key)
