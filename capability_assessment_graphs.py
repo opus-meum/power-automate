@@ -823,7 +823,10 @@ from email import encoders
 
 sender_email = "ehlke.hepworth@relativ.co.za"
 receiver_email = "ehlke.hepworth@outlook.com"
-password = input("0)K3x#5KJQ*Pnu4H0I1nw0tc ")
+password = os.getenv('REPORT_SECRET')
+if not password:
+    raise ValueError("Password not found in environment variables")
+
 
 msg = MIMEMultipart()
 msg['From'] = sender_email
