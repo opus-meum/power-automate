@@ -849,7 +849,8 @@ with open(file_path, "rb") as f:
     msg.attach(file_attachment)
 
 try:
-    with smtplib.SMTP_SSL('smtp.example.com', 465) as server:  # Use SMTP_SSL for secure connection, adjust as needed
+    with smtplib.SMTP_SSL('smtp.office365.com', 587) as server:  # Use SMTP_SSL for secure connection, adjust as needed
+        server.starttls()
         server.login(sender_email, password)
         server.send_message(msg)
         print("Email sent successfully!")
