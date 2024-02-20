@@ -25,8 +25,6 @@ jobs:
         python -m pip install sendgrid
         
     - name: Run script
-      env:
-        SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
       run: | 
         python test.py
         python capability_assessment_graphs.py
