@@ -44,40 +44,4 @@ jobs:
           git add .
           git commit -m "Automatically generated PPTX report" -a || echo "No changes to commit"
           git push https://${MY_GITHUB_TOKEN}@github.com/ehlke-hepworth/power-automate.git
-   
-
-
-      - name: Send email with SendGrid
-        env:
-          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
-        run: |
-          python -c " 
-          import os 
-          from sendgrid import SendGridAPIClient
-          from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition
-          import base64
-          file_path = 'Capability Assessment Report.pptx'  # Adjust this to the path where your script saves the .pptx file
-          with open(file_path, 'rb') as f:
-            data = f.read()
-            encoded = base64.b64encode(data).decode()
-          attachment = Attachment(
-            FileContent(encoded),
-            FileName('report.pptx'),
-            FileType('application/vnd.openxmlformats-officedocument.presentationml.presentation'),
-            Disposition('attachment')
-          )
-          
-          message = Mail(
-            from_email='ehlke.hepworth@outlook.com',  # Replace with your SendGrid verified sender email
-            to_emails='ehlke@relativimpact.com',  # Replace with the recipient's email
-            subject='Your PPTX Report',
-            plain_text_content='Find attached the PPTX report.'
-          )
-          try:
-            sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
-            response = sg.send(message)
-            print(response.status_code)
-            print(response.body)
-            print(response.headers)
-          except Exception as e:
-            print(e)"
+  
