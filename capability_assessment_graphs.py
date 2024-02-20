@@ -814,4 +814,42 @@ slide.shapes.add_picture(dir_+'CapAss.png', left, top, width, height)
       
 prs.save('Capability Assessment_'+company+'_.pptx')
 
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.base import MIMEBase
+from email.mime.application import MIMEApplication
+from email.message import EmailMessage
+from email import encoders
+
+sender_email = "ehlke.hepworth@relativ.co.za"
+receiver_email = "ehlke.hepworth@outlook.com"
+password = input("Type your password and press enter: ")
+
+msg = MIMEMultipart()
+msg['From'] = sender_email
+msg['To'] = receiver_email
+msg['Subject'] = "Capability Assessment Report"
+#body = "Dear "+company+", \
+#      \n Please find attached your Capability Assessment Report."
+#msg.attach(MIMEText(body, 'plain'))
+
+msg.attach(MIMEApplication(_data="Dear"+company+ ", \
+                           \nPlease find attached your capability assessment report.", _subtype="plain"))
+
+file_path = 'Capability Assessment_Report_'+company+'_.pptx'
+
+with open(file_path, "rb") as f:
+    file_attachment = MIMEBase('application', 'octet-stream')
+    file_attachment.set_payload(f.read())
+    encoders.encode_base64(file_attachment)
+    file_attachment.add_header('Content-Disposition', 'attachment; filename="{}"'.format(file_path.split("/")[-1]))
+    msg.attach(file_attachment)
+
+try:
+    with smtplib.SMTP_SSL('smtp.example.com', 465) as server:  # Use SMTP_SSL for secure connection, adjust as needed
+        server.login(sender_email, password)
+        server.send_message(msg)
+        print("Email sent successfully!")
+except Exception as e:
+    print(f"Failed to send email: {e}")
    #capability_report(company=company)
