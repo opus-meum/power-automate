@@ -813,123 +813,42 @@ slide.shapes.add_picture(dir_+'CapAss.png', left, top, width, height)
 
       
 prs.save('Capability Assessment Report.pptx')
+
+
+
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+# Email account credentials
+sender_email = "ehlke@relativimpact.com"
+sender_password = "0)K3x#5KJQ*Pnu4H0I1nw0tc "
+
+# Email details
+receiver_email = "ehlke.hepworth@outlook.com"
+subject = "Test Email from Python"
+body = """
+This is a test email sent from a Python script!
 """
-import requests
 
-def send_email_with_mailgun():
-    api_url = "https://api.mailgun.net/v3/sandboxa4963a3cb5084c78b4610616743f57d1.mailgun.org/messages"
-    api_key = "7e638864a42f7ec10563e8467b3f08c7-408f32f3-85277eb8"
-    from_email = "ehlke.hepworth@outlook.com"
-    to_email = "ehlke@relativimpact.com"
-    subject = "Capability Assessment Report"
-    body_text = "Please find attached your Capability Assessment Report"
-    attachment_path = "Capability Assessment Report - "+company+"_.pptx"
+# Create a multipart message
+message = MIMEMultipart()
+message["From"] = sender_email
+message["To"] = receiver_email
+message["Subject"] = subject
 
-    # Prepare the data for the API request
-    data = {
-        "from": from_email,
-        "to": to_email,
-        "subject": subject,
-        "text": body_text,
-    }
-    files = {
-        "attachment": (attachment_path, open(attachment_path, "rb").read()),
-    }
-
-    # Make the request to Mailgun to send the email
-    response = requests.post(
-        api_url,
-        auth=("api", api_key),
-        data=data,
-        files=files
-    )
-
-    # Check the response
-    if response.status_code == 200:
-        print("Email sent successfully!")
-    else:
-        print(f"Failed to send email: {response.text}")
-
-if __name__ == "__main__":
-    send_email_with_mailgun()
-"""
-"""
-import os
-import base64
-import sendgrid
-from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail, Email, To, Content
-
-my_sg = sendgrid.SendGridAPIClient(api_key = os.environ.get('SENDGRID_API_KEY'))
-
-from_email = Email("ehlke.hepworth@outlook.com") 
-to_email = To("ehlke@relativimpact.com")
-subject = "Capability Assessment Report"
-content = Content("text/plain", "Please find attached your Capability Assessment Report")
-
-mail = Mail(from_email, to_email, subject, content)
-
-mail_json = mail.get()
-response = my_sg.client.mail.send.post(request_body=mail_json)
-"""
-"""
-    # Assuming 'presentation.pptx' is the PowerPoint file you want to send
-pptx_file_path = 'Capability Assessment Report - '+company+'_.pptx'
-    
-# Read the .pptx file in binary mode
-with open(pptx_file_path, 'rb') as f:
-          pptx_data = f.read()
-
-    # Encode the .pptx file data in base64
-encoded_pptx = base64.b64encode(pptx_data).decode()
-    
-# Create the attachment
-attachment = Attachment()
-attachment.file_content = FileContent(encoded_pptx)
-attachment.file_type = FileType('application/vnd.openxmlformats-officedocument.presentationml.presentation')
-attachment.file_name = FileName('Capability Assessment Report - '+company+'_.pptx')
-attachment.disposition = Disposition('attachment')
-
-message = Mail(
-          from_email='ehlke.hepworth@outlook.com',
-          to_emails='ehlke@relativimpact.com',
-          subject='Capability Assessment Report',
-          plain_text_content="Dear "+company+", \
-          \n Please find attached your Capability Assessment Report."
-)
-    
-    # Add the attachment to the message
-message.attachment = attachment
-
-sg = sendgrid.SendGridAPIClient(apikey='SENDGRID_API_KEY')
-
-full_email = sendgrid.helpers.mail.Mail(from_email, subject,
-                                            to_email, message)
+# Add body to email
+message.attach(MIMEText(body, "plain"))
 
 try:
-          response = sg.client.mail.send.post(request_body=full_email.get())
-except HTTPError as err:
-      # Probably a bad API key. Possible other causes could include sendgrid's
-      # API being unavailable, or any other errors that come from the
-      # api.sendgrid.com/mail/send endpoint.
-      # Docs:
-      # https://sendgrid.com/docs/API_Reference/Web_API_v3/Mail/index.html
-      # https://sendgrid.com/docs/API_Reference/Web_API_v3/Mail/errors.html
-      # Common probable occurrences:
-      # 401 unauthorized, 403 forbidden, 413 payload too large, 429 too many
-      # requests, 500 server unavailable, 503 v3 api unavailable.
-      # also, 200 OK and 202 ACCEPTED
-      response = err
-"""    
-#try:
-#          sendgrid_api_key = os.environ.get('SENDGRID_API_KEY')
-#          sg = SendGridAPIClient(sendgrid_api_key)
-#          response = sg.send(message)
-#          print(f"Email sent. Status code: {response.status_code}")
-#except Exception as e:
-#          print(f"Failed to send email: {e}")
+    # Connect to Gmail's SMTP server
+    with smtplib.SMTP_SSL("smtp.office365.com", 587) as server:
+        server.login(sender_email, sender_password)
+        server.sendmail(sender_email, receiver_email, message.as_string())
+    print("Email sent successfully!")
+except Exception as e:
+    print(f"Failed to send email: {e}")
 
-          
 """
 import smtplib
 from email.mime.multipart import MIMEMultipart
