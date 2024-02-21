@@ -30,7 +30,7 @@ data2 = pd.read_csv('Capability Assessment Survey2.csv').iloc[-1]
 #data = pd.read_csv(dir2_+'Capability Assessment Survey.csv')
 print(data)
 print(data2)
-dddddd
+
 company = data.iloc[6]
 
 #company = data.iloc[:,6]
@@ -156,13 +156,13 @@ for i in range(len(df)):
     print(tmp)
 
     
-    tmp.to_csv(dir_+'Strategy_'+fn+'_.csv', index=False)
+    tmp.to_csv(str(dir_)+'Strategy_'+str(fn)+'_.csv', index=False)
     print(tmp)
     add_ = tmp[['level'][-1]].to_frame().rename(columns={"level":'Strategy'}).tail(1)
     add_=pd.DataFrame(add_)
     print(add_['Strategy'].values[0])
    # tmp.tail(1)[['level']].rename(columns={"level": 'Strategy'}).to_csv(dir_+'Summary_'+fn+ '_.csv', index=False)    
-    add_.to_csv(dir_+'Summary_'+fn+'_.csv', index=False)   
+    add_.to_csv(str(dir_)+'Summary_'+str(fn)+'_.csv', index=False)   
     print(add_)
 
 
