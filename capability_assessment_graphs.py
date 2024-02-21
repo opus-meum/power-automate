@@ -63,7 +63,13 @@ for i in range(8):
    y_coordinates_1 = [0.0, 0.9381977789616357, 1.1699134946181884, 0.5206604869410698, -0.5206604869410696, -1.1699134946181884, -0.9381977789616358, -2.9391523179536476e-16]
 
 print(df['Processes'])
-  
+
+if df['Processes'].iloc[0] == 5:
+    x_pr = x0[1];
+    y_pr = y0[1]
+if 4 < df['Processes'].iloc[0] < 5:
+    x_pr = (x0[1]+x1[1])/2;
+    y_pr = (y0[1]+y1[1])/2
 if df['Processes'].iloc[0] == 4:
     x_pr = x1[0];
     y_pr = y1[0]
@@ -127,7 +133,12 @@ if df['Talent'].iloc[0] == 0:
     y_tal = 0
 
 
-      
+if df['Strategy'].iloc[0] == 5:
+    x_st = x0[1];
+    y_st = y0[1]
+if 4 < df['Strategy'].iloc[0] < 5:
+    x_st = (x0[1]+x1[1])/2;
+    y_st = (y0[1]+y1[1])/2
 if df['Strategy'].iloc[0] == 4:
    x_st = x1[2];
    y_st = y1[2]
@@ -156,6 +167,12 @@ if df['Strategy'].iloc[0] == 0:
    x_st = 0;
    y_st = 0
 
+if df['Technology'].iloc[0] == 5:
+    x_te = x0[1];
+    y_te = y0[1]
+if 4 < df['Technology'].iloc[0] < 5:
+    x_te = (x0[1]+x1[1])/2;
+    y_te = (y0[1]+y1[1])/2
 if df['Technology'].iloc[0] == 4:
    x_te = x1[3];
    y_te = y1[3]
@@ -184,6 +201,12 @@ if df['Technology'].iloc[0] == 0:
    x_te = 0;
    y_te = 0
 
+if df['Reporting'].iloc[0] == 5:
+    x_re = x0[1];
+    y_re = y0[1]
+if 4 < df['Reporting'].iloc[0] < 5:
+    x_re = (x0[1]+x1[1])/2;
+    y_re = (y0[1]+y1[1])/2
 if df['Reporting'].iloc[0] == 4:
    x_re = x1[4];
    y_re = y1[4]
@@ -211,7 +234,13 @@ if 0 < df['Reporting'].iloc[0] <1 :
 if df['Reporting'].iloc[0] == 0:
    x_re = 0;
    y_re = 0
-
+          
+if df['Measurement'].iloc[0] == 5:
+    x_me = x0[1];
+    y_me = y0[1]
+if 4 < df['Measurement'].iloc[0] < 5:
+    x_me = (x0[1]+x1[1])/2;
+    y_me = (y0[1]+y1[1])/2
 if df['Measurement'].iloc[0] == 4:
    x_me = x1[5];
    y_me = y1[5]
@@ -240,6 +269,12 @@ if df['Measurement'].iloc[0] == 0:
    x_me = 0;
    y_me = 0
 
+if df['Data'].iloc[0] == 5:
+    x_da = x0[1];
+    y_da = y0[1]
+if 4 < df['Data'].iloc[0] < 5:
+    x_da = (x0[1]+x1[1])/2;
+    y_da = (y0[1]+y1[1])/2
 if df['Data'].iloc[0] == 4:
    x_da = x1[6];
    y_da = y1[6]
