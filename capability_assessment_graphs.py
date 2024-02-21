@@ -816,43 +816,7 @@ prs.save('Capability Assessment Report.pptx')
 
 os.remove('Capability Assessment Survey 1.xlsx')
 
-import os
-import base64
-from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition
-
-email_ = data.iloc[10]
-
-message = Mail(
-    from_email='ehlke.hepworth@relativ.co.za',
-  #  to_emails=email_,
-    to_email='ehlke.hepworth@outlook.com'
-    subject='Capability Assessment Report',
-    html_content=f"<strong>Dear {company},Thank you for taking the time to fill out the survey. Please find attached your Capability Assessment Report. Don't hesitate to contact us if you have any questions.</strong>"
-    )
-
-file_path = f'Capability Assessment Report - {company}_.pptx'
-with open(file_path, 'rb') as f:
-    data = f.read()
-    f.close()
-encoded_file = base64.b64encode(data).decode()
-
-attachment = Attachment()
-attachment.file_content = FileContent(encoded_file)
-attachment.file_type = FileType('application/vnd.openxmlformats-officedocument.presentationml.presentation')
-attachment.file_name = FileName('Capability Assessment Report.pptx')
-attachment.disposition = Disposition('attachment')
-message.add_attachment(attachment)
-
-try:
-    sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
-    response = sg.send(message)
-    print(response.status_code)
-    print(response.body)
-    print(response.headers)
-except Exception as e:
-    print(str(e))
-          
+        
 """
 import smtplib
 from email.mime.multipart import MIMEMultipart
