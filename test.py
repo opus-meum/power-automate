@@ -32,7 +32,7 @@ data = pd.read_csv('Capability Assessment Survey.csv').iloc[-1]
 #data = pd.read_csv(dir2_+'Capability Assessment Survey.csv')
 print(data)
 
-company = data.iloc[6]
+company = data.iloc[7]
 
 #company = data.iloc[:,6]
 fn = company
