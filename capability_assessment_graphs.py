@@ -284,7 +284,7 @@ y = [0, 1.1727472237020446, 1.4623918682727355, 0.6508256086763373, -0.650825608
 font_path = fm.findfont(fm.FontProperties(family='Avenir Next light'))
 
 # Plot the heptagon
-plt.plot(x,y, color='grey', linewidth=.5)
+plt.plot(x,y, color='grey', linewidth=5, label = "Mature State")
 plt.plot(x1,y1, color='grey',linewidth=.5)
 plt.plot(x2,y2, color='grey',linewidth=.5)
 plt.plot(x3,y3, color='grey',linewidth=.5)
