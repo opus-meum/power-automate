@@ -27,6 +27,7 @@ jobs:
           python -m pip install python-pptx
           python -m pip install seaborn
           python -m pip install sendgrid
+          python -m pip install openpyxl
         
       - name: Run script
         run: | 
