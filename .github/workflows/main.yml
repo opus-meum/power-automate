@@ -59,12 +59,18 @@ jobs:
           import base64
           from sendgrid import SendGridAPIClient
           from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition
+
+          data = pd.read_csv('Capability Assessment Survey.csv').iloc[-1]
+          company = data.iloc[6]
+          email_sending  = data.iloc[10]
           
           message = Mail(
               from_email='ehlke.hepworth@relativ.co.za',
+              #to_emails=email_sending
               to_emails='ehlke.hepworth@outlook.com',
-              subject='Trigger - Test',
-              html_content='<strong>Please find attached your Capability Assessment Report.</strong>'
+              subject=f'Trigger - {company}',
+              html_content=f"<strong>Dear, {company}, \
+              \nPlease find attached your Capability Assessment Report.</strong>"
           )
 
           file_path = 'Capability Assessment Report.pptx'
