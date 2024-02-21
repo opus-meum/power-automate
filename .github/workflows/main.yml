@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '**.xlsx'  # Trigger the workflow only when .xlsx files are changed
 
 permissions:
   contents: write
