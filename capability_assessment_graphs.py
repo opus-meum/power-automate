@@ -14,7 +14,7 @@ import pandas as pd
 import os
 
 data = pd.read_csv('Capability Assessment Survey.csv').iloc[-1]
-company = data.iloc[6]
+company = data.iloc[7]
 
 
 dir_ = 'results/'
