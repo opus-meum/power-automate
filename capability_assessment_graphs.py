@@ -17,7 +17,7 @@ data = pd.read_csv('Capability Assessment Survey.csv').iloc[-1]
 company = data.iloc[6]
 
 dir_ = 'results/'
-df = pd.read_csv(str(dir_)+'Summary_'+company+'_.csv')
+df = pd.read_csv(str(dir_)+'Summary_'+str(company)+'_.csv')
 print(df)
 
 fig1, ax = plt.subplots(1, figsize =(17, 10))
@@ -322,7 +322,7 @@ plt.annotate("This figure highlights the greatest gaps, \
 
 
 # Show the plot
-plt.savefig(dir_+company+'heptagon_plot.png',dpi=300, bbox_inches='tight')
+plt.savefig(str(dir_)+str(company)+'heptagon_plot.png',dpi=300, bbox_inches='tight')
 
 #%% 
 ##------------------------------------------------
@@ -335,25 +335,25 @@ import numpy as np
 #%%
 fig2,ax = plt.subplots(1, figsize =(20, 9))
 
-data = pd.read_csv(dir_+'Strategy_'+company+'_.csv',sep=',')
+data = pd.read_csv(str(dir_)+'Strategy_'+str(company)+'_.csv',sep=',')
 strategy = data['max'][:-1]
 dim_st   = data['Dimension'][:-1]
-data = pd.read_csv(dir_+'Talent_'+company+'_.csv',sep=',')
+data = pd.read_csv(str(dir_)+'Talent_'+str(company)+'_.csv',sep=',')
 talent  = data['max'][:-1]
 dim_ta  = data['Dimension'][:-1]
-data = pd.read_csv(dir_+'Processes_'+company+'_.csv',sep=',')
+data = pd.read_csv(str(dir_)+'Processes_'+str(company)+'_.csv',sep=',')
 processes  = data['max'][:-1]
 dim_pr  = data['Dimension'][:-1]
-data = pd.read_csv(dir_+'Data_'+company+'_.csv',sep=',')
+data = pd.read_csv(str(dir_)+'Data_'+str(company)+'_.csv',sep=',')
 data_  = data['max'][:-1]
 dim_da  = data['Dimension'][:-1]
-data = pd.read_csv(dir_+'Technology_'+company+'_.csv',sep=',')
+data = pd.read_csv(str(dir_)+'Technology_'+str(company)+'_.csv',sep=',')
 tech  = data['max'][:-1]
 dim_te  = data['Dimension'][:-1]
-data = pd.read_csv(dir_+'Reporting_'+company+'_.csv',sep=',')
+data = pd.read_csv(str(dir_)+'Reporting_'+str(company)+'_.csv',sep=',')
 reporting  = data['max'][:-1]
 dim_re  = data['Dimension'][:-1]
-data = pd.read_csv(dir_+'Measurement_'+company+'_.csv',sep=',')
+data = pd.read_csv(str(dir_)+'Measurement_'+str(company)+'_.csv',sep=',')
 measurement  = data['max'][:-1]
 dim_me  = data['Dimension'][:-1]
 
@@ -557,7 +557,7 @@ print("X limits:", x_limits)
 print("Y limits:", y_limits)
 
 ax.grid(False)
-plt.savefig(dir_+'CapAss.png',dpi=300,bbox_inches='tight')
+plt.savefig(str(dir_)+'CapAss.png',dpi=300,bbox_inches='tight')
 
 
 import matplotlib.backends.backend_pdf as pdf
@@ -801,7 +801,7 @@ top = Inches(2.1)
 width = Inches(8.6)
 height = Inches(3.5)
 
-slide.shapes.add_picture(dir_+company+'heptagon_plot.png', left, top, width, height)
+slide.shapes.add_picture(str(dir_)+str(company)+'heptagon_plot.png', left, top, width, height)
 
 slide= prs.slides[7]
 left = Inches(1.6)
@@ -809,7 +809,7 @@ top = Inches(1.8)
 width = Inches(8.2)
 height = Inches(3.65)
 
-slide.shapes.add_picture(dir_+'CapAss.png', left, top, width, height)
+slide.shapes.add_picture(str(dir_)+'CapAss.png', left, top, width, height)
 
       
 prs.save('Capability Assessment Report.pptx')
