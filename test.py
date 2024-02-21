@@ -17,6 +17,10 @@ import glob
 import os
 
 #%%
+excel_data = 'Capability Assessment Survey 1.xlsx'
+df = pd.read_excel(excel_data)
+df.to_csv('Capability Assessment Survey.csv')
+
 dir_ = 'results/'
 #dir2_= '/Users/ehlke/Desktop/'
 data = pd.read_csv('Capability Assessment Survey.csv').iloc[-1]
