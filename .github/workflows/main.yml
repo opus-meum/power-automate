@@ -63,7 +63,7 @@ jobs:
           message = Mail(
               from_email='ehlke.hepworth@relativ.co.za',
               to_emails='ehlke.hepworth@outlook.com',
-              subject='Test - Capability Assessment Report',
+              subject='Trigger - Test',
               html_content='<strong>Please find attached your Capability Assessment Report.</strong>'
           )
 
