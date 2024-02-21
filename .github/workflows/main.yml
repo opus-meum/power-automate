@@ -12,10 +12,10 @@ jobs:
   run-script:
     runs-on: ubuntu-latest
     steps:
-      - name: triggered
-        run: echo "A push event triggered this workflow."
       - name: Checkout repository
         uses: actions/checkout@v2
+      - name: triggered
+        run: echo "A push event triggered this workflow."
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
