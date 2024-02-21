@@ -31,7 +31,6 @@ data = pd.read_csv('Capability Assessment Survey.csv').iloc[-1]
 
 #data = pd.read_csv(dir2_+'Capability Assessment Survey.csv')
 print(data)
-print(data2)
 
 company = data.iloc[6]
 
