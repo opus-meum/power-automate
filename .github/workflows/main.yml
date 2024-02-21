@@ -62,8 +62,8 @@ jobs:
           from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition
 
           data = pd.read_csv('Capability Assessment Survey.csv').iloc[-1]
-          company = data.iloc[6]
-          email_sending  = data.iloc[10]
+          company = data.iloc[7]
+          email_sending  = data.iloc[11]
           print(company)
           print(email_sending)
           
