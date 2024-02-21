@@ -16,8 +16,6 @@ import os
 data = pd.read_csv('Capability Assessment Survey.csv').iloc[-1]
 company = data.iloc[6]
 
-print(data)
-print(company)
 
 dir_ = 'results/'
 df = pd.read_csv(str(dir_)+'Summary_'+str(company)+'_.csv')
@@ -729,13 +727,13 @@ from pptx.enum.text import PP_ALIGN
 slide = prs.slides[0]
 txBox = slide.shapes.add_textbox(Inches(9), Inches(0.5), Inches(2), Inches(0.5))
 tf = txBox.text_frame
-tf.text = company
-tf.text = company.upper()
+tf.text = str(company)
+tf.text = str(company).upper()
 
 slide = prs.slides[45]
 txBox = slide.shapes.add_textbox(Inches(9.2), Inches(0.5), Inches(1), Inches(0.5))
 tf2 = txBox.text_frame
-tf2.text = company
+tf2.text = str(company)
 
 p = tf.paragraphs[0]
 p.font.bold = False
