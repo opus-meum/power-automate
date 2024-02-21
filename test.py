@@ -373,17 +373,17 @@ for i in range(len(df)):
 
     tmp['idx'] = tmp.index +1
 
-    tmp.to_csv(dir_+'Processes_' +fn+ '_.csv', index=False)
+    tmp.to_csv(str(dir_)+'Processes_' +str(fn)+ '_.csv', index=False)
     print(tmp)
     add_ = tmp[['level'][-1]].to_frame().rename(columns={"level":'Processes'}).tail(1)
     add_=pd.DataFrame(add_)
     print(add_['Processes'].values[0])
 
-    summary_ = pd.read_csv(dir_+'Summary_'+fn+'_.csv')
+    summary_ = pd.read_csv(str(dir_)+'Summary_'+str(fn)+'_.csv')
     print(summary_)
     summary_['Processes'] = add_['Processes'].values[0]
     print(summary_)
-    summary_.to_csv(dir_+'Summary_' +fn+ '_.csv', index=False)
+    summary_.to_csv(str(dir_)+'Summary_' +str(fn)+ '_.csv', index=False)
 
 
 
@@ -492,17 +492,17 @@ for i in range(len(df)):
 
     tmp['idx'] = tmp.index +1
 
-    tmp.to_csv(dir_+'Data_' +fn+ '_.csv', index=False)
+    tmp.to_csv(str(dir_)+'Data_' +str(fn)+ '_.csv', index=False)
 
     add_ = tmp[['level'][-1]].to_frame().rename(columns={"level":'Data'}).tail(1)
     add_=pd.DataFrame(add_)
     print(add_['Data'].values[0])
 
-    summary_ = pd.read_csv(dir_+'Summary_'+fn+ '_.csv')
+    summary_ = pd.read_csv(str(dir_)+'Summary_'+str(fn)+ '_.csv')
     print(summary_)
     summary_['Data'] = add_['Data'].values[0]
     print(summary_)
-    summary_.to_csv(dir_+'Summary_' +fn+ '_.csv', index=False)
+    summary_.to_csv(str(dir_)+'Summary_' +str(fn)+ '_.csv', index=False)
 
 #-----------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------
@@ -589,18 +589,18 @@ for i in range(len(df)):
 
     tmp['idx'] = tmp.index +1
 
-    tmp.to_csv(dir_+'Reporting_' +fn+ '_.csv', index=False)
+    tmp.to_csv(str(dir_)+'Reporting_' +str(fn)+ '_.csv', index=False)
 
     print(tmp)
     add_ = tmp[['level'][-1]].to_frame().rename(columns={"level":'Reporting'}).tail(1)
     add_=pd.DataFrame(add_)
     print(add_['Reporting'].values[0])
 
-    summary_ = pd.read_csv(dir_+'Summary_'+fn+ '_.csv')
+    summary_ = pd.read_csv(str(dir_)+'Summary_'+str(fn)+ '_.csv')
     print(summary_)
     summary_['Reporting'] = add_['Reporting'].values[0]
     print(summary_)
-    summary_.to_csv(dir_+'Summary_' +fn+ '_.csv', index=False)
+    summary_.to_csv(str(dir_)+'Summary_' +str(fn)+ '_.csv', index=False)
 
 
 #-----------------------------------------------------------------------------------------------
@@ -672,7 +672,7 @@ for i in range(len(data)):
 
     tmp['idx'] = tmp.index +1
 
-    tmp.to_csv(dir_+'Technology_' +fn+ '_.csv', index=False)
+    tmp.to_csv(str(dir_)+'Technology_' +str(fn)+ '_.csv', index=False)
 
     print(tmp)
 
@@ -680,11 +680,11 @@ for i in range(len(data)):
     add_=pd.DataFrame(add_)
     print(add_['Technology'].values[0])
 
-    summary_ = pd.read_csv(dir_+'Summary_'+fn+ '_.csv')
+    summary_ = pd.read_csv(str(dir_)+'Summary_'+str(fn)+ '_.csv')
     print(summary_)
     summary_['Technology'] = add_['Technology'].values[0]
     print(summary_)
-    summary_.to_csv(dir_+'Summary_' +fn+ '_.csv', index=False)
+    summary_.to_csv(str(dir_)+'Summary_' +str(fn)+ '_.csv', index=False)
 
 
 #-----------------------------------------------------------------------------------------------
