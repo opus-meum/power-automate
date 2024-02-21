@@ -828,10 +828,10 @@ message = Mail(
   #  to_emails=email_,
     to_email='ehlke.hepworth@outlook.com'
     subject='Capability Assessment Report',
-    html_content=f'<strong>Dear {company},Thank you for taking the time to fill out the survey. Please find attached your Capability Assessment Report. Don't hesitate to contact us if you have any questions.</strong>'
+    html_content=f"<strong>Dear {company},Thank you for taking the time to fill out the survey. Please find attached your Capability Assessment Report. Don't hesitate to contact us if you have any questions.</strong>"
     )
 
-file_path = 'Capability Assessment Report.pptx'
+file_path = f'Capability Assessment Report - {company}_.pptx'
 with open(file_path, 'rb') as f:
     data = f.read()
     f.close()
