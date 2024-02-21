@@ -272,19 +272,19 @@ for i in range(len(df)):
     tmp['idx'] = tmp.index +1
 
 
-    tmp.to_csv(dir_+'Talent_'+fn+'_.csv', index=False)
+    tmp.to_csv(str(dir_)+'Talent_'+str(fn)+'_.csv', index=False)
     print(tmp)
     add_ = tmp[['level'][-1]].to_frame().rename(columns={"level":'Talent'}).tail(1)
     add_=pd.DataFrame(add_)
     print(add_['Talent'].values[0])
 
-    summary_ = pd.read_csv(dir_+'Summary_'+fn+'_.csv')
+    summary_ = pd.read_csv(str(dir_)+'Summary_'+str(fn)+'_.csv')
     print(summary_)
     print(add_['Talent'].values[0])
 
     summary_['Talent'] = add_['Talent'].values[0]
     print(summary_)
-    summary_.to_csv(dir_+'Summary_' +fn+ '_.csv', index=False)
+    summary_.to_csv(str(dir_)+'Summary_' +str(fn)+ '_.csv', index=False)
 
 
 #-----------------------------------------------------------------------------------------------
