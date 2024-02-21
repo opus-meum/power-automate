@@ -64,7 +64,7 @@ jobs:
           data = pd.read_csv('Capability Assessment Survey.csv').iloc[-1]
           company = data.iloc[6]
           email_sending  = data.iloc[10]
-          print(comany)
+          print(company)
           print(email_sending)
           
           message = Mail(
