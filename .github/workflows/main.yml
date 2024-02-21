@@ -63,14 +63,15 @@ jobs:
           data = pd.read_csv('Capability Assessment Survey.csv').iloc[-1]
           company = data.iloc[6]
           email_sending  = data.iloc[10]
+          print(comany)
+          print(email_sending)
           
           message = Mail(
               from_email='ehlke.hepworth@relativ.co.za',
               #to_emails=email_sending
               to_emails='ehlke.hepworth@outlook.com',
               subject=f'Trigger - {company}',
-              html_content=f"<strong>Dear, {company}, \
-              \nPlease find attached your Capability Assessment Report.</strong>"
+              html_content='<strong>Dear, {company}, Please find attached your Capability Assessment Report.</strong>'
           )
 
           file_path = 'Capability Assessment Report.pptx'
