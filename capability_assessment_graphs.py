@@ -16,6 +16,10 @@ import os
 data = pd.read_csv('Capability Assessment Survey.csv').iloc[-1]
 company = data.iloc[6]
 
+print(data)
+print(company)
+ddddd
+
 dir_ = 'results/'
 df = pd.read_csv(str(dir_)+'Summary_'+str(company)+'_.csv')
 print(df)
