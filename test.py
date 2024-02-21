@@ -17,11 +17,11 @@ import glob
 import os
 
 #%%
-excel_data = 'Capability Assessment Survey.xlsx'
+excel_data = 'Capability Assessment Survey 1.xlsx'
 df = pd.read_excel(excel_data)
 df.to_csv('Capability Assessment Survey.csv')
 
-os.remove('Capability Assessment Survey.xlsx')
+os.remove('Capability Assessment Survey 1.xlsx')
 
 
 
