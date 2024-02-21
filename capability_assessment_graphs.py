@@ -813,9 +813,6 @@ slide.shapes.add_picture(dir_+'CapAss.png', left, top, width, height)
 
       
 prs.save('Capability Assessment Report.pptx')
-
-os.remove('Capability Assessment Survey 1.xlsx')
-
         
 """
 import smtplib
