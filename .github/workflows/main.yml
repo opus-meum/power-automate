@@ -71,7 +71,6 @@ jobs:
               from_email='ehlke.hepworth@relativ.co.za',
               to_emails=[email_sending, 'ehlke.hepworth@relativ.co.za'],
               subject=f'Report - {company}',
-             # html_content=f'<strong style="font-family: Avenir Next, sans-serif;">Dear {company},&nbsp; Please find attached your Capability Assessment Report.</strong>'
               html_content=f'<strong>Dear {company},<br>Please find attached your Capability Assessment Report.</strong>'
           )
 
