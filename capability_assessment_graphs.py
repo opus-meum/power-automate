@@ -21,7 +21,7 @@ dir_ = 'results/'
 df = pd.read_csv(str(dir_)+'Summary_'+str(company)+'_.csv')
 print(df)
 
-fig1, ax = plt.subplots(1, figsize =(17, 10))
+fig1, ax = plt.subplots(1, figsize =(20, 10))
 
 ##set up heptagon
 charcoal_color = '#425369'
