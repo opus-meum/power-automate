@@ -633,7 +633,7 @@ for i in range(len(sentences_list)):
 
 
 #combined_data = pd.concat([one, one_caps, one_imps], axis=1)
-data_dict = {'dimension':['Techology'],'Nascent': [one], 'Emerging': [two], 'Expanding': [three],\
+data_dict = {'dimension':['Technology'],'Nascent': [one], 'Emerging': [two], 'Expanding': [three],\
         'Optimising': [four], 'Mature': [five]}
 
 df = pd.DataFrame(data_dict)
