@@ -70,7 +70,7 @@ jobs:
           message = Mail(
               from_email='ehlke.hepworth@relativ.co.za',
               to_emails=[email_sending, 'ehlke.hepworth@relativ.co.za'],
-              subject=f'Report - {company}',
+              subject=f'Impact Management Capability Assessment Report - {company}',
               html_content=f'<strong>Dear {company},<br>Please find attached your Capability Assessment Report.</strong>'
           )
 
