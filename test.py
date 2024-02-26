@@ -773,7 +773,7 @@ for i in range(len(sentences_list)):
 
 
 #combined_data = pd.concat([one, one_caps, one_imps], axis=1)
-data_dict = {'dimension':['IMF', 'Tools & Templates', 'Evaulation', 'Risks, Knowledge,\n& Insights'],'Nascent': [one,one2,one3,one4], 'Emerging': [two,two2,two3,two4], 'Expanding': [three,three2,three3,three4],\
+data_dict = {'dimension':['IMF', 'Tools & Templates', 'Evaulation', 'Research, Knowledge,\n& Insights'],'Nascent': [one,one2,one3,one4], 'Emerging': [two,two2,two3,two4], 'Expanding': [three,three2,three3,three4],\
             'Optimising': [four,four2,four3,four4], 'Mature': [five,five,five3,five4]}
 
 df = pd.DataFrame(data_dict)
@@ -796,7 +796,7 @@ for i in range(len(df)):
 
     print(total_row)
     tmp = pd.concat([tst[i], pd.DataFrame([total_row])], ignore_index=True)
-    tmp.insert(0,'Dimension',['IMF', 'Tools & Templates', 'Evaulation', 'Risks, Knowledge,\n& Insights','Total'])
+    tmp.insert(0,'Dimension',['IMF', 'Tools & Templates', 'Evaulation', 'Research, Knowledge,\n& Insights','Total'])
     columns_greater_than_zero = tmp.iloc[:,1:].apply(lambda row: row.index[row.astype(float) > 0].tolist(), axis=1)
     columns_greater_than_zero_df = columns_greater_than_zero.apply(pd.Series)
     columns_greater_than_zero_df = columns_greater_than_zero_df.replace(word_to_number)
