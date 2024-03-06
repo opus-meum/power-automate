@@ -1,0 +1,5 @@
+Dimension,Nascent,Emerging,Expanding,Optimising,Mature,level,max,max_column,idx
+Data Access,0,0,1,1,0,3.5,4.0,Optimising,1
+Data Collection,0,0,0,2,0,4.0,4.0,Optimising,2
+Data Quality,0,0,0,1,0,4.0,4.0,Optimising,3
+Total,0,0,1,4,0,3.75,4.0,Optimising,4
