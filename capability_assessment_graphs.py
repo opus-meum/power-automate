@@ -570,6 +570,17 @@ for i in range(len(dim_te)):
           plt.hlines(current_hline_y, 1-0.4, 1+0.4, linewidth=55, color=c_ta)
           plt.text(1, text_y-0.15, dim_ta.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9, fontweight='bold')
 """
+
+dimensions = [strategy, talent, processes, data_, measurement, reporting, tech]
+dimension_names = [dim_st, dim_ta, dim_pr, dim_da, dim_me, dim_re, dim_te]
+
+related_words=[]
+for dim_data, dim_name in zip(dimensions, dimension_names):
+    for i, value in enumerate(dim_data):
+        if value == 1:
+            related_words.append(dim_name.iloc[i])
+
+
 ##add test to hlines
 plt.text(-0.2,6,'Future State',fontsize=11,font='Avenir Next',color='whitesmoke')
 plt.text(0.8,6,'Future State',fontsize=11,font='Avenir Next',color='whitesmoke')
@@ -578,14 +589,7 @@ plt.text(2.8,6,'Future State',fontsize=11,font='Avenir Next',color='whitesmoke')
 plt.text(3.8,6,'Future State',fontsize=11,font='Avenir Next',color='whitesmoke')
 plt.text(4.8,6,'Future State',fontsize=11,font='Avenir Next',color='whitesmoke')
 plt.text(5.8,6,'Future State',fontsize=11,font='Avenir Next',color='whitesmoke')
-"""
-plt.text(-0.5,6.7, "This figure provides a more detailed view of the gaps (reflected as the number of steps) between current and future state in each element \
-            \nof the Impact Management Capability dimensions. The elements that are driving the greater degree of shift required between current and future \
-            \nstates (in the next year) of the strategy and processes dimensions include purpose alignment and responsibility framework, respectively.​", 
-         fontsize=16,
-   fontname='Avenir Next',  color='#425369'
-         )
-"""
+
 x_limits = plt.xlim()
 y_limits = plt.ylim()
 
@@ -812,6 +816,32 @@ p_date.font.color.rgb = RGBColor(66, 83, 105)
 p_date.alignment = PP_ALIGN.RIGHT
 p_date.font.name = 'Lato'
 
+# Add recommendations to slide 8
+cleaned_words = [word.replace('\n', ' ') for word in related_words]  # Replace newline characters with spaces
+
+slide = prs.slides[7]
+txBox_rec8 = slide.shapes.add_textbox(Inches(7.39), Inches(1.26), Inches(2), Inches(0.5))
+tf_rec8 = txBox_rec8.text_frame
+tf_rec8.text = ', '.join(cleaned_words[:6]) +','
+
+p_rec8 = tf_rec8.paragraphs[0]
+p_rec8.font.bold = False
+p_rec8.font.size = Pt(9.5)
+p_rec8.font.color.rgb = RGBColor(66, 83, 105)
+p_rec8.alignment = PP_ALIGN.RIGHT
+p_rec8.font.name = 'Lato'
+
+slide = prs.slides[7]
+txBox_rec82 = slide.shapes.add_textbox(Inches(2.59), Inches(1.45), Inches(2), Inches(0.5))
+tf_rec82 = txBox_rec82.text_frame
+tf_rec82.text = ', '.join(cleaned_words[6:]) +'.'
+
+p_rec82 = tf_rec82.paragraphs[0]
+p_rec82.font.bold = False
+p_rec82.font.size = Pt(9.5)
+p_rec82.font.color.rgb = RGBColor(66, 83, 105)
+p_rec82.alignment = PP_ALIGN.RIGHT
+p_rec82.font.name = 'Lato'
 
 # Set the font to be super light for all text in the slides
 for slide in prs.slides:
