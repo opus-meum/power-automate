@@ -340,13 +340,22 @@ plt.yticks([])
 # Set the aspect ratio to equal
 plt.axis('equal')
 
+# Find the minimum value across all dimensions
+min_value = df.min(numeric_only=True).min()
+# Find all dimensions where the minimum value is found
+min_dimensions = df.min(numeric_only=True)[df.min(numeric_only=True) == min_value].index.tolist()
 
-plt.annotate("This figure highlights the greatest gaps, \
+if len(min_dimensions) > 1:
+    min_dimensions_str = ', '.join(min_dimensions[:-1]) + ' and ' + min_dimensions[-1]
+else:
+    min_dimensions_str = min_dimensions[0]
+          
+plt.annotate(f"This figure highlights the greatest gaps, \
             \nrepresenting the degree of shift required, \
             \nbetween the average current state (depicted \
             \nby the thick, dark line) and the potential \
-            \nfuture state (thin,outermost line) across \
-            \n",
+            \nfuture state (thick,grey line) across \
+            \n{min_dimensions_str}.",
          xy=(1, 0),  # point to label
          xytext=(3, 0),  # location of text
          ha='left', va='center',
