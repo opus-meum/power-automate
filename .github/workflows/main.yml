@@ -24,6 +24,8 @@ jobs:
           python-version: '3.10'
       - name: Install dependencies
         run: |
+          sudo apt-get update
+          sudo apt-get install -y libreoffice
           python -m pip install --upgrade pip
           python -m pip install pandas
           python -m pip install matplotlib
@@ -38,6 +40,10 @@ jobs:
           python test.py
           python capability_assessment_graphs.py
 
+      - name: Convert PPTX to PDF
+        run: |
+          libreoffice --headless --convert-to pdf --outdir . "Capability Assessment Report.pptx"
+
       - name: Configure git
         run: |
           git config --global user.name 'GitHub Actions'
@@ -50,7 +56,7 @@ jobs:
           git commit -m "Automatically generated PPTX report" -a || echo "No changes to commit"
           git push https://${MY_GITHUB_TOKEN}@github.com/ehlke-hepworth/power-automate.git
 
-      - name: Send email
+      - name: Send email with PDF attachement
         env:
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
         run: |
@@ -74,7 +80,7 @@ jobs:
               html_content=f'<strong>Dear {company},<br>Please find attached your Capability Assessment Report.</strong>'
           )
 
-          file_path = 'Capability Assessment Report.pptx'
+          file_path = 'Capability Assessment Report.pdf'
           with open(file_path, 'rb') as f:
               data = f.read()
               f.close()
@@ -82,8 +88,8 @@ jobs:
 
           attachment = Attachment()
           attachment.file_content = FileContent(encoded_file)
-          attachment.file_type = FileType('application/vnd.openxmlformats-officedocument.presentationml.presentation')
-          attachment.file_name = FileName('Capability Assessment Report.pptx')
+          attachment.file_type = FileType('application/pdf')
+          attachment.file_name = FileName('Capability Assessment Report.pdf')
           attachment.disposition = Disposition('attachment')
           message.add_attachment(attachment)
 
