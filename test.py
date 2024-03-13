@@ -653,7 +653,7 @@ for i in range(len(data)):
     total_row = tst[i].sum()
     print(total_row)
     tmp = pd.concat([tst[i], pd.DataFrame([total_row])], ignore_index=True)
-    tmp.insert(0,'Dimension',['Techology','Total'])
+    tmp.insert(0,'Dimension',['Technology','Total'])
 
     columns_greater_than_zero = tmp.iloc[:,1:].apply(lambda row: row.index[row.astype(float) > 0].tolist(), axis=1)
     columns_greater_than_zero_df = columns_greater_than_zero.apply(pd.Series)
