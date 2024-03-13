@@ -787,14 +787,14 @@ p = tf.paragraphs[0]
 p.font.bold = False
 p.font.size = Pt(28)
 p.font.color.rgb = RGBColor(66, 83, 105)
-p.alignment = PP_ALIGN.RIGHT
+p.alignment = PP_ALIGN.LEFT
 p.font.name = 'Lato'
 
 p2 = tf2.paragraphs[0]
 p2.font.bold = False
 p2.font.size = Pt(18)
 p2.font.color.rgb = RGBColor(66, 83, 105)
-p2.alignment = PP_ALIGN.RIGHT
+p2.alignment = PP_ALIGN.LEFT
 p2.font.name = 'Lato'
 
 # Add Relativ to the slide
@@ -808,7 +808,7 @@ p_rel = tf_rel.paragraphs[0]
 p_rel.font.bold = True
 p_rel.font.size = Pt(21)
 p_rel.font.color.rgb = RGBColor(66, 83, 105)
-p_rel.alignment = PP_ALIGN.RIGHT
+p_rel.alignment = PP_ALIGN.LEFT
 p_rel.font.name = 'Lato'
 
 # Add date to the slide
@@ -822,7 +822,7 @@ p_date = tf_date.paragraphs[0]
 p_date.font.bold = False
 p_date.font.size = Pt(18)
 p_date.font.color.rgb = RGBColor(66, 83, 105)
-p_date.alignment = PP_ALIGN.RIGHT
+p_date.alignment = PP_ALIGN.LEFT
 p_date.font.name = 'Lato'
 
 # Add recommendations to slide 8
@@ -837,7 +837,7 @@ p_rec8 = tf_rec8.paragraphs[0]
 p_rec8.font.bold = False
 p_rec8.font.size = Pt(9.5)
 p_rec8.font.color.rgb = RGBColor(66, 83, 105)
-p_rec8.alignment = PP_ALIGN.RIGHT
+p_rec8.alignment = PP_ALIGN.LEFT
 p_rec8.font.name = 'Lato'
 
 slide = prs.slides[7]
@@ -849,7 +849,7 @@ p_rec82 = tf_rec82.paragraphs[0]
 p_rec82.font.bold = False
 p_rec82.font.size = Pt(9.5)
 p_rec82.font.color.rgb = RGBColor(66, 83, 105)
-p_rec82.alignment = PP_ALIGN.RIGHT
+p_rec82.alignment = PP_ALIGN.LEFT
 p_rec82.font.name = 'Lato'
 
 # Set the font to be super light for all text in the slides
