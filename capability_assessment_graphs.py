@@ -727,7 +727,11 @@ def create_plot_and_add_to_ppt(category, company, dir_, prs, slide_index):
    font = {'family': 'Dejavu Sans'}
    plt.rc('font', **font, weight='light')
 
-   ax.bar(dimensions, values, color=charcoal_color, edgecolor='black', linewidth=1, alpha=0.7)
+   num_bars = len(dimensions)
+   # Dynamically adjust bar width based on the number of bars
+   bar_width = num_bars / 4.2
+
+   ax.bar(dimensions, values, width=bar_width, color=charcoal_color, edgecolor='black', linewidth=1, alpha=0.7)
    for num in values:
       for key, value in maturity_dict.items():
          for i, level in enumerate(values):
@@ -739,7 +743,10 @@ def create_plot_and_add_to_ppt(category, company, dir_, prs, slide_index):
 
    plt.ylim(0, 5)
    plt.tight_layout()
-
+   # Adjust x-axis limits to better display a single bar
+   if num_bars == 1:
+      plt.xlim([-0.5, 0.5])
+             
    sns.set_style("whitegrid")
    sns.despine(left=True)
    plt.grid(False)
