@@ -716,7 +716,7 @@ import pandas as pd
 
 def create_plot_and_add_to_ppt(category, company, dir_, prs, slide_index):
    fig, ax = plt.subplots(1, figsize =(17, 10))
-   plt.rcParams['font.sans-serif'] = 'DejaVu Sans'
+   plt.rcParams['font.sans-serif'] = 'Dejavu Sans'
 
    data = pd.read_csv(f'{dir_}{category}_{company}_.csv', sep=',')
    values = data['max'][:-1]
@@ -769,26 +769,140 @@ def create_plot_and_add_to_ppt(category, company, dir_, prs, slide_index):
    height = Inches(3.5)
    slide.shapes.add_picture(img_path, left, top, width, height)
 
+##------------------>> recommendations automated --------------------##
+reco_ = pd.read_csv('recommendations/recommendations_Summary.csv', sep=',')
+data = pd.read_csv(f'{dir_}Summary_{company}_.csv', sep=',')
+data['Strategy'] = data['Strategy'].round(0)
+data['Measurement'] = data['Measurement'].round(0)
+data['Data'] = data['Data'].round(0)
+data['Processes'] = data['Processes'].round(0)
+data['Talent'] = data['Talent'].round(0)
+data['Reporting'] = data['Reporting'].round(0)
+data['Technology'] = data['Technology'].round(0)
+
+categories = ['Strategy', 'Measurement', 'Data', 'Processes', 'Talent', 'Reporting', 'Technology']
+recommendations = {}
+
+for category in categories:
+    if data[category].iloc[0] == 0:
+        recommendations[category] = reco_[category][data[category][0]]
+    else:
+        recommendations[category] = reco_[category][data[category][0] - 1]
+
+reco_ = pd.read_csv('recommendations/recommendations_Strategy.csv', sep=',')
+data = pd.read_csv(f'{dir_}Strategy_{company}_.csv', sep=',')
+values = data['max'][:-1]
+reco_st_1 = reco_['Capability Purpose'][values[0]-1]
+reco_st_2 = reco_['Capability Stakeholders'][values[1]-1]
+reco_st_3 = reco_['Impact Strategy'][values[2]-1]
+
+reco_ = pd.read_csv('recommendations/recommendations_Talent.csv', sep=',')
+data = pd.read_csv(f'{dir_}Talent_{company}_.csv', sep=',')
+values = data['max'][:-1]
+reco_ta_1 = reco_['Equipping'][values[0]-1]
+reco_ta_2 = reco_['Impact Performance'][values[1]-1]
+reco_ta_3 = reco_['Team Composition'][values[2]-1]
+
+reco_ = pd.read_csv('recommendations/recommendations_Processes.csv', sep=',')
+data = pd.read_csv(f'{dir_}Processes_{company}_.csv', sep=',')
+values = data['max'][:-1]
+reco_pr_1 = reco_['Processes & Responsibility Framework'][values[0]-1]
+
+reco_ = pd.read_csv('recommendations/recommendations_Data.csv', sep=',')
+data = pd.read_csv(f'{dir_}Data_{company}_.csv', sep=',')
+values = data['max'][:-1]
+reco_da_1 = reco_['Data Access'][values[0]-1]
+reco_da_2 = reco_['Data Collection'][values[1]-1]
+reco_da_3 = reco_['Data Quality'][values[2]-1]
+
+reco_ = pd.read_csv('recommendations/recommendations_Measurement.csv', sep=',')
+data = pd.read_csv(f'{dir_}Measurement_{company}_.csv', sep=',')
+values = data['max'][:-1]
+reco_me_1 = reco_['IMF'][values[0]-1]
+reco_me_2 = reco_['Tools & Templates'][values[1]-1]
+reco_me_3 = reco_['Evaluation'][values[2]-1]
+reco_me_4 = reco_['Research, Knowledge, & Insights'][values[3]-1]
+
+reco_ = pd.read_csv('recommendations/recommendations_Reporting.csv', sep=',')
+data = pd.read_csv(f'{dir_}Reporting_{company}_.csv', sep=',')
+values = data['max'][:-1]
+reco_re_1 = reco_['Reporting Framework'][values[0]-1]
+reco_re_2 = reco_['Reporting Standards'][values[1]-1]
+
+reco_ = pd.read_csv('recommendations/recommendations_Technology.csv', sep=',')
+data = pd.read_csv(f'{dir_}Technology_{company}_.csv', sep=',')
+values = data['max'][:-1]
+reco_te_1 = reco_['Technology'][values[0]-1]
+
+##------------------- recommendations automated <<--------------------##
+
    # Load the presentation
 prs = Presentation('Capability Assessment Report Template.pptx')  
 #company='Ehlke-Hepworth'
-date_ = 'February 2024'
+date_ = 'March 2024'
 relativ = 'Relativ Impact'
 
 from pptx.util import Pt
 from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN
 
+##------------------->> recommendations automated --------------------##
+def add_formatted_textbox(slide, text, left, top, width, height):
+    txBox = slide.shapes.add_textbox(Inches(left), Inches(top), Inches(width), Inches(height))
+    tf = txBox.text_frame
+    tf.text = text
+    for paragraph in tf.paragraphs:
+        paragraph.font.bold = False
+        paragraph.font.size = Pt(11)
+        paragraph.font.color.rgb = RGBColor(66, 83, 105)
+        paragraph.alignment = PP_ALIGN.LEFT
+        paragraph.font.name = 'Lato'
+
+# Usage
+slide = prs.slides[8]
+add_formatted_textbox(slide, recommendations['Strategy'], .8, 1.7, 7, 1)
+add_formatted_textbox(slide, recommendations['Measurement'], .8, 2.2, 7, 1)
+add_formatted_textbox(slide, recommendations['Data'], .8, 2.7, 7, 1)
+add_formatted_textbox(slide, recommendations['Talent'], .8, 3.2, 7, 1)
+add_formatted_textbox(slide, recommendations['Processes'], .8, 3.7, 7, 1)
+add_formatted_textbox(slide, recommendations['Reporting'], .8, 4.2, 7, 1)
+add_formatted_textbox(slide, recommendations['Technology'], .8, 4.7, 7, 1)
+
+slide = prs.slides[13]
+add_formatted_textbox(slide, reco_st_1, 2, 1.3, 7, 1)
+add_formatted_textbox(slide, reco_st_2, 2, 2.5, 7, 1)
+add_formatted_textbox(slide, reco_st_3, 2, 3.6, 7, 1)
+slide = prs.slides[17]
+add_formatted_textbox(slide, reco_ta_1, 2, 1.3, 7, 1)
+add_formatted_textbox(slide, reco_ta_2, 2, 3.8, 7, 1)
+slide = prs.slides[18]
+add_formatted_textbox(slide, reco_ta_3, 2, 1.3, 7, 1)
+slide = prs.slides[22]
+add_formatted_textbox(slide, reco_pr_1, 2, 1.3, 7, 1)
+slide = prs.slides[26]
+add_formatted_textbox(slide, reco_da_1, 2, 1.3, 7, 1)
+slide = prs.slides[27]
+add_formatted_textbox(slide, reco_da_2, 2, 1.3, 7, 1)
+add_formatted_textbox(slide, reco_da_3, 2, 3.6, 7, 1)
+slide = prs.slides[31]
+add_formatted_textbox(slide, reco_me_1, 2, 1.3, 7, 1)
+add_formatted_textbox(slide, reco_me_2, 2, 3.6, 7, 1)
+slide = prs.slides[32]
+add_formatted_textbox(slide, reco_me_2, 2, 1.3, 7, 1)
+add_formatted_textbox(slide, reco_me_3, 2, 3.6, 7, 1)
+slide = prs.slides[36]
+add_formatted_textbox(slide, reco_re_1, 2, 1.3, 7, 1)
+add_formatted_textbox(slide, reco_re_2, 2, 3.6, 7, 1)
+slide = prs.slides[40]
+add_formatted_textbox(slide, reco_te_1, 2, 1.3, 7, 1)
+
+##------------------- recommendations automated <<--------------------##
+
 slide = prs.slides[0]
-txBox = slide.shapes.add_textbox(Inches(9), Inches(0.5), Inches(2), Inches(0.5))
+txBox = slide.shapes.add_textbox(Inches(8.95), Inches(0.5), Inches(2), Inches(0.5))
 tf = txBox.text_frame
 tf.text = str(company)
 tf.text = str(company).upper()
-
-slide = prs.slides[45]
-txBox = slide.shapes.add_textbox(Inches(9.2), Inches(0.5), Inches(1), Inches(0.5))
-tf2 = txBox.text_frame
-tf2.text = str(company)
 
 p = tf.paragraphs[0]
 p.font.bold = False
@@ -806,7 +920,7 @@ p2.font.name = 'Lato'
 
 # Add Relativ to the slide
 slide = prs.slides[0]
-txBox_date = slide.shapes.add_textbox(Inches(9), Inches(4), Inches(2), Inches(0.5))
+txBox_date = slide.shapes.add_textbox(Inches(8.4), Inches(4), Inches(2), Inches(0.5))
 tf_rel = txBox_date.text_frame
 tf_rel.text = relativ
 tf_rel.text = relativ.upper()
@@ -820,7 +934,7 @@ p_rel.font.name = 'Lato'
 
 # Add date to the slide
 slide = prs.slides[0]
-txBox_date = slide.shapes.add_textbox(Inches(9), Inches(4.4), Inches(2), Inches(0.5))
+txBox_date = slide.shapes.add_textbox(Inches(8.95), Inches(4.4), Inches(2), Inches(0.5))
 tf_date = txBox_date.text_frame
 tf_date.text = date_
 tf_date.text = date_.upper()
@@ -836,9 +950,12 @@ p_date.font.name = 'Lato'
 cleaned_words = [word.replace('\n', ' ') for word in related_words]  # Replace newline characters with spaces
 
 slide = prs.slides[7]
-txBox_rec8 = slide.shapes.add_textbox(Inches(7.39), Inches(1.26), Inches(2), Inches(0.5))
+txBox_rec8 = slide.shapes.add_textbox(Inches(2.56), Inches(1.27), Inches(2), Inches(0.5))
 tf_rec8 = txBox_rec8.text_frame
-tf_rec8.text = ', '.join(cleaned_words[:6]) +','
+if len(cleaned_words) < 7:
+   tf_rec8.text = ', '.join(cleaned_words[:-1]) + ', and ' + cleaned_words[-1] + '.'
+else:
+   tf_rec8.text = ', '.join(cleaned_words[:6]) +','
 
 p_rec8 = tf_rec8.paragraphs[0]
 p_rec8.font.bold = False
@@ -848,9 +965,12 @@ p_rec8.alignment = PP_ALIGN.LEFT
 p_rec8.font.name = 'Lato'
 
 slide = prs.slides[7]
-txBox_rec82 = slide.shapes.add_textbox(Inches(2.59), Inches(1.45), Inches(2), Inches(0.5))
+txBox_rec82 = slide.shapes.add_textbox(Inches(0.6), Inches(1.45), Inches(2), Inches(0.5))
 tf_rec82 = txBox_rec82.text_frame
-tf_rec82.text = ', '.join(cleaned_words[6:]) +'.'
+if len(cleaned_words[6:]) > 1:
+   tf_rec82.text = ', '.join(cleaned_words[6:-1]) + ', and ' + cleaned_words[-1] +'.'
+else:
+   tf_rec82.text = ', '.join(cleaned_words[6:]) + '.'
 
 p_rec82 = tf_rec82.paragraphs[0]
 p_rec82.font.bold = False
