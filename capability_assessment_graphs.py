@@ -991,7 +991,7 @@ for slide in prs.slides:
 dir_ = 'results/'
       #company='Ehlke-Hepworth'
 categories = ['Strategy', 'Talent', 'Processes', 'Data', 'Measurement', 'Reporting', 'Technology']
-slide_indices = [12, 16, 21, 25, 29, 34, 38]  # Add more slide indices as needed
+slide_indices = [12, 16, 21, 25, 30, 35, 39]  # Add more slide indices as needed
 for category, slide_index in zip(categories, slide_indices):
    create_plot_and_add_to_ppt(category, company, dir_, prs, slide_index)
 
