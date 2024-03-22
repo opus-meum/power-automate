@@ -16,6 +16,7 @@ from matplotlib.font_manager import FontProperties
 import matplotlib.pyplot as plt
 
 font_prop = FontProperties(fname='fonts/AvenirNextCyr-Thin.ttf')
+plt.rcParams['font.family'] = 'Avenir Next'
 
 data = pd.read_csv('Capability Assessment Survey.csv').iloc[-1]
 company = data.iloc[7]
@@ -335,7 +336,7 @@ plt.plot(x_current,y_current,color=charcoal_color,linewidth=5, label = "Current 
 #   plt.plot(x_future,y_future,color='red',linewidth=5, label="Future State")
 
 for i, word in enumerate(words):
-   plt.text(x_w[i], y_w[i], word, ha='center', va='center', fontname=font_prop, fontweight='light',color=charcoal_color,size=12)
+   plt.text(x_w[i], y_w[i], word, ha='center', va='center', fontname='Avenir Next', fontweight='light',color=charcoal_color,size=12)
 #legend = plt.legend(prop={'family':'Avenir Next'})
 legend = plt.legend()
 for text in legend.get_texts():
@@ -367,7 +368,7 @@ plt.annotate(f"This figure highlights the greatest gaps, \
 #         arrowprops=dict(facecolor='black', shrink=0.05),
 #         bbox=dict(boxstyle="round,pad=0.3", fc="whitesmoke", alpha=0.8),
          fontsize=20,
-         fontname=font_prop, color='#425369'
+         fontname='Avenir Next', color='#425369'
          )
 
 
@@ -416,7 +417,7 @@ y_ax = (['5','4','3','2','1','0'])
 
 ax.set_xticks([0,1, 2, 3, 4, 5, 6])
 
-ax.set_xticklabels(x_ax, position=(0,-0.01), font=font_prop,color='#425369')
+ax.set_xticklabels(x_ax, position=(0,-0.01), font='Avenir Next',color='#425369')
 #ax.set_xlabel('Capability Assessment Dimension',fontsize=25,\
 #                        font='Avenir Next',color='#425369')
 ax.xaxis.labelpad = 20
@@ -741,8 +742,8 @@ def create_plot_and_add_to_ppt(category, company, dir_, prs, slide_index):
       for key, value in maturity_dict.items():
          for i, level in enumerate(values):
                ax.text(dimensions[i], level + 0.1, list(maturity_dict.keys())[list(maturity_dict.values()).index(level)],color=charcoal_color, fontweight='light', ha='center',fontsize=18)
-   plt.xticks(color=charcoal_color, font='Dejavu Sans')
-   plt.yticks(color=charcoal_color, font='Dejavu Sans')
+   plt.xticks(color=charcoal_color, font='Avenir Next')
+   plt.yticks(color=charcoal_color, font='Avenir Next')
    ax.tick_params(axis='both', which='major', labelsize=21)
    ax.tick_params(axis='x', colors=charcoal_color)
 
@@ -858,10 +859,10 @@ def add_formatted_textbox(slide, text, left, top, width, height):
     tf.text = text
     for paragraph in tf.paragraphs:
         paragraph.font.bold = False
-        paragraph.font.size = Pt(11)
+        paragraph.font.size = Pt(10)
         paragraph.font.color.rgb = RGBColor(66, 83, 105)
         paragraph.alignment = PP_ALIGN.LEFT
-        paragraph.font.name = font_prop
+        paragraph.font.name = 'Avenir Next'
 
 # Usage
 slide = prs.slides[8]
@@ -914,14 +915,14 @@ p.font.bold = False
 p.font.size = Pt(28)
 p.font.color.rgb = RGBColor(66, 83, 105)
 p.alignment = PP_ALIGN.LEFT
-p.font.name = 'Lato'
+p.font.name = 'Avenir Next'
 
 p2 = tf2.paragraphs[0]
 p2.font.bold = False
 p2.font.size = Pt(18)
 p2.font.color.rgb = RGBColor(66, 83, 105)
 p2.alignment = PP_ALIGN.LEFT
-p2.font.name = 'Lato'
+p2.font.name = 'Avenir Next'
 
 # Add Relativ to the slide
 slide = prs.slides[0]
@@ -935,7 +936,7 @@ p_rel.font.bold = True
 p_rel.font.size = Pt(21)
 p_rel.font.color.rgb = RGBColor(66, 83, 105)
 p_rel.alignment = PP_ALIGN.LEFT
-p_rel.font.name = 'Lato'
+p_rel.font.name = 'Avenir Next'
 
 # Add date to the slide
 slide = prs.slides[0]
@@ -949,7 +950,7 @@ p_date.font.bold = False
 p_date.font.size = Pt(18)
 p_date.font.color.rgb = RGBColor(66, 83, 105)
 p_date.alignment = PP_ALIGN.LEFT
-p_date.font.name = 'Lato'
+p_date.font.name = 'Avenir Next'
 
 # Add recommendations to slide 8
 cleaned_words = [word.replace('\n', ' ') for word in related_words]  # Replace newline characters with spaces
@@ -967,7 +968,7 @@ p_rec8.font.bold = False
 p_rec8.font.size = Pt(9.5)
 p_rec8.font.color.rgb = RGBColor(66, 83, 105)
 p_rec8.alignment = PP_ALIGN.LEFT
-p_rec8.font.name = 'Lato'
+p_rec8.font.name = 'Avenir Next'
 
 slide = prs.slides[7]
 txBox_rec82 = slide.shapes.add_textbox(Inches(0.6), Inches(1.45), Inches(2), Inches(0.5))
@@ -982,7 +983,7 @@ p_rec82.font.bold = False
 p_rec82.font.size = Pt(9.5)
 p_rec82.font.color.rgb = RGBColor(66, 83, 105)
 p_rec82.alignment = PP_ALIGN.LEFT
-p_rec82.font.name = 'Lato'
+p_rec82.font.name = 'Avenir Next'
 
 # Set the font to be super light for all text in the slides
 for slide in prs.slides:
