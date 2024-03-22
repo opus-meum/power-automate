@@ -51,11 +51,11 @@ jobs:
           git config --global user.email 'actions@github.com'
       - name: Commit and push changes
         env:
-          GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}  # Use your secret name
+          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # Use your secret name
         run: |
           git add .
           git commit -m "Automatically generated PPTX report" -a || echo "No changes to commit"
-          git push https://${GH_ACCESS_TOKEN}@github.com/ehlke-hepworth/power-automate.git
+          git push https://${MY_GITHUB_TOKEN}@github.com/ehlke-hepworth/power-automate.git
 
       - name: Send email with PDF attachement
         env:
