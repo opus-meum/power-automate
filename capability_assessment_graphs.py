@@ -12,10 +12,10 @@ import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 import pandas as pd
 import os
+from matplotlib.font_manager import FontProperties
 import matplotlib.pyplot as plt
 
-plt.rcParams['font.family'] = 'AvenirNextCyr-Thin'
-
+font = FontProperties(fname='fonts/AvenirNextCyr-Thin.ttf')
 
 data = pd.read_csv('Capability Assessment Survey.csv').iloc[-1]
 company = data.iloc[7]
@@ -321,7 +321,7 @@ x = [1.5, 0.9352347027881004, -0.3337814009344715, -1.3514533018536286, -1.35145
       -0.3337814009344719, 0.9352347027881001,1.5]
 y = [0, 1.1727472237020446, 1.4623918682727355, 0.6508256086763373, -0.650825608676337,\
       -1.4623918682727355, -1.1727472237020449,0]
-font_path = fm.findfont(fm.FontProperties(family='Avenir Next light'))
+#font_path = fm.findfont(fm.FontProperties(family='Avenir Next light'))
 
 # Plot the heptagon
 plt.plot(x,y, color='grey', linewidth=5, label = "Mature State")
@@ -366,7 +366,7 @@ plt.annotate(f"This figure highlights the greatest gaps, \
 #         arrowprops=dict(facecolor='black', shrink=0.05),
 #         bbox=dict(boxstyle="round,pad=0.3", fc="whitesmoke", alpha=0.8),
          fontsize=20,
-         fontname='Avenir Next', color='#425369'
+         fontname=font, color='#425369'
          )
 
 
@@ -415,7 +415,7 @@ y_ax = (['5','4','3','2','1','0'])
 
 ax.set_xticks([0,1, 2, 3, 4, 5, 6])
 
-ax.set_xticklabels(x_ax, position=(0,-0.01), font='AvenirNextCyr-Thin',color='#425369')
+ax.set_xticklabels(x_ax, position=(0,-0.01), font=font,color='#425369')
 #ax.set_xlabel('Capability Assessment Dimension',fontsize=25,\
 #                        font='Avenir Next',color='#425369')
 ax.xaxis.labelpad = 20
@@ -860,7 +860,7 @@ def add_formatted_textbox(slide, text, left, top, width, height):
         paragraph.font.size = Pt(11)
         paragraph.font.color.rgb = RGBColor(66, 83, 105)
         paragraph.alignment = PP_ALIGN.LEFT
-        paragraph.font.name = 'AvenirNextCyr-Thin'
+        paragraph.font.name = font
 
 # Usage
 slide = prs.slides[8]
