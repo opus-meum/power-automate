@@ -336,7 +336,8 @@ plt.plot(x_current,y_current,color=charcoal_color,linewidth=5, label = "Current 
 
 for i, word in enumerate(words):
    plt.text(x_w[i], y_w[i], word, ha='center', va='center', fontname=font_prop, fontweight='light',color=charcoal_color,size=12)
-legend = plt.legend(prop={'family':'Avenir Next'})
+#legend = plt.legend(prop={'family':'Avenir Next'})
+legend = plt.legend()
 for text in legend.get_texts():
    text.set_color('#425369')
 plt.xticks([])
