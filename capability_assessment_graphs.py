@@ -15,7 +15,7 @@ import os
 from matplotlib.font_manager import FontProperties
 import matplotlib.pyplot as plt
 
-font = FontProperties(fname='fonts/AvenirNextCyr-Thin.ttf')
+font_prop = FontProperties(fname='fonts/AvenirNextCyr-Thin.ttf')
 
 data = pd.read_csv('Capability Assessment Survey.csv').iloc[-1]
 company = data.iloc[7]
@@ -335,7 +335,7 @@ plt.plot(x_current,y_current,color=charcoal_color,linewidth=5, label = "Current 
 #   plt.plot(x_future,y_future,color='red',linewidth=5, label="Future State")
 
 for i, word in enumerate(words):
-   plt.text(x_w[i], y_w[i], word, ha='center', va='center', fontname='AvenirNextCyr-Thin', fontweight='light',color=charcoal_color,size=12)
+   plt.text(x_w[i], y_w[i], word, ha='center', va='center', fontname=font_prop, fontweight='light',color=charcoal_color,size=12)
 legend = plt.legend(prop={'family':'Avenir Next'})
 for text in legend.get_texts():
    text.set_color('#425369')
@@ -415,7 +415,7 @@ y_ax = (['5','4','3','2','1','0'])
 
 ax.set_xticks([0,1, 2, 3, 4, 5, 6])
 
-ax.set_xticklabels(x_ax, position=(0,-0.01), font=font,color='#425369')
+ax.set_xticklabels(x_ax, position=(0,-0.01), font=font_prop,color='#425369')
 #ax.set_xlabel('Capability Assessment Dimension',fontsize=25,\
 #                        font='Avenir Next',color='#425369')
 ax.xaxis.labelpad = 20
@@ -720,7 +720,7 @@ import pandas as pd
 
 def create_plot_and_add_to_ppt(category, company, dir_, prs, slide_index):
    fig, ax = plt.subplots(1, figsize =(17, 10))
-   plt.rcParams['font.sans-serif'] = 'Dejavu Sans'
+   #plt.rcParams['font.sans-serif'] = 'Dejavu Sans'
 
    data = pd.read_csv(f'{dir_}{category}_{company}_.csv', sep=',')
    values = data['max'][:-1]
@@ -728,8 +728,8 @@ def create_plot_and_add_to_ppt(category, company, dir_, prs, slide_index):
 
    maturity_dict = {'Nascent': 1, 'Emerging': 2, 'Expanding': 3, 'Optimising': 4, 'Mature': 5}
    charcoal_color = '#425369'
-   font = {'family': 'Dejavu Sans'}
-   plt.rc('font', **font, weight='light')
+   #font = {'family': 'Dejavu Sans'}
+   #plt.rc('font', **font, weight='light')
 
    num_bars = len(dimensions)
    # Dynamically adjust bar width based on the number of bars
@@ -860,7 +860,7 @@ def add_formatted_textbox(slide, text, left, top, width, height):
         paragraph.font.size = Pt(11)
         paragraph.font.color.rgb = RGBColor(66, 83, 105)
         paragraph.alignment = PP_ALIGN.LEFT
-        paragraph.font.name = font
+        paragraph.font.name = font_prop
 
 # Usage
 slide = prs.slides[8]
