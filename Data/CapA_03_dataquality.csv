@@ -1,0 +1,4 @@
+﻿nascent,emerging,expanding,optimising,mature
+No,n/a,n/a,n/a,n/a
+Data quality processes are not defined.,Data quality and standards are loosely defined.,Data quality has been defined with minimum standards.  ,Improvements to our existing data quality process are in-progress.,Data quality processes have been refined based on review.
+We do not have trusted data architecture protected with strong data governance to manage our data. ,We are in the process of defining and developing data architecture and governance standards. ,A defined and trusted data architecture protected with strong data governance is increasingly utilised.,Data is consistently managed in a defined data architecture protected with strong data governance.,There are routine review and improvement processes of our data architecture and governance standards.
