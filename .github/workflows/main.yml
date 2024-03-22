@@ -81,7 +81,7 @@ jobs:
           with open(file_path, 'rb') as f:
             data = f.read()
             f.close()
-            encoded_file = base64.b64encode(data).decode()
+          encoded_file = base64.b64encode(data).decode()
 
           attachment = Attachment()
           attachment.file_content = FileContent(encoded_file)
