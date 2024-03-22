@@ -58,7 +58,7 @@ jobs:
           git commit -m "Automatically generated PPTX report" -a || echo "No changes to commit"
           git push https://${MY_GITHUB_TOKEN}@github.com/ehlke-hepworth/power-automate.git
 
-      - name: Send email with PDF attachement
+      - name: Send email with attachement
         env:
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
         run: |
@@ -80,6 +80,12 @@ jobs:
               subject=f'Impact Management Capability Assessment Report - {company}',
               html_content=f'<strong>Hi Gabs,<br>Please find attached the Capability Assessment Report for {company}.</strong>'
           )
+          
+          file_path = 'Capability Assessment Report.pptx'
+          with open(file_path, 'rb') as f:
+          data = f.read()
+          f.close()
+          encoded_file = base64.b64encode(data).decode()
 
           attachment = Attachment()
           attachment.file_content = FileContent(encoded_file)
