@@ -366,7 +366,7 @@ plt.annotate(f"This figure highlights the greatest gaps, \
 #         arrowprops=dict(facecolor='black', shrink=0.05),
 #         bbox=dict(boxstyle="round,pad=0.3", fc="whitesmoke", alpha=0.8),
          fontsize=20,
-         fontname=font, color='#425369'
+         fontname=font_prop, color='#425369'
          )
 
 
