@@ -914,7 +914,7 @@ p = tf.paragraphs[0]
 p.font.bold = False
 p.font.size = Pt(28)
 p.font.color.rgb = RGBColor(66, 83, 105)
-p.alignment = PP_ALIGN.LEFT
+p.alignment = PP_ALIGN.RIGHT
 p.font.name = 'Avenir Next'
 
 # Add Relativ to the slide
@@ -942,14 +942,14 @@ p_date = tf_date.paragraphs[0]
 p_date.font.bold = False
 p_date.font.size = Pt(18)
 p_date.font.color.rgb = RGBColor(66, 83, 105)
-p_date.alignment = PP_ALIGN.LEFT
+p_date.alignment = PP_ALIGN.RIGHT
 p_date.font.name = 'Avenir Next'
 
 # Add recommendations to slide 8
 cleaned_words = [word.replace('\n', ' ') for word in related_words]  # Replace newline characters with spaces
 
 slide = prs.slides[7]
-txBox_rec8 = slide.shapes.add_textbox(Inches(2.56), Inches(1.27), Inches(2), Inches(0.5))
+txBox_rec8 = slide.shapes.add_textbox(Inches(2.56), Inches(1.165), Inches(2), Inches(0.5))
 tf_rec8 = txBox_rec8.text_frame
 if len(cleaned_words) < 7:
    tf_rec8.text = ', '.join(cleaned_words[:-1]) + ', and ' + cleaned_words[-1] + '.'
@@ -958,13 +958,13 @@ else:
 
 p_rec8 = tf_rec8.paragraphs[0]
 p_rec8.font.bold = False
-p_rec8.font.size = Pt(9.5)
+p_rec8.font.size = Pt(10.5)
 p_rec8.font.color.rgb = RGBColor(66, 83, 105)
 p_rec8.alignment = PP_ALIGN.LEFT
 p_rec8.font.name = 'Avenir Next'
 
 slide = prs.slides[7]
-txBox_rec82 = slide.shapes.add_textbox(Inches(0.6), Inches(1.45), Inches(2), Inches(0.5))
+txBox_rec82 = slide.shapes.add_textbox(Inches(0.6), Inches(1.35), Inches(2), Inches(0.5))
 tf_rec82 = txBox_rec82.text_frame
 if len(cleaned_words[6:]) > 1:
    tf_rec82.text = ', '.join(cleaned_words[6:-1]) + ', and ' + cleaned_words[-1] +'.'
@@ -973,7 +973,7 @@ else:
 
 p_rec82 = tf_rec82.paragraphs[0]
 p_rec82.font.bold = False
-p_rec82.font.size = Pt(9.5)
+p_rec82.font.size = Pt(10.5)
 p_rec82.font.color.rgb = RGBColor(66, 83, 105)
 p_rec82.alignment = PP_ALIGN.LEFT
 p_rec82.font.name = 'Avenir Next'
