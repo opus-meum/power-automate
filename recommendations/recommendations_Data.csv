@@ -1,0 +1,71 @@
+﻿Level,Data Access,Data Collection,Data Quality,
+1,"Identify enabling capabilities such as IT to determine where data needs to end up to ensure it can be accessed and used by 
+the right people at the right time, e.g. decision-makers and those who are contributing to, learning about and improving the 
+work of the organization and / programmes. Utilise the Impact Measurement and Reporting Frameworks (once developed) 
+to review and / identify the data access needs and timing that users have to inform the above. A review of user requirements 
+will inform data architecture and supporting processes for future. ​Ensure any data access rights / requirements are identified 
+and planned for (may include policies and access controls to protect data assets and meet regulatory requirements) with 
+appropriate systems, processes and people to remove bottlenecks to information access. ​","Identify data collection tools, types of data collected and processes using the Impact Strategy and Impact Measurement 
+framework to select fit-for-purpose and fit-for context mix of tools, data types (and range to support triangulation and 
+participation), methods and processes.","Identify the impact data architecture – the models, rules, and policies that will govern how impact data is captured, processed 
+and stored. ​Identify data quality and minimum standards to ensure results are an accurate reflection of what has occurred.",
+2,"Develop enabling capabilities such as IT to determine where data needs to end up to ensure it can be accessed and used by 
+the right people at the right time, e.g. decision-makers and those who are contributing to, learning about and improving the 
+work of the organization and / programmes. Utilise the Impact Measurement and Reporting Frameworks (once developed) 
+to review and / identify the data access needs and timing that users have to inform the above. A review of user requirements 
+will inform data architecture and supporting processes for future. ​Ensure any data access rights / requirements are identified 
+and planned for (may include policies and access controls to protect data assets and meet regulatory requirements) with 
+appropriate systems, processes and people to remove bottlenecks to information access. ​","Define and develop data collection tools, types of data collected and processes using the Impact Strategy and Impact 
+Measurement framework to select fit-for-purpose and fit-for context mix of tools, data types (and range to support 
+triangulation and participation), methods and processes. Progress discussions on Data Tools and Methodologies to support 
+primary data gathering.  ","Define and develop the impact data architecture – the models, rules, and policies that will govern how impact data is captured, 
+processed and stored. ​Define and develop data quality and minimum standards to ensure results are an accurate reflection of 
+what has occurred. Leverage existing data quality standards – see data quality and data quality dimensions.​ ​",
+3,"Finalise and implement enabling capabilities such as IT to determine where data needs to end up to ensure it can be accessed 
+and used by the right people at the right time, e.g. decision-makers and those who are contributing to, learning about and 
+improving the work of the organization and / programmes. Utilise the Impact Measurement and Reporting Frameworks 
+(once developed) to review and / identify the data access needs and timing that users have to inform the above. A review of 
+user requirements will inform data architecture and supporting processes for future. ​Ensure any data access rights / 
+requirements are identified and planned for (may include policies and access controls to protect data assets and meet 
+regulatory requirements) with appropriate systems, processes and people to remove bottlenecks to information access. ​","Fianlize and implement data collection tools, types of data collected and processes using the Impact Strategy and Impact 
+Measurement framework to select fit-for-purpose and fit-for context mix of tools, data types (and range to support 
+triangulation and participation), methods and processes. Progress discussions on Data Tools and Methodologies to support 
+primary data gathering. Integrate and execute plans to gather information at regular intervals (such as yearly or according 
+to project and program cycles and reporting timelines encompassed in your Impact Measurement and Reporting Frameworks).","Finalize and implement the impact data architecture – the models, rules, and policies that will govern how impact data is 
+captured, processed and stored. ​Finalize and implement data quality and minimum standards to ensure results are an accurate 
+reflection of what has occurred. Unpack data quality dimensions selected in the relevant context and ensure these are translated 
+and integrated into processes, data architecture and data governance measures for the initiative. ​This may practically mean a 
+phased approach to implementing select data quality standards as integration and embedding are possible within the initiative’s 
+environment.",
+4,"Work together with enabling capabilities such as IT to determine where data needs to end up to ensure it can be accessed and 
+used by the right people at the right time, e.g. decision-makers and those who are contributing to, learning about and improving 
+the work of the organization and / programmes. Utilise the Impact Measurement and Reporting Frameworks (once developed) 
+to review and / identify the data access needs and timing that users have to inform the above. A review of user requirements 
+will inform data architecture and supporting processes for future. ​Ensure any data access rights / requirements are identified 
+and planned for (may include policies and access controls to protect data assets and meet regulatory requirements) with 
+appropriate systems, processes and people to remove bottlenecks to information access. ​","Review and refine data collection tools, types of data collected and processes using the Impact Strategy and Impact 
+Measurement framework to select fit-for-purpose and fit-for context mix of tools, data types (and range to support 
+triangulation and participation), methods and processes. Define ethical considerations and standards for data collection 
+considering issues of consent, respect and care for protection and use of personal information. These may be governed by 
+social norms and expectations, but in some cases may have legal implications and may require policies and protocols to 
+support (e.g. considerations and implications of working with children and also collecting data indirectly).","Review and refine the impact data architecture – the models, rules, and policies that will govern how impact data is captured, 
+processed and stored. ​Review and refine data quality and minimum standards to ensure results are an accurate reflection of 
+what has occurred. Socialise data architecture, quality standards and processes across all levels of the organization and data 
+contributors to ensure widely understood and executed accordingly maintain data governance and quality assurance.",
+5,"Routinely review and update enabling capabilities, such as IT, to determine where data needs to end up to ensure it can be 
+accessed and used by the right people at the right time, e.g. decision-makers and those who are contributing to, learning 
+about and improving the work of the organization and / programmes. Utilise the Impact Measurement and Reporting 
+Frameworks (once developed) to review and / identify the data access needs and timing that users have to inform the above. 
+A review of user requirements will inform data architecture and supporting processes for future. ​Ensure any data access 
+rights / requirements are identified and planned for (may include policies and access controls to protect data assets and meet 
+regulatory requirements) with appropriate systems, processes and people to remove bottlenecks to information access. ​","Routinely review and update the data collection tools, types of data collected and processes using the Impact Strategy and 
+Impact Measurement framework to select fit-for-purpose and fit-for context mix of tools, data types (and range to support 
+triangulation and participation), methods and processes. Review and update ethical considerations and standards for data 
+collection considering issues of consent, respect and care for protection and use of personal information. These may be 
+governed by social norms and expectations, but in some cases may have legal implications and may require policies and 
+protocols to support (e.g. considerations and implications of working with children and also collecting data indirectly).","Routinely review and update the impact data architecture – the models, rules, and policies that will govern how impact data 
+is captured, processed and stored. ​Routinely review and update data quality and minimum standards to ensure results are an 
+accurate reflection of what has occurred. Socialise data architecture, quality standards and processes across all levels of the 
+organization and data contributors to ensure widely understood and executed accordingly maintain data governance and 
+quality assurance.",
+,,,,
