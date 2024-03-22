@@ -917,13 +917,6 @@ p.font.color.rgb = RGBColor(66, 83, 105)
 p.alignment = PP_ALIGN.LEFT
 p.font.name = 'Avenir Next'
 
-p2 = tf2.paragraphs[0]
-p2.font.bold = False
-p2.font.size = Pt(18)
-p2.font.color.rgb = RGBColor(66, 83, 105)
-p2.alignment = PP_ALIGN.LEFT
-p2.font.name = 'Avenir Next'
-
 # Add Relativ to the slide
 slide = prs.slides[0]
 txBox_date = slide.shapes.add_textbox(Inches(8.4), Inches(4), Inches(2), Inches(0.5))
