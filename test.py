@@ -16,6 +16,12 @@ import pandas as pd
 import glob
 import os
 
+from matplotlib.font_manager import FontProperties
+import matplotlib.pyplot as plt
+
+font_prop = FontProperties(fname='fonts/AvenirNextCyr-Thin.ttf')
+plt.rcParams['font.family'] = 'Avenir Next'
+
 #%%
 excel_data = 'Capability Assessment Survey 1.xlsx'
 df = pd.read_excel(excel_data)
