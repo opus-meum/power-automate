@@ -331,7 +331,7 @@ plt.plot(x_current,y_current,color=charcoal_color,linewidth=5, label = "Current 
 #   plt.plot(x_future,y_future,color='red',linewidth=5, label="Future State")
 
 for i, word in enumerate(words):
-   plt.text(x_w[i], y_w[i], word, ha='center', va='center', fontname='Avenir Next', fontweight='light',color=charcoal_color,size=12)
+   plt.text(x_w[i], y_w[i], word, ha='center', va='center', fontname='AvenirNextCyr-Thin', fontweight='light',color=charcoal_color,size=12)
 legend = plt.legend(prop={'family':'Avenir Next'})
 for text in legend.get_texts():
    text.set_color('#425369')
@@ -411,7 +411,7 @@ y_ax = (['5','4','3','2','1','0'])
 
 ax.set_xticks([0,1, 2, 3, 4, 5, 6])
 
-ax.set_xticklabels(x_ax, position=(0,-0.01), font='Avenir Next',color='#425369')
+ax.set_xticklabels(x_ax, position=(0,-0.01), font='AvenirNextCyr-Thin',color='#425369')
 #ax.set_xlabel('Capability Assessment Dimension',fontsize=25,\
 #                        font='Avenir Next',color='#425369')
 ax.xaxis.labelpad = 20
@@ -856,7 +856,7 @@ def add_formatted_textbox(slide, text, left, top, width, height):
         paragraph.font.size = Pt(11)
         paragraph.font.color.rgb = RGBColor(66, 83, 105)
         paragraph.alignment = PP_ALIGN.LEFT
-        paragraph.font.name = 'Lato'
+        paragraph.font.name = 'AvenirNextCyr-Thin'
 
 # Usage
 slide = prs.slides[8]
