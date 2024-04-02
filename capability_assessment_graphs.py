@@ -949,7 +949,7 @@ p_date.font.name = 'Avenir Next'
 cleaned_words = [word.replace('\n', ' ') for word in related_words]  # Replace newline characters with spaces
 
 slide = prs.slides[7]
-txBox_rec8 = slide.shapes.add_textbox(Inches(2.36), Inches(1.165), Inches(2), Inches(0.5))
+txBox_rec8 = slide.shapes.add_textbox(Inches(1.36), Inches(1.165), Inches(2), Inches(0.5))
 tf_rec8 = txBox_rec8.text_frame
 if len(cleaned_words) < 8:
    tf_rec8.text = ', '.join(cleaned_words[:-1]) + ', and ' + cleaned_words[-1] + '.'
