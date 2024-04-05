@@ -845,7 +845,7 @@ reco_te_1 = reco_['Technology'][values[0]-1]
    # Load the presentation
 prs = Presentation('Capability Assessment Report Template.pptx')  
 #company='Ehlke-Hepworth'
-date_ = 'March 2024'
+date_ = 'April 2024'
 relativ = 'Relativ Impact'
 
 from pptx.util import Pt
@@ -887,19 +887,18 @@ slide = prs.slides[22]
 add_formatted_textbox(slide, reco_pr_1, 2, 1.3, 7, 1)
 slide = prs.slides[26]
 add_formatted_textbox(slide, reco_da_1, 2, 1.3, 7, 1)
-slide = prs.slides[27]
-add_formatted_textbox(slide, reco_da_2, 2, 1.3, 7, 1)
-add_formatted_textbox(slide, reco_da_3, 2, 3.6, 7, 1)
-slide = prs.slides[31]
+add_formatted_textbox(slide, reco_da_2, 2, 3.2, 7, 1)
+add_formatted_textbox(slide, reco_da_3, 2, 4.4, 7, 1)
+slide = prs.slides[30]
 add_formatted_textbox(slide, reco_me_1, 2, 1.3, 7, 1)
-add_formatted_textbox(slide, reco_me_2, 2, 3.6, 7, 1)
-slide = prs.slides[32]
-add_formatted_textbox(slide, reco_me_2, 2, 1.3, 7, 1)
-add_formatted_textbox(slide, reco_me_3, 2, 3.6, 7, 1)
-slide = prs.slides[36]
+add_formatted_textbox(slide, reco_me_2, 2, 3.1, 7, 1)
+slide = prs.slides[31]
+add_formatted_textbox(slide, reco_me_3, 2, 1.3, 7, 1)
+add_formatted_textbox(slide, reco_me_4, 2, 2.8, 7, 1)
+slide = prs.slides[35]
 add_formatted_textbox(slide, reco_re_1, 2, 1.3, 7, 1)
-add_formatted_textbox(slide, reco_re_2, 2, 3.6, 7, 1)
-slide = prs.slides[40]
+add_formatted_textbox(slide, reco_re_2, 2, 2.7, 7, 1)
+slide = prs.slides[39]
 add_formatted_textbox(slide, reco_te_1, 2, 1.3, 7, 1)
 
 ##------------------- recommendations automated <<--------------------##
@@ -1001,7 +1000,7 @@ for slide in prs.slides:
 dir_ = 'results/'
       #company='Ehlke-Hepworth'
 categories = ['Strategy', 'Talent', 'Processes', 'Data', 'Measurement', 'Reporting', 'Technology']
-slide_indices = [12, 16, 21, 25, 30, 35, 39]  # Add more slide indices as needed
+slide_indices = [12, 16, 21, 25, 29, 34, 38]  # Add more slide indices as needed
 for category, slide_index in zip(categories, slide_indices):
    create_plot_and_add_to_ppt(category, company, dir_, prs, slide_index)
 
