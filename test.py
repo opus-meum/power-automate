@@ -37,22 +37,16 @@ df = pd.read_csv('Capability Assessment Survey.csv')
 
 # Define the function to remove spaces after full stops in a string
 def remove_spaces_after_fullstop(text):
+    # Ensure text is treated as a string
+    text = str(text)
     if pd.isnull(text):
         return text  # Return as is if text is NaN
-    # Ensure text is treated as a string, decode if it's bytes
-    if isinstance(text, bytes):
-        text = text.decode('utf-8')
     return re.sub(r'\.\s{1,3}', '.', text)
 
-# Select the last row as a Series
-data = df.iloc[-1]
-
-# Apply the function directly to the specific cells in the Series
-data.iloc[73] = remove_spaces_after_fullstop(data.iloc[73].astype(str))
-data.iloc[74] = remove_spaces_after_fullstop(data.iloc[74].astype(str))
+df.iloc[-1, 73] = remove_spaces_after_fullstop(df.iloc[-1, 73])
+df.iloc[-1, 74] = remove_spaces_after_fullstop(df.iloc[-1, 74])
 
 # If you need to update the DataFrame with these changes and save it
-df.iloc[-1] = data
 df.to_csv('Capability Assessment Survey.csv', index=False)
 
 data = pd.read_csv('Capability Assessment Survey.csv').iloc[-1]
