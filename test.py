@@ -18,6 +18,7 @@ import os
 
 from matplotlib.font_manager import FontProperties
 import matplotlib.pyplot as plt
+import re
 
 font_prop = FontProperties(fname='fonts/AvenirNextCyr-Thin.ttf')
 plt.rcParams['font.family'] = 'Avenir Next'
@@ -26,16 +27,32 @@ plt.rcParams['font.family'] = 'Avenir Next'
 excel_data = 'Capability Assessment Survey 1.xlsx'
 df = pd.read_excel(excel_data)
 df.to_csv('Capability Assessment Survey.csv')
-
 os.remove('Capability Assessment Survey 1.xlsx')
-
 
 
 dir_ = 'results/'
 #dir2_= '/Users/ehlke/Desktop/'
-data = pd.read_csv('Capability Assessment Survey.csv').iloc[-1]
+#df = pd.read_csv('Capability Assessment Survey.csv').iloc[-1]
+df = pd.read_csv('Capability Assessment Survey.csv')
 
-#data = pd.read_csv(dir2_+'Capability Assessment Survey.csv')
+# Define the function to remove spaces after full stops in a string
+def remove_spaces_after_fullstop(text):
+    if pd.isnull(text):
+        return text  # Return as is if text is NaN
+    return re.sub(r'\.\s{1,3}', '.', text)
+
+# Select the last row as a Series
+data = df.iloc[-1]
+
+# Apply the function directly to the specific cells in the Series
+data.iloc[73] = remove_spaces_after_fullstop(data.iloc[73])
+data.iloc[74] = remove_spaces_after_fullstop(data.iloc[74])
+
+# If you need to update the DataFrame with these changes and save it
+df.iloc[-1] = data
+df.to_csv('Capability Assessment Survey.csv', index=False)
+
+data = pd.read_csv('Capability Assessment Survey.csv').iloc[-1]
 print(data)
 
 company = data.iloc[7]
@@ -696,167 +713,7 @@ for i in range(len(data)):
 #-----------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------
-####MEASUREMENT
-import re
 
-file1 = pd.read_csv(dir_+'Data/CapA_04_IMF.csv')
-file2 = pd.read_csv(dir_+'Data/CapA_04_TT.csv')
-file3 = pd.read_csv(dir_+'Data/CapA_04_evaluation.csv')
-file4 = pd.read_csv(dir_+'Data/CapA_04_rki.csv')
-print(file4)
-
-# Read the CSV file
-
-
-# Function to remove spaces after full stops in a string
-def remove_spaces_after_fullstop(text):
-    if pd.isnull(text):
-        return text  # Return as is if text is NaN
-    return re.sub(r'\.\s{1,3}', '.', text)
-
-# Apply the function to each text column in the DataFrame
-for col in file4.select_dtypes(include=['object']).columns:
-    file4[col] = file4[col].apply(remove_spaces_after_fullstop)
-
-# Write the modified DataFrame back to the CSV file
-file4.to_csv(dir_+'Data/CapA_04_rki.csv', index=False)
-file4 = pd.read_csv(dir_+'Data/CapA_04_rki.csv')
-print(file4)
-
-
-one=[]
-two=[]
-three=[]
-four=[]
-five=[]
-
-
-for i in range(len(sentences_list)):
-    oo = file1[file1.isin(sentences_list[i])].groupby(['nascent']).size().sum()
-    one.append(oo)
-    tw = file1[file1.isin(sentences_list[i])].groupby(['emerging']).size().sum()
-    two.append(tw)
-    th = file1[file1.isin(sentences_list[i])].groupby(['expanding']).size().sum()
-    three.append(th)
-    fo = file1[file1.isin(sentences_list[i])].groupby(['optimising']).size().sum()
-    four.append(fo)
-    fi = file1[file1.isin(sentences_list[i])].groupby(['mature']).size().sum()
-    five.append(fi)
-
-one2=[]
-two2=[]
-three2=[]
-four2=[]
-five2=[]
-
-for i in range(len(sentences_list)):
-    oo_caps = file2[file2.isin(sentences_list[i])].groupby(['nascent']).size().sum()
-    one2.append(oo_caps)
-    tw_caps = file2[file2.isin(sentences_list[i])].groupby(['emerging']).size().sum()
-    two2.append(tw_caps)
-    th_caps = file2[file2.isin(sentences_list[i])].groupby(['expanding']).size().sum()
-    three2.append(th_caps)
-    fo_caps = file2[file2.isin(sentences_list[i])].groupby(['optimising']).size().sum()
-    four2.append(fo_caps)
-    fi_caps = file2[file2.isin(sentences_list[i])].groupby(['mature']).size().sum()
-    five2.append(fi_caps)
-
-one3=[]
-two3=[]
-three3=[]
-four3=[]
-five3=[]
-
-for i in range(len(sentences_list)):
-    oo_imps = file3[file3.isin(sentences_list[i])].groupby(['nascent']).size().sum()
-    one3.append(oo_imps)
-    tw_imps = file3[file3.isin(sentences_list[i])].groupby(['emerging']).size().sum()
-    two3.append(tw_imps)
-    th_imps = file3[file3.isin(sentences_list[i])].groupby(['expanding']).size().sum()
-    three3.append(th_imps)
-    fo_imps = file3[file3.isin(sentences_list[i])].groupby(['optimising']).size().sum()
-    four3.append(fo_imps)
-    fi_imps = file3[file3.isin(sentences_list[i])].groupby(['mature']).size().sum()
-    five3.append(fi_imps)
-
-one4=[]
-two4=[]
-three4=[]
-four4=[]
-five4=[]
-
-for i in range(len(sentences_list)):
-    oo_imps = file4[file4.isin(sentences_list[i])].groupby(['nascent']).size().sum()
-    one4.append(oo_imps)
-    tw_imps = file4[file4.isin(sentences_list[i])].groupby(['emerging']).size().sum()
-    two4.append(tw_imps)
-    th_imps = file4[file4.isin(sentences_list[i])].groupby(['expanding']).size().sum()
-    three4.append(th_imps)
-    fo_imps = file4[file4.isin(sentences_list[i])].groupby(['optimising']).size().sum()
-    four4.append(fo_imps)
-    fi_imps = file4[file4.isin(sentences_list[i])].groupby(['mature']).size().sum()
-    five4.append(fi_imps)
-
-
-#combined_data = pd.concat([one, one_caps, one_imps], axis=1)
-data_dict = {'dimension':['IMF', 'Tools & Templates', 'Evaluation', 'Research, Knowledge,\n& Insights'],'Nascent': [one,one2,one3,one4], 'Emerging': [two,two2,two3,two4], 'Expanding': [three,three2,three3,three4],\
-            'Optimising': [four,four2,four3,four4], 'Mature': [five,five,five3,five4]}
-
-df = pd.DataFrame(data_dict)
-print(df)
-
-tst=[]
-#fn=[]
-save_=[]
-
-#for k in range(len(strategy_capp)):
-
-for i in range(len(df)):
-    tmp = df.iloc[:,1:].apply(lambda x: x.str[i])
-    tst.append(tmp)
-# filename = data.iloc[i, 6] + '_.csv'
-    #print(filename)
-# fn.append(filename)
-#print(fn)
-    total_row = tst[i].sum()
-
-    print(total_row)
-    tmp = pd.concat([tst[i], pd.DataFrame([total_row])], ignore_index=True)
-    tmp.insert(0,'Dimension',['IMF', 'Tools & Templates', 'Evaluation', 'Research, Knowledge,\n& Insights','Total'])
-    columns_greater_than_zero = tmp.iloc[:,1:].apply(lambda row: row.index[row.astype(float) > 0].tolist(), axis=1)
-    columns_greater_than_zero_df = columns_greater_than_zero.apply(pd.Series)
-    columns_greater_than_zero_df = columns_greater_than_zero_df.replace(word_to_number)
-    average_values = columns_greater_than_zero_df.mean(axis=1)
-    average_values = average_values.fillna(0)
-    print(average_values)   
-
-    tmp['level'] = average_values
-    last_value_level = tmp['level'].iloc[-1]
-    tmp['level'].iloc[-1] = tmp['level'].mean()
-
-    tmp['max'] = tmp['level'].round()
-    tmp['max'] = tmp['max'].replace(0, 1)
-    tmp['max_column'] = tmp['max'].map({v: k for k, v in word_to_number.items()})
-
-    tmp['idx'] = tmp.index +1
-    
-    tmp.to_csv(str(dir_)+'Measurement_' +str(fn)+ '_.csv', index=False)
-
-    add_ = tmp[['level'][-1]].to_frame().rename(columns={"level":'Measurement'}).tail(1)
-    add_=pd.DataFrame(add_)
-    print(add_['Measurement'].values[0])
-
-    summary_ = pd.read_csv(str(dir_)+'Summary_'+str(fn)+ '_.csv')
-    print(summary_)
-    summary_['Measurement'] = add_['Measurement'].values[0]
-    print(summary_)
-    summary_.to_csv(str(dir_)+'Summary_' +str(fn)+ '_.csv', index=False)
-                       
-
-
-
-
-"""
 ####MEASUREMENT
 
 file1 = pd.read_csv(dir_+'Data/CapA_04_IMF.csv')
@@ -993,4 +850,4 @@ for i in range(len(df)):
     summary_['Measurement'] = add_['Measurement'].values[0]
     print(summary_)
     summary_.to_csv(str(dir_)+'Summary_' +str(fn)+ '_.csv', index=False)
-"""                        
+                      
