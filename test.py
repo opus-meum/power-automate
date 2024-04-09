@@ -48,8 +48,8 @@ def remove_spaces_after_fullstop(text):
 data = df.iloc[-1]
 
 # Apply the function directly to the specific cells in the Series
-data.iloc[73] = remove_spaces_after_fullstop(data.iloc[73])
-data.iloc[74] = remove_spaces_after_fullstop(data.iloc[74])
+data.iloc[73] = remove_spaces_after_fullstop(data.iloc[73].astype(str))
+data.iloc[74] = remove_spaces_after_fullstop(data.iloc[74].astype(str))
 
 # If you need to update the DataFrame with these changes and save it
 df.iloc[-1] = data
