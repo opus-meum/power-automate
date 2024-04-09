@@ -39,6 +39,9 @@ df = pd.read_csv('Capability Assessment Survey.csv')
 def remove_spaces_after_fullstop(text):
     if pd.isnull(text):
         return text  # Return as is if text is NaN
+    # Ensure text is treated as a string, decode if it's bytes
+    if isinstance(text, bytes):
+        text = text.decode('utf-8')
     return re.sub(r'\.\s{1,3}', '.', text)
 
 # Select the last row as a Series
