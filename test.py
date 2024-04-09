@@ -702,7 +702,8 @@ file1 = pd.read_csv(dir_+'Data/CapA_04_IMF.csv')
 file2 = pd.read_csv(dir_+'Data/CapA_04_TT.csv')
 file3 = pd.read_csv(dir_+'Data/CapA_04_evaluation.csv')
 file4 = pd.read_csv(dir_+'Data/CapA_04_rki.csv')
-
+print(file4)
+dddddd
 
 one=[]
 two=[]
