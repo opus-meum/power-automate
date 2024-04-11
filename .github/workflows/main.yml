@@ -78,7 +78,7 @@ jobs:
           )
 
           
-          'libreoffice', '--headless', '--convert-to', 'pdf', '--outdir', "Capability Assessment Report.pptx"
+          'libreoffice', '--headless', '--convert-to', 'pdf', "Capability Assessment Report.pptx" '--outdir'
 
           file_path = 'Capability Assessment Report.pdf'
           with open(file_path, 'rb') as f:
