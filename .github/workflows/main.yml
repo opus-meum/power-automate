@@ -76,7 +76,7 @@ jobs:
               subject=f'Impact Management Capability Assessment Report - {company}',
               html_content=f'<strong>Hi Gabs,<br>Please find attached the Capability Assessment Report for {company}.</strong>'
           )
-          
+          "
       - name: Install LibreOffice
         run: |
           sudo apt-get update
@@ -114,5 +114,5 @@ jobs:
               print(response.headers)
           except Exception as e:
               print(str(e))
-          "
+          
   
