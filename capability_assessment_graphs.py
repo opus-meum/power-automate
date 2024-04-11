@@ -876,28 +876,27 @@ add_formatted_textbox(slide, recommendations['Technology'], .8, 4.7, 7, 1)
 
 slide = prs.slides[13]
 add_formatted_textbox(slide, reco_st_1, 2, 1.3, 7, 1)
-add_formatted_textbox(slide, reco_st_2, 2, 2.5, 7, 1)
-add_formatted_textbox(slide, reco_st_3, 2, 3.6, 7, 1)
+add_formatted_textbox(slide, reco_st_2, 2, 2.2, 7, 1)
+add_formatted_textbox(slide, reco_st_3, 2, 2.9, 7, 1)
 slide = prs.slides[17]
-add_formatted_textbox(slide, reco_ta_1, 2, 1.3, 7, 1)
-add_formatted_textbox(slide, reco_ta_2, 2, 3.8, 7, 1)
-slide = prs.slides[18]
-add_formatted_textbox(slide, reco_ta_3, 2, 1.3, 7, 1)
+add_formatted_textbox(slide, reco_ta_1, 2, 1.25, 7, 1)
+add_formatted_textbox(slide, reco_ta_2, 2, 3.13, 7, 1)
+add_formatted_textbox(slide, reco_ta_3, 2, 4.1, 7, 1)
 slide = prs.slides[22]
 add_formatted_textbox(slide, reco_pr_1, 2, 1.3, 7, 1)
 slide = prs.slides[26]
 add_formatted_textbox(slide, reco_da_1, 2, 1.3, 7, 1)
-add_formatted_textbox(slide, reco_da_2, 2, 3.2, 7, 1)
-add_formatted_textbox(slide, reco_da_3, 2, 4.4, 7, 1)
+add_formatted_textbox(slide, reco_da_2, 2, 2.8, 7, 1)
+add_formatted_textbox(slide, reco_da_3, 2, 4.3, 7, 1)
 slide = prs.slides[30]
 add_formatted_textbox(slide, reco_me_1, 2, 1.3, 7, 1)
-add_formatted_textbox(slide, reco_me_2, 2, 3.1, 7, 1)
+add_formatted_textbox(slide, reco_me_2, 2, 2.9, 7, 1)
 slide = prs.slides[31]
 add_formatted_textbox(slide, reco_me_3, 2, 1.3, 7, 1)
-add_formatted_textbox(slide, reco_me_4, 2, 2.8, 7, 1)
+add_formatted_textbox(slide, reco_me_4, 2, 2.75, 7, 1)
 slide = prs.slides[35]
 add_formatted_textbox(slide, reco_re_1, 2, 1.3, 7, 1)
-add_formatted_textbox(slide, reco_re_2, 2, 2.7, 7, 1)
+add_formatted_textbox(slide, reco_re_2, 2, 2.1, 7, 1)
 slide = prs.slides[39]
 add_formatted_textbox(slide, reco_te_1, 2, 1.3, 7, 1)
 
@@ -1000,7 +999,7 @@ for slide in prs.slides:
 dir_ = 'results/'
       #company='Ehlke-Hepworth'
 categories = ['Strategy', 'Talent', 'Processes', 'Data', 'Measurement', 'Reporting', 'Technology']
-slide_indices = [12, 16, 21, 25, 29, 34, 38]  # Add more slide indices as needed
+slide_indices = [12, 16, 20, 24, 28, 33, 37]  # Add more slide indices as needed
 for category, slide_index in zip(categories, slide_indices):
    create_plot_and_add_to_ppt(category, company, dir_, prs, slide_index)
 
