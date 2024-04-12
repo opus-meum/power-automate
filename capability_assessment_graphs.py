@@ -602,7 +602,7 @@ dimension_names = [dim_st, dim_ta, dim_pr, dim_da, dim_me, dim_re, dim_te]
 related_words=[]
 for dim_data, dim_name in zip(dimensions, dimension_names):
     for i, value in enumerate(dim_data):
-        if value == value.min():
+        if value == 2:
             related_words.append(dim_name.iloc[i])
 
 
