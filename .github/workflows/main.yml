@@ -91,8 +91,8 @@ jobs:
               process thus far has been valuable and helped to stretch your thinking on Impact Management, 
               its role within your organisation, and how maturing this capability in and across your 
               organisation can support more effective achievement of your impact goals and objectives.​</p>
-              <p>Kind regards,</p><br>​The Relativ Impact Team​'''
-              
+              <p>Kind regards,</p>
+              <br>​The Relativ Impact Team​              
               )
           
           file_path = 'Capability Assessment Report.pptx'
