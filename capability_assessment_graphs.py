@@ -477,8 +477,14 @@ for i in range(len(dim_da)):
 
 #      plt.text(2.7+0.1 * (i+1), data_[i]+1, str(i+1), ha='center', va='bottom', color='whitesmoke', fontsize=15)
 #    plt.text(2.6,5-data_[i],dim_da[i],fontsize=10,font='Avenir Next',color='whitesmoke')   
-for i in range(len(dim_me)):
-   plt.hlines(measurement[i]+1, 4-0.4, 4+0.4,linewidth=75, color=c_m)
+for i in range(len(dim_st)):
+    if strategy[i] > 3:
+        linewidth = 75
+    else:
+        linewidth = 55
+    plt.hlines(strategy[i]+1, 0-0.4, 0+0.4, linewidth=linewidth, color=c_s)
+##for i in range(len(dim_me)):
+##   plt.hlines(measurement[i]+1, 4-0.4, 4+0.4,linewidth=75, color=c_m)
 # plt.text(3.99, measurement[i]+1.3-0.15*i, dim_me.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9, fontweight='bold')
 #       plt.text(3.7+0.1 * (i+1), measurement[i]+1, str(i+1), ha='center', va='bottom', color='whitesmoke', fontsize=15)
 #    plt.text(3.6,5-measurement[i],dim_me[i],fontsize=10,font='Avenir Next',color='whitesmoke')   
