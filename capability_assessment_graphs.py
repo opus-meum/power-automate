@@ -654,12 +654,17 @@ for dim_data, dim_name in zip(dimensions, dimension_names):
         if value == 2:
             related_words.append(dim_name.iloc[i])
 """
-related_words=[]
+# Flatten all dim_data lists into a single list
+all_values = [value for dim_data in dimensions for value in dim_data]
+
+# Find the minimum value across all dimensions
+overall_min_value = min(all_values)
+
+# Now, you can check against this overall minimum value
+related_words = []
 for dim_data, dim_name in zip(dimensions, dimension_names):
-    min_value = min(dim_data)  # Find the minimum value in the current dimension data
-    print(min_value)
     for i, value in enumerate(dim_data):
-        if value == min_value:  # Check if the current value is the minimum value
+        if value == overall_min_value:
             related_words.append(dim_name.iloc[i])
 
 ##add test to hlines
