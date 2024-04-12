@@ -949,9 +949,9 @@ cleaned_words = [word.replace('\n', ' ') for word in related_words]  # Replace n
 slide = prs.slides[7]
 txBox_rec8 = slide.shapes.add_textbox(Inches(1.36), Inches(1.165), Inches(2), Inches(0.5))
 tf_rec8 = txBox_rec8.text_frame
-if len(cleaned_words) < 8:
+if 1 < len(cleaned_words) < 8:
    tf_rec8.text = ', '.join(cleaned_words[:-1]) + ', and ' + cleaned_words[-1] + '.'
-else:
+if len(cleaned_words) > 7:
    tf_rec8.text = ', '.join(cleaned_words[:7]) +','
 
 p_rec8 = tf_rec8.paragraphs[0]
@@ -967,6 +967,7 @@ tf_rec82 = txBox_rec82.text_frame
 
 if len(cleaned_words[7:]) > 1:
    tf_rec82.text = ', '.join(cleaned_words[7:-1]) + ', and ' + cleaned_words[-1] +'.'
+
 
 p_rec82 = tf_rec82.paragraphs[0]
 p_rec82.font.bold = False
