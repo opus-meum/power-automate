@@ -511,7 +511,7 @@ def adjust_text_position(text_positions, current_position, direction=-1):
 # Strategy dimension text positioning
 strategy_text_positions = set()
 for i in range(len(dim_st)):
-   text_y = strategy[i] + 1.2  # Initial Y position for text
+   text_y = strategy[i] + 1.3  # Initial Y position for text
    text_y = adjust_text_position(strategy_text_positions, text_y)
    plt.text(0, text_y, dim_st.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9, fontweight='bold')
 
@@ -525,35 +525,35 @@ for i in range(len(dim_ta)):
 # Processes dimension text positioning
 processes_text_positions = set()
 for i in range(len(dim_pr)):
-   text_y = processes[i] + 1.26  # Initial Y position for text
+   text_y = processes[i] + 1.3  # Initial Y position for text
    text_y = adjust_text_position(processes_text_positions, text_y)
    plt.text(2, text_y, dim_pr.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9, fontweight='bold')
 
 # Data dimension text positioning
 data_text_positions = set()
 for i in range(len(dim_da)):
-   text_y = data_[i] + 1.26  # Initial Y position for text
+   text_y = data_[i] + 1.3  # Initial Y position for text
    text_y = adjust_text_position(data_text_positions, text_y)
    plt.text(3, text_y, dim_da.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9, fontweight='bold')
 
 # Measurement dimension text positioning
 measurement_text_positions = set()
 for i in range(len(dim_me)):
-   text_y = measurement[i] + 1.26  # Initial Y position for text
+   text_y = measurement[i] + 1.3  # Initial Y position for text
    text_y = adjust_text_position(measurement_text_positions, text_y)
    plt.text(4, text_y, dim_me.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9, fontweight='bold')
 
 # Reporting dimension text positioning
 reporting_text_positions = set()
 for i in range(len(dim_re)):
-   text_y = reporting[i] + 1.26  # Initial Y position for text
+   text_y = reporting[i] + 1.3  # Initial Y position for text
    text_y = adjust_text_position(reporting_text_positions, text_y)
    plt.text(5, text_y, dim_re.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9, fontweight='bold')
 
 # Technology dimension text positioning
 tech_text_positions = set()
 for i in range(len(dim_te)):
-   text_y = tech[i] + 1.26 # Initial Y position for text
+   text_y = tech[i] + 1.3 # Initial Y position for text
    text_y = adjust_text_position(tech_text_positions, text_y)
    plt.text(6, text_y, dim_te.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9, fontweight='bold')
 
