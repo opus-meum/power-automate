@@ -456,23 +456,23 @@ plt.hlines(6, 6-0.4, 6+0.4,linewidth=45, color='darkgrey')
 
     
 for i in range(len(dim_st)):
-   plt.hlines(strategy[i]+1, 0-0.4, 0+0.4,linewidth=75, color=c_s)
+   plt.hlines(strategy[i]+1, 0-0.4, 0+0.4,linewidth=65, color=c_s)
 # plt.text(-0.01 * (i+1), strategy[i]+1.3-0.1*i, dim_st.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9,fontweight='bold')
 #     plt.text(-0.4,5-strategy[i],dim_st[i],fontsize=10,font='Avenir Next',color='whitesmoke')
 for i in range(len(dim_ta)):
-   plt.hlines(talent[i]+1, 1-0.4, 1+0.4,linewidth=75, color=c_ta)
+   plt.hlines(talent[i]+1, 1-0.4, 1+0.4,linewidth=65, color=c_ta)
    #plt.text(0.99+0 * (i+1), talent[i]+1.3-0.15*i, dim_ta.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9,fontweight='bold')
 
 #       plt.text(0.7+0.1 * (i+1), talent[i]+1, str(i+1), ha='center', va='bottom', color='whitesmoke', fontsize=15)
 #    plt.text(0.6,5-talent[i],dim_ta[i],fontsize=10,font='Avenir Next',color='whitesmoke')
 for i in range(len(dim_pr)):
-   plt.hlines(processes[i]+1, 2.0-0.4, 2.0+0.4,linewidth=75, color=c_p)
+   plt.hlines(processes[i]+1, 2.0-0.4, 2.0+0.4,linewidth=65, color=c_p)
 # plt.text(1.99+0 * (i+1), processes[i]+1.3-0.15*i, dim_pr.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9,fontweight='bold')
 
 #       plt.text(1.7+0.1 * (i+1), processes[i]+1, str(i+1), ha='center', va='bottom', color='whitesmoke', fontsize=15)
 #    plt.text(1.6,5-processes[i],dim_pr[i],fontsize=10,font='Avenir Next',color='whitesmoke')   
 for i in range(len(dim_da)):
-   plt.hlines(data_[i]+1, 3-0.4, 3+0.4,linewidth=75, color=c_d)
+   plt.hlines(data_[i]+1, 3-0.4, 3+0.4,linewidth=65, color=c_d)
 # plt.text(2.99+0 * (i+1), data_[i]+1.3-0.15*i, dim_da.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9,fontweight='bold')
 
 #      plt.text(2.7+0.1 * (i+1), data_[i]+1, str(i+1), ha='center', va='bottom', color='whitesmoke', fontsize=15)
@@ -481,7 +481,7 @@ for i in range(len(dim_st)):
     if strategy[i] > 3:
         linewidth = 75
     else:
-        linewidth = 55
+        linewidth = 65
     plt.hlines(strategy[i]+1, 0-0.4, 0+0.4, linewidth=linewidth, color=c_s)
 ##for i in range(len(dim_me)):
 ##   plt.hlines(measurement[i]+1, 4-0.4, 4+0.4,linewidth=75, color=c_m)
@@ -489,13 +489,13 @@ for i in range(len(dim_st)):
 #       plt.text(3.7+0.1 * (i+1), measurement[i]+1, str(i+1), ha='center', va='bottom', color='whitesmoke', fontsize=15)
 #    plt.text(3.6,5-measurement[i],dim_me[i],fontsize=10,font='Avenir Next',color='whitesmoke')   
 for i in range(len(dim_re)):
-   plt.hlines(reporting[i]+1, 5-0.4, 5+0.4,linewidth=75, color=c_r)
+   plt.hlines(reporting[i]+1, 5-0.4, 5+0.4,linewidth=65, color=c_r)
 # plt.text(4.99+0 * (i+1), reporting[i]+1.3-0.15*i, dim_re.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9,fontweight='bold')
 
 #       plt.text(4.7+0.1 * (i+1), reporting[i]+1, str(i+1), ha='center', va='bottom', color='whitesmoke', fontsize=15)
 #    plt.text(4.6,5-reporting[i],dim_re[i],fontsize=10,font='Avenir Next',color='whitesmoke')   
 for i in range(len(dim_te)):
-   plt.hlines(tech[i]+1, 6-0.4, 6+0.4,linewidth=75, color=c_te)
+   plt.hlines(tech[i]+1, 6-0.4, 6+0.4,linewidth=65, color=c_te)
 # plt.text(5.99+0 * (i+1), tech[i]+1.3-0.15*i, dim_te.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9, fontweight='bold')
 
 
@@ -511,49 +511,49 @@ def adjust_text_position(text_positions, current_position, direction=-1):
 # Strategy dimension text positioning
 strategy_text_positions = set()
 for i in range(len(dim_st)):
-   text_y = strategy[i] + 1.28  # Initial Y position for text
+   text_y = strategy[i] + 1.26  # Initial Y position for text
    text_y = adjust_text_position(strategy_text_positions, text_y)
    plt.text(0, text_y, dim_st.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9, fontweight='bold')
 
 # Talent dimension text positioning
 talent_text_positions = set()
 for i in range(len(dim_ta)):
-   text_y = talent[i] + 1.28  # Initial Y position for text
+   text_y = talent[i] + 1.26  # Initial Y position for text
    text_y = adjust_text_position(talent_text_positions, text_y)
    plt.text(1, text_y, dim_ta.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9, fontweight='bold')
 
 # Processes dimension text positioning
 processes_text_positions = set()
 for i in range(len(dim_pr)):
-   text_y = processes[i] + 1.28  # Initial Y position for text
+   text_y = processes[i] + 1.26  # Initial Y position for text
    text_y = adjust_text_position(processes_text_positions, text_y)
    plt.text(2, text_y, dim_pr.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9, fontweight='bold')
 
 # Data dimension text positioning
 data_text_positions = set()
 for i in range(len(dim_da)):
-   text_y = data_[i] + 1.28  # Initial Y position for text
+   text_y = data_[i] + 1.26  # Initial Y position for text
    text_y = adjust_text_position(data_text_positions, text_y)
    plt.text(3, text_y, dim_da.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9, fontweight='bold')
 
 # Measurement dimension text positioning
 measurement_text_positions = set()
 for i in range(len(dim_me)):
-   text_y = measurement[i] + 1.28  # Initial Y position for text
+   text_y = measurement[i] + 1.26  # Initial Y position for text
    text_y = adjust_text_position(measurement_text_positions, text_y)
    plt.text(4, text_y, dim_me.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9, fontweight='bold')
 
 # Reporting dimension text positioning
 reporting_text_positions = set()
 for i in range(len(dim_re)):
-   text_y = reporting[i] + 1.28  # Initial Y position for text
+   text_y = reporting[i] + 1.26  # Initial Y position for text
    text_y = adjust_text_position(reporting_text_positions, text_y)
    plt.text(5, text_y, dim_re.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9, fontweight='bold')
 
 # Technology dimension text positioning
 tech_text_positions = set()
 for i in range(len(dim_te)):
-   text_y = tech[i] + 1.28 # Initial Y position for text
+   text_y = tech[i] + 1.26 # Initial Y position for text
    text_y = adjust_text_position(tech_text_positions, text_y)
    plt.text(6, text_y, dim_te.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9, fontweight='bold')
 
