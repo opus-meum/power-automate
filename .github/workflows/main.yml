@@ -78,7 +78,7 @@ jobs:
               subject=f'Impact Management Capability Assessment Report - {company}',
               
               # Your original string with potential non-printable characters
-              html_content = """Dear {company}<p>Please find attached a copy of your
+              html_content = f'''Dear {company}<p>Please find attached a copy of your
               Impact Management Capability Assessment Report. This report is based on your completion 
               of the Impact Management Capability Assessment Survey. It is intended to give you a 
               ‘point-in-time’ view of where you are currently, and what key actions you can take 
@@ -94,14 +94,8 @@ jobs:
               process thus far has been valuable and helped to stretch your thinking on Impact Management, 
               its role within your organisation, and how maturing this capability in and across your 
               organisation can support more effective achievement of your impact goals and objectives.​</p>
-              <p>Kind regards,</p>
-              <br>​The Relativ Impact Team"""
+              <p>Kind regards,</p><br>​The Relativ Impact Team'''
               
-              # Remove non-printable characters
-              clean_html_content = re.sub(r'\u200B', '', html_content)
-              
-              # Now you can safely use clean_html_content in your code
-              print(clean_html_content)             
               )
           
           import base64
