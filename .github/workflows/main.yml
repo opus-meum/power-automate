@@ -77,32 +77,16 @@ jobs:
               html_content=f'<strong>Hi Gabs,<br>Please find attached the Capability Assessment Report for {company}.</strong>'
           )
           "
-      - name: Install LibreOffice
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libreoffice
-
-      - name: Convert PPTX to PDF
-        run: libreoffice --headless --convert-to pdf --outdir . "Capability Assessment Report.pptx"
-
-      - name: Upload PDF
-        uses: actions/upload-artifact@v2
-        with:
-          name: converted-pdf
-          path: Capability Assessment Report.pdf
-      
-      - name: send email with pdf
-        run: |
-          file_path = 'Capability Assessment Report.pdf'
+          file_path = 'Capability Assessment Report.pptx'
           with open(file_path, 'rb') as f:
-              data = f.read()
-              f.close()
+            data = f.read()
+            f.close()
           encoded_file = base64.b64encode(data).decode()
 
           attachment = Attachment()
           attachment.file_content = FileContent(encoded_file)
-          attachment.file_type = FileType('application/pdf')
-          attachment.file_name = FileName('Capability Assessment Report.pdf')
+          attachment.file_type = FileType('application/vnd.openxmlformats-officedocument.presentationml.presentation')
+          attachment.file_name = FileName('Capability Assessment Report.pptx')
           attachment.disposition = Disposition('attachment')
           message.add_attachment(attachment)
 
@@ -115,4 +99,3 @@ jobs:
           except Exception as e:
               print(str(e))
           
-  
