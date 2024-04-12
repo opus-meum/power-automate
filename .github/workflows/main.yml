@@ -98,6 +98,18 @@ jobs:
               
               )
           
+          file_path = 'Capability Assessment Report.pptx'
+          with open(file_path, 'rb') as f:
+            data = f.read()
+            f.close()
+          encoded_file = base64.b64encode(data).decode()
+
+          attachment = Attachment()
+          attachment.file_content = FileContent(encoded_file)
+          attachment.file_type = FileType('application/vnd.openxmlformats-officedocument.presentationml.presentation')
+          attachment.file_name = FileName('Capability Assessment Report.pptx')
+          attachment.disposition = Disposition('attachment')
+          message.add_attachment(attachment)
 
           
           try:
