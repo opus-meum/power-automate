@@ -456,40 +456,40 @@ plt.hlines(6, 6-0.4, 6+0.4,linewidth=45, color='darkgrey')
 
     
 for i in range(len(dim_st)):
-   plt.hlines(strategy[i]+1, 0-0.4, 0+0.4,linewidth=65, color=c_s)
+   plt.hlines(strategy[i]+1, 0-0.4, 0+0.4,linewidth=75, color=c_s)
 # plt.text(-0.01 * (i+1), strategy[i]+1.3-0.1*i, dim_st.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9,fontweight='bold')
 #     plt.text(-0.4,5-strategy[i],dim_st[i],fontsize=10,font='Avenir Next',color='whitesmoke')
 for i in range(len(dim_ta)):
-   plt.hlines(talent[i]+1, 1-0.4, 1+0.4,linewidth=65, color=c_ta)
+   plt.hlines(talent[i]+1, 1-0.4, 1+0.4,linewidth=75, color=c_ta)
    #plt.text(0.99+0 * (i+1), talent[i]+1.3-0.15*i, dim_ta.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9,fontweight='bold')
 
 #       plt.text(0.7+0.1 * (i+1), talent[i]+1, str(i+1), ha='center', va='bottom', color='whitesmoke', fontsize=15)
 #    plt.text(0.6,5-talent[i],dim_ta[i],fontsize=10,font='Avenir Next',color='whitesmoke')
 for i in range(len(dim_pr)):
-   plt.hlines(processes[i]+1, 2.0-0.4, 2.0+0.4,linewidth=65, color=c_p)
+   plt.hlines(processes[i]+1, 2.0-0.4, 2.0+0.4,linewidth=75, color=c_p)
 # plt.text(1.99+0 * (i+1), processes[i]+1.3-0.15*i, dim_pr.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9,fontweight='bold')
 
 #       plt.text(1.7+0.1 * (i+1), processes[i]+1, str(i+1), ha='center', va='bottom', color='whitesmoke', fontsize=15)
 #    plt.text(1.6,5-processes[i],dim_pr[i],fontsize=10,font='Avenir Next',color='whitesmoke')   
 for i in range(len(dim_da)):
-   plt.hlines(data_[i]+1, 3-0.4, 3+0.4,linewidth=65, color=c_d)
+   plt.hlines(data_[i]+1, 3-0.4, 3+0.4,linewidth=75, color=c_d)
 # plt.text(2.99+0 * (i+1), data_[i]+1.3-0.15*i, dim_da.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9,fontweight='bold')
 
 #      plt.text(2.7+0.1 * (i+1), data_[i]+1, str(i+1), ha='center', va='bottom', color='whitesmoke', fontsize=15)
 #    plt.text(2.6,5-data_[i],dim_da[i],fontsize=10,font='Avenir Next',color='whitesmoke')   
 for i in range(len(dim_me)):
-   plt.hlines(measurement[i]+1, 4-0.4, 4+0.4,linewidth=65, color=c_m)
+   plt.hlines(measurement[i]+1, 4-0.4, 4+0.4,linewidth=75, color=c_m)
 # plt.text(3.99, measurement[i]+1.3-0.15*i, dim_me.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9, fontweight='bold')
 #       plt.text(3.7+0.1 * (i+1), measurement[i]+1, str(i+1), ha='center', va='bottom', color='whitesmoke', fontsize=15)
 #    plt.text(3.6,5-measurement[i],dim_me[i],fontsize=10,font='Avenir Next',color='whitesmoke')   
 for i in range(len(dim_re)):
-   plt.hlines(reporting[i]+1, 5-0.4, 5+0.4,linewidth=65, color=c_r)
+   plt.hlines(reporting[i]+1, 5-0.4, 5+0.4,linewidth=75, color=c_r)
 # plt.text(4.99+0 * (i+1), reporting[i]+1.3-0.15*i, dim_re.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9,fontweight='bold')
 
 #       plt.text(4.7+0.1 * (i+1), reporting[i]+1, str(i+1), ha='center', va='bottom', color='whitesmoke', fontsize=15)
 #    plt.text(4.6,5-reporting[i],dim_re[i],fontsize=10,font='Avenir Next',color='whitesmoke')   
 for i in range(len(dim_te)):
-   plt.hlines(tech[i]+1, 6-0.4, 6+0.4,linewidth=65, color=c_te)
+   plt.hlines(tech[i]+1, 6-0.4, 6+0.4,linewidth=75, color=c_te)
 # plt.text(5.99+0 * (i+1), tech[i]+1.3-0.15*i, dim_te.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9, fontweight='bold')
 
 
