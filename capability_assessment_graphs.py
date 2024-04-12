@@ -478,11 +478,11 @@ for i in range(len(dim_da)):
 #      plt.text(2.7+0.1 * (i+1), data_[i]+1, str(i+1), ha='center', va='bottom', color='whitesmoke', fontsize=15)
 #    plt.text(2.6,5-data_[i],dim_da[i],fontsize=10,font='Avenir Next',color='whitesmoke')   
 for i in range(len(dim_st)):
-    if strategy[i] > 3:
+    if measurement[i] > 3:
         linewidth = 75
     else:
         linewidth = 65
-    plt.hlines(strategy[i]+1, 0-0.4, 0+0.4, linewidth=linewidth, color=c_s)
+    plt.hlines(measurement[i]+1, 4-0.4, 4+0.4, linewidth=linewidth, color=c_s)
 ##for i in range(len(dim_me)):
 ##   plt.hlines(measurement[i]+1, 4-0.4, 4+0.4,linewidth=75, color=c_m)
 # plt.text(3.99, measurement[i]+1.3-0.15*i, dim_me.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9, fontweight='bold')
@@ -511,14 +511,14 @@ def adjust_text_position(text_positions, current_position, direction=-1):
 # Strategy dimension text positioning
 strategy_text_positions = set()
 for i in range(len(dim_st)):
-   text_y = strategy[i] + 1.26  # Initial Y position for text
+   text_y = strategy[i] + 1.2  # Initial Y position for text
    text_y = adjust_text_position(strategy_text_positions, text_y)
    plt.text(0, text_y, dim_st.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9, fontweight='bold')
 
 # Talent dimension text positioning
 talent_text_positions = set()
 for i in range(len(dim_ta)):
-   text_y = talent[i] + 1.26  # Initial Y position for text
+   text_y = talent[i] + 1.3  # Initial Y position for text
    text_y = adjust_text_position(talent_text_positions, text_y)
    plt.text(1, text_y, dim_ta.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9, fontweight='bold')
 
