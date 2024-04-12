@@ -539,7 +539,11 @@ for i in range(len(dim_da)):
 # Measurement dimension text positioning
 measurement_text_positions = set()
 for i in range(len(dim_me)):
-   text_y = measurement[i] + 1.3  # Initial Y position for text
+   if measurement[i] > 3:
+      y_position = 1.4
+   else:
+      y_position = 1.3
+   text_y = measurement[i] + y_position  # Initial Y position for text
    text_y = adjust_text_position(measurement_text_positions, text_y)
    plt.text(4, text_y, dim_me.iloc[i], ha='center', va='top', color='whitesmoke', fontsize=9, fontweight='bold')
 
