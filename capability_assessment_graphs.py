@@ -960,7 +960,7 @@ if 1 < len(cleaned_words) < 8:
 if len(cleaned_words) > 7:
    tf_rec8.text = ', '.join(cleaned_words[:7]) +','
 if len(cleaned_words) == 1:
-   tf_rec8.text = cleaned_words +'.'
+   tf_rec8.text = cleaned_words[0] +'.'
 
 p_rec8 = tf_rec8.paragraphs[0]
 p_rec8.font.bold = False
