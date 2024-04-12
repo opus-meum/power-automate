@@ -74,8 +74,25 @@ jobs:
               from_email='ehlke.hepworth@relativ.co.za',
               to_emails=['ehlke.hepworth@relativ.co.za'], 
               subject=f'Impact Management Capability Assessment Report - {company}',
-              html_content=f'<strong>Hi Gabs,<br>Please find attached the Capability Assessment Report for {company}.</strong>'
-          )
+             
+              html_content=f'<strong>Dear {company},<br><p>Please find attached a copy of your
+              Impact Management Capability Assessment Report. This report is based on your completion 
+              of the Impact Management Capability Assessment Survey. It is intended to give you a 
+              ‘point-in-time’ view of where you are currently, and what key actions you can take 
+              to further progress on your journey towards maturity and optimising the value you can 
+              derive from Impact Management and its key dimensions of: Strategy; Talent; Processes; Data; 
+              Measurement; Reporting; and Technology.</p><br><p>Developing and maturing a new capability 
+              is a journey, and were are here to help! <strong> If you have any questions on the results 
+              of your Report or on how we can help support you to implement recommendations made in the 
+              report, please reach out to us by replying to this email.</strong> To understand how we have 
+              worked with organisations similar to yours, you can view our case studies here.</p><br><p>
+              Thank you for embarking on this journey of discovery and development with us. ​We trust the 
+              process thus far has been valuable and helped to stretch your thinking on Impact Management, 
+              its role within your organisation, and how maturing this capability in and across your 
+              organisation can support more effective achievement of your impact goals and objectives.​</p>
+              <br><p>Kind regards</p>,<br><p>​The Relativ Impact Team​</p>'
+              
+              )
           
           file_path = 'Capability Assessment Report.pptx'
           with open(file_path, 'rb') as f:
