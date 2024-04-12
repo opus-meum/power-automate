@@ -41,6 +41,7 @@ jobs:
         run: | 
           python test.py
           python capability_assessment_graphs.py
+          python convert.py
 
       - name: Configure git
         run: |
