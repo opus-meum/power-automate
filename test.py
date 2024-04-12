@@ -43,6 +43,8 @@ def remove_spaces_after_fullstop(text):
         return text  # Return as is if text is NaN
     return re.sub(r'\.\s{1,3}', '.', text)
 
+df.iloc[-1, 36] = remove_spaces_after_fullstop(df.iloc[-1, 73])
+df.iloc[-1, 37] = remove_spaces_after_fullstop(df.iloc[-1, 74])
 df.iloc[-1, 73] = remove_spaces_after_fullstop(df.iloc[-1, 73])
 df.iloc[-1, 74] = remove_spaces_after_fullstop(df.iloc[-1, 74])
 
