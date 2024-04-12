@@ -75,7 +75,7 @@ jobs:
               to_emails=['ehlke.hepworth@relativ.co.za'], 
               subject=f'Impact Management Capability Assessment Report - {company}',
              
-              html_content=f'Dear {company},<br><p>Please find attached a copy of your
+              html_content=f'''Dear {company},<br><p>Please find attached a copy of your
               Impact Management Capability Assessment Report. This report is based on your completion 
               of the Impact Management Capability Assessment Survey. It is intended to give you a 
               ‘point-in-time’ view of where you are currently, and what key actions you can take 
@@ -91,7 +91,7 @@ jobs:
               process thus far has been valuable and helped to stretch your thinking on Impact Management, 
               its role within your organisation, and how maturing this capability in and across your 
               organisation can support more effective achievement of your impact goals and objectives.​</p>
-              <br><p>Kind regards</p>,<br><p>​The Relativ Impact Team​</p>'
+              <br><p>Kind regards</p>,<br><p>​The Relativ Impact Team​</p>'''
               
               )
           
