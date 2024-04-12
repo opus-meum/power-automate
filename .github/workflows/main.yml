@@ -76,7 +76,7 @@ jobs:
               subject=f'Impact Management Capability Assessment Report - {company}',
               html_content=f'<strong>Hi Gabs,<br>Please find attached the Capability Assessment Report for {company}.</strong>'
           )
-          "
+          
           file_path = 'Capability Assessment Report.pptx'
           with open(file_path, 'rb') as f:
             data = f.read()
@@ -98,4 +98,6 @@ jobs:
               print(response.headers)
           except Exception as e:
               print(str(e))
+          "
+
           
