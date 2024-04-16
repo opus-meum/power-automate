@@ -44,7 +44,7 @@ jobs:
         run: | 
           python test.py
           python capability_assessment_graphs.py
-          python convert.py
+          unoconv -f pdf -o "Capability Assessment Report.pdf" "Capability Assessment Report.pptx"
 
           
       - name: Configure git
