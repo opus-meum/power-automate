@@ -49,8 +49,8 @@ jobs:
       
       - name: Convert
         run: | 
+          export UNO_PATH=/path/to/libreoffice/program
           unoconv -f pdf -o "Capability Assessment Report.pdf" "Capability Assessment Report.pptx"
-
           
       - name: Configure git
         run: |
