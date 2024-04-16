@@ -57,7 +57,7 @@ jobs:
 
       - name: Convert PPTX to PDF
         run: |
-          libreoffice --headless --convert-to pdf --outdir . *.pptx
+          libreoffice --headless --convert-to pdf --outdir . "Capability Assessment Report.pptx"
   
       - name: Upload PDF
         uses: actions/upload-artifact@v2
