@@ -1018,7 +1018,7 @@ p_date.font.name = 'Avenir Next'
 cleaned_words = [word.replace('\n', ' ') for word in related_words]  # Replace newline characters with spaces
 
 slide = prs.slides[7]
-txBox_rec8 = slide.shapes.add_textbox(Inches(1.6), Inches(1), Inches(2), Inches(0.5)) #(Inches(1.36), Inches(1.165)
+txBox_rec8 = slide.shapes.add_textbox(Inches(1), Inches(1.1), Inches(2), Inches(0.5)) #(Inches(1.36), Inches(1.165)
 tf_rec8 = txBox_rec8.text_frame
 if 1 < len(cleaned_words) < 8:
    tf_rec8.text = ', '.join(cleaned_words[:-1]) + ', and ' + cleaned_words[-1] + '.'
@@ -1029,7 +1029,7 @@ if len(cleaned_words) == 1:
 
 p_rec8 = tf_rec8.paragraphs[0]
 p_rec8.font.bold = False
-p_rec8.font.size = Pt(9) #10.5
+p_rec8.font.size = Pt(9.5) #10.5
 p_rec8.font.color.rgb = RGBColor(66, 83, 105)
 p_rec8.alignment = PP_ALIGN.LEFT
 p_rec8.font.name = 'Avenir Next'
@@ -1044,7 +1044,7 @@ if len(cleaned_words[7:]) > 1:
 
 p_rec82 = tf_rec82.paragraphs[0]
 p_rec82.font.bold = False
-p_rec82.font.size = Pt(9) #10.5
+p_rec82.font.size = Pt(9.5) #10.5
 p_rec82.font.color.rgb = RGBColor(66, 83, 105)
 p_rec82.alignment = PP_ALIGN.LEFT
 p_rec82.font.name = 'Avenir Next'
@@ -1054,7 +1054,7 @@ if len(cleaned_words[7:]) == 1:
     
 p_rec82 = tf_rec82.paragraphs[0]
 p_rec82.font.bold = False
-p_rec82.font.size = Pt(9) #10.5
+p_rec82.font.size = Pt(9.5) #10.5
 p_rec82.font.color.rgb = RGBColor(66, 83, 105)
 p_rec82.alignment = PP_ALIGN.LEFT
 p_rec82.font.name = 'Avenir Next'
