@@ -668,8 +668,8 @@ for dim_data, dim_name in zip(dimensions, dimension_names):
             related_words.append(dim_name.iloc[i])
 
 ##add test to hlines
-#plt.text(-0.2,6,'Future State',fontsize=11,font='Avenir Next',color='whitesmoke')
-#plt.text(0.8,6,'Future State',fontsize=11,font='Avenir Next',color='whitesmoke')
+plt.text(-0.2,6,'Future State',fontsize=11,font='Avenir Next',color='whitesmoke')
+plt.text(0.8,6,'Future State',fontsize=11,font='Avenir Next',color='whitesmoke')
 plt.text(1.8,6,'Future State',fontsize=11,font='Avenir Next',color='whitesmoke')
 plt.text(2.8,6,'Future State',fontsize=11,font='Avenir Next',color='whitesmoke')
 plt.text(3.8,6,'Future State',fontsize=11,font='Avenir Next',color='whitesmoke')
@@ -937,18 +937,18 @@ def add_formatted_textbox(slide, text, left, top, width, height):
 
 # Usage
 slide = prs.slides[8]
-add_formatted_textbox(slide, recommendations['Strategy'], -0.93, 1.7, 7, 1)
+add_formatted_textbox(slide, recommendations['Strategy'], 0, 1.7, 7, 1)
 add_formatted_textbox(slide, recommendations['Measurement'], 1.2, 2.2, 7, 1)
-add_formatted_textbox(slide, recommendations['Data'], 1.85, 2.7, 7, 1)
-add_formatted_textbox(slide, recommendations['Talent'], 1.65, 3.2, 7, 1)
-add_formatted_textbox(slide, recommendations['Processes'], 2.15, 3.7, 7, 1)
+add_formatted_textbox(slide, recommendations['Data'], 1.9, 2.7, 7, 1)
+add_formatted_textbox(slide, recommendations['Talent'], 1.7, 3.2, 7, 1)
+add_formatted_textbox(slide, recommendations['Processes'], 2.19, 3.7, 7, 1)
 add_formatted_textbox(slide, recommendations['Reporting'], 0.5, 4.2, 7, 1)
 add_formatted_textbox(slide, recommendations['Technology'], 1.3, 4.7, 7, 1)
 
 slide = prs.slides[13]
 add_formatted_textbox(slide, reco_st_1, 3, 1.3, 7, 1)
 add_formatted_textbox(slide, reco_st_2, 2.9, 2.2, 7, 1)
-add_formatted_textbox(slide, reco_st_3, 3, 2.9, 7, 1)
+add_formatted_textbox(slide, reco_st_3, 3.02, 2.9, 7, 1)
 slide = prs.slides[17]
 add_formatted_textbox(slide, reco_ta_1, 3, 1.2, 7, 1)
 add_formatted_textbox(slide, reco_ta_2, 2.9, 3.1, 7, 1)
@@ -967,7 +967,7 @@ add_formatted_textbox(slide, reco_me_3, 3.1, 1.3, 7, 1)
 add_formatted_textbox(slide, reco_me_4, 3, 2.75, 7, 1)
 slide = prs.slides[34]
 add_formatted_textbox(slide, reco_re_1, 3, 1.3, 7, 1)
-add_formatted_textbox(slide, reco_re_2, 2.82, 2.1, 7, 1)
+add_formatted_textbox(slide, reco_re_2, 2.8, 2.1, 7, 1)
 slide = prs.slides[38]
 add_formatted_textbox(slide, reco_te_1, 2.9, 1.3, 7, 1)
 
@@ -1035,7 +1035,7 @@ p_rec8.alignment = PP_ALIGN.LEFT
 p_rec8.font.name = 'Avenir Next'
 
 slide = prs.slides[7]
-txBox_rec82 = slide.shapes.add_textbox(Inches(0.6), Inches(1.35), Inches(2), Inches(0.5))
+txBox_rec82 = slide.shapes.add_textbox(Inches(2.5), Inches(1.2), Inches(2), Inches(0.5))
 tf_rec82 = txBox_rec82.text_frame
 
 if len(cleaned_words[7:]) > 1:
@@ -1054,7 +1054,7 @@ if len(cleaned_words[7:]) == 1:
     
 p_rec82 = tf_rec82.paragraphs[0]
 p_rec82.font.bold = False
-p_rec82.font.size = Pt(10.5)
+p_rec82.font.size = Pt(9) #10.5
 p_rec82.font.color.rgb = RGBColor(66, 83, 105)
 p_rec82.alignment = PP_ALIGN.LEFT
 p_rec82.font.name = 'Avenir Next'
