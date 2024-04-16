@@ -44,10 +44,18 @@ jobs:
           python test.py
           python capability_assessment_graphs.py
       
-      - name: Convert PowerPoint to PDF
+      - name: Convert Document
         run: |
-          libreoffice --headless --convert-to pdf Capability Assessment Report.pptx --outdir .
+          # Example command using a tool with high-fidelity conversion capabilities
+          # This is a placeholder and should be replaced with actual conversion command
+          convert-tool --input Capability Assessment Report.pptx --output Capability Assessment Report.pdf --high-fidelity
 
+      - name: Verify Conversion
+        run: |
+          # Placeholder for verification step
+          echo "Verify conversion fidelity here"
+
+          
       - name: Configure git
         run: |
           git config --global user.name 'GitHub Actions'
