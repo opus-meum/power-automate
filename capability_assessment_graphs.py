@@ -930,7 +930,7 @@ def add_formatted_textbox(slide, text, left, top, width, height):
     tf.text = text
     for paragraph in tf.paragraphs:
         paragraph.font.bold = False
-        paragraph.font.size = Pt(9) #10
+        paragraph.font.size = Pt(9.5) #10
         paragraph.font.color.rgb = RGBColor(66, 83, 105)
         paragraph.alignment = PP_ALIGN.LEFT
         paragraph.font.name = 'Avenir Next'
