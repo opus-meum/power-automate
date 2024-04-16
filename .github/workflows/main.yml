@@ -38,12 +38,17 @@ jobs:
           python -m pip install sendgrid
           python -m pip install openpyxl
           python -m pip install comtypes
+          pip install unoconv
+          pip install --upgrade unoconv
 
         
       - name: Run script
         run: | 
           python test.py
           python capability_assessment_graphs.py
+      
+      - name: Convert
+        run: | 
           unoconv -f pdf -o "Capability Assessment Report.pdf" "Capability Assessment Report.pptx"
 
           
