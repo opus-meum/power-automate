@@ -38,8 +38,6 @@ jobs:
           python -m pip install sendgrid
           python -m pip install openpyxl
           python -m pip install comtypes
-          python -m pip install pypiwin32
-
 
         
       - name: Run script
