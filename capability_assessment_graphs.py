@@ -930,18 +930,18 @@ def add_formatted_textbox(slide, text, left, top, width, height):
     tf.text = text
     for paragraph in tf.paragraphs:
         paragraph.font.bold = False
-        paragraph.font.size = Pt(10)
+        paragraph.font.size = Pt(9) #10
         paragraph.font.color.rgb = RGBColor(66, 83, 105)
         paragraph.alignment = PP_ALIGN.LEFT
         paragraph.font.name = 'Avenir Next'
 
 # Usage
 slide = prs.slides[8]
-add_formatted_textbox(slide, recommendations['Strategy'], 0, 1.7, 7, 1)
+add_formatted_textbox(slide, recommendations['Strategy'], -0.97, 1.7, 7, 1)
 add_formatted_textbox(slide, recommendations['Measurement'], 1.2, 2.2, 7, 1)
-add_formatted_textbox(slide, recommendations['Data'], 1.9, 2.7, 7, 1)
-add_formatted_textbox(slide, recommendations['Talent'], 1.7, 3.2, 7, 1)
-add_formatted_textbox(slide, recommendations['Processes'], 2.19, 3.7, 7, 1)
+add_formatted_textbox(slide, recommendations['Data'], 1.98, 2.7, 7, 1)
+add_formatted_textbox(slide, recommendations['Talent'], 1.74, 3.2, 7, 1)
+add_formatted_textbox(slide, recommendations['Processes'], 2.23, 3.7, 7, 1)
 add_formatted_textbox(slide, recommendations['Reporting'], 0.5, 4.2, 7, 1)
 add_formatted_textbox(slide, recommendations['Technology'], 1.3, 4.7, 7, 1)
 
@@ -1018,7 +1018,7 @@ p_date.font.name = 'Avenir Next'
 cleaned_words = [word.replace('\n', ' ') for word in related_words]  # Replace newline characters with spaces
 
 slide = prs.slides[7]
-txBox_rec8 = slide.shapes.add_textbox(Inches(1.36), Inches(1.165), Inches(2), Inches(0.5))
+txBox_rec8 = slide.shapes.add_textbox(Inches(1.6), Inches(1), Inches(2), Inches(0.5)) #(Inches(1.36), Inches(1.165)
 tf_rec8 = txBox_rec8.text_frame
 if 1 < len(cleaned_words) < 8:
    tf_rec8.text = ', '.join(cleaned_words[:-1]) + ', and ' + cleaned_words[-1] + '.'
@@ -1029,13 +1029,13 @@ if len(cleaned_words) == 1:
 
 p_rec8 = tf_rec8.paragraphs[0]
 p_rec8.font.bold = False
-p_rec8.font.size = Pt(10.5)
+p_rec8.font.size = Pt(9) #10.5
 p_rec8.font.color.rgb = RGBColor(66, 83, 105)
 p_rec8.alignment = PP_ALIGN.LEFT
 p_rec8.font.name = 'Avenir Next'
 
 slide = prs.slides[7]
-txBox_rec82 = slide.shapes.add_textbox(Inches(2.5), Inches(1.2), Inches(2), Inches(0.5))
+txBox_rec82 = slide.shapes.add_textbox(Inches(2.5), Inches(1.2), Inches(2), Inches(0.5)) #0.6, 1.35
 tf_rec82 = txBox_rec82.text_frame
 
 if len(cleaned_words[7:]) > 1:
@@ -1044,7 +1044,7 @@ if len(cleaned_words[7:]) > 1:
 
 p_rec82 = tf_rec82.paragraphs[0]
 p_rec82.font.bold = False
-p_rec82.font.size = Pt(10.5)
+p_rec82.font.size = Pt(9) #10.5
 p_rec82.font.color.rgb = RGBColor(66, 83, 105)
 p_rec82.alignment = PP_ALIGN.LEFT
 p_rec82.font.name = 'Avenir Next'
