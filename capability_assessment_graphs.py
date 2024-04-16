@@ -937,39 +937,39 @@ def add_formatted_textbox(slide, text, left, top, width, height):
 
 # Usage
 slide = prs.slides[8]
-add_formatted_textbox(slide, recommendations['Strategy'], .8, 1.7, 7, 1)
-add_formatted_textbox(slide, recommendations['Measurement'], .8, 2.2, 7, 1)
-add_formatted_textbox(slide, recommendations['Data'], .8, 2.7, 7, 1)
-add_formatted_textbox(slide, recommendations['Talent'], .8, 3.2, 7, 1)
-add_formatted_textbox(slide, recommendations['Processes'], .8, 3.7, 7, 1)
-add_formatted_textbox(slide, recommendations['Reporting'], .8, 4.2, 7, 1)
-add_formatted_textbox(slide, recommendations['Technology'], .8, 4.7, 7, 1)
+add_formatted_textbox(slide, recommendations['Strategy'], .1, 1.7, 7, 1)
+add_formatted_textbox(slide, recommendations['Measurement'], 1.2, 2.2, 7, 1)
+add_formatted_textbox(slide, recommendations['Data'], 1.5, 2.7, 7, 1)
+add_formatted_textbox(slide, recommendations['Talent'], 1.5, 3.2, 7, 1)
+add_formatted_textbox(slide, recommendations['Processes'], 2, 3.7, 7, 1)
+add_formatted_textbox(slide, recommendations['Reporting'], 1.2, 4.2, 7, 1)
+add_formatted_textbox(slide, recommendations['Technology'], 1.3, 4.7, 7, 1)
 
 slide = prs.slides[13]
-add_formatted_textbox(slide, reco_st_1, 2, 1.3, 7, 1)
-add_formatted_textbox(slide, reco_st_2, 2, 2.2, 7, 1)
-add_formatted_textbox(slide, reco_st_3, 2, 2.9, 7, 1)
+add_formatted_textbox(slide, reco_st_1, 2.5, 1.3, 7, 1)
+add_formatted_textbox(slide, reco_st_2, 2.5, 2.2, 7, 1)
+add_formatted_textbox(slide, reco_st_3, 2.5, 2.9, 7, 1)
 slide = prs.slides[17]
-add_formatted_textbox(slide, reco_ta_1, 2, 1.2, 7, 1)
-add_formatted_textbox(slide, reco_ta_2, 2, 3.1, 7, 1)
-add_formatted_textbox(slide, reco_ta_3, 2, 4.05, 7, 1)
+add_formatted_textbox(slide, reco_ta_1, 2.5, 1.2, 7, 1)
+add_formatted_textbox(slide, reco_ta_2, 2.5, 3.1, 7, 1)
+add_formatted_textbox(slide, reco_ta_3, 2.5, 4.05, 7, 1)
 slide = prs.slides[21]
-add_formatted_textbox(slide, reco_pr_1, 2, 1.3, 7, 1)
+add_formatted_textbox(slide, reco_pr_1, 3, 1.3, 7, 1)
 slide = prs.slides[25]
-add_formatted_textbox(slide, reco_da_1, 2, 1.3, 7, 1)
-add_formatted_textbox(slide, reco_da_2, 2, 2.8, 7, 1)
-add_formatted_textbox(slide, reco_da_3, 2, 4.3, 7, 1)
+add_formatted_textbox(slide, reco_da_1, 3, 1.3, 7, 1)
+add_formatted_textbox(slide, reco_da_2, 3, 2.8, 7, 1)
+add_formatted_textbox(slide, reco_da_3, 3, 4.3, 7, 1)
 slide = prs.slides[29]
-add_formatted_textbox(slide, reco_me_1, 2, 1.3, 7, 1)
-add_formatted_textbox(slide, reco_me_2, 2, 2.9, 7, 1)
+add_formatted_textbox(slide, reco_me_1, 2.2, 1.3, 7, 1)
+add_formatted_textbox(slide, reco_me_2, 2.2, 2.9, 7, 1)
 slide = prs.slides[30]
-add_formatted_textbox(slide, reco_me_3, 2, 1.3, 7, 1)
-add_formatted_textbox(slide, reco_me_4, 2, 2.75, 7, 1)
+add_formatted_textbox(slide, reco_me_3, 2.8, 1.3, 7, 1)
+add_formatted_textbox(slide, reco_me_4, 2.8, 2.75, 7, 1)
 slide = prs.slides[34]
-add_formatted_textbox(slide, reco_re_1, 2, 1.3, 7, 1)
-add_formatted_textbox(slide, reco_re_2, 2, 2.1, 7, 1)
+add_formatted_textbox(slide, reco_re_1, 3.5, 1.3, 7, 1)
+add_formatted_textbox(slide, reco_re_2, 3.5, 2.1, 7, 1)
 slide = prs.slides[38]
-add_formatted_textbox(slide, reco_te_1, 2, 1.3, 7, 1)
+add_formatted_textbox(slide, reco_te_1, 3.5, 1.3, 7, 1)
 
 ##------------------- recommendations automated <<--------------------##
 
