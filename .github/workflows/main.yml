@@ -43,7 +43,13 @@ jobs:
         run: | 
           python test.py
           python capability_assessment_graphs.py
-          python convert.py
+      
+      - name: Install LibreOffice
+        run: |
+          sudo apt-get install -y libreoffice
+      - name: Convert PowerPoint to PDF
+        run: |
+          libreoffice --headless --convert-to pdf Capability Assessment Report.pptx --outdir 
 
       - name: Configure git
         run: |
