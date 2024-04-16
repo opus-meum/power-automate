@@ -48,11 +48,22 @@ jobs:
         run: | 
           python test.py
           python capability_assessment_graphs.py
-      
-      - name: Convert
-        run: | 
-          export UNO_PATH=/path/to/libreoffice/program
-          unoconv -f pdf -o "Capability Assessment Report.pdf" "Capability Assessment Report.pptx"
+
+
+      - name: Install LibreOffice
+        run: |
+          apt-get update
+          apt-get install -y libreoffice
+
+      - name: Convert PPTX to PDF
+        run: |
+          libreoffice --headless --convert-to pdf --outdir . *.pptx
+  
+      - name: Upload PDF
+        uses: actions/upload-artifact@v2
+        with:
+          name: converted-pdf
+          path: ./*.pdf
           
       - name: Configure git
         run: |
