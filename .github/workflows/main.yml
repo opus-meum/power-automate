@@ -37,23 +37,15 @@ jobs:
           python -m pip install sendgrid
           python -m pip install openpyxl
           python -m pip install comtypes
+          python -m pip install pypiwin32
+
 
         
       - name: Run script
         run: | 
           python test.py
           python capability_assessment_graphs.py
-      
-      - name: Convert Document
-        run: |
-          # Example command using a tool with high-fidelity conversion capabilities
-          # This is a placeholder and should be replaced with actual conversion command
-          convert-tool --input Capability Assessment Report.pptx --output Capability Assessment Report.pdf --high-fidelity
-
-      - name: Verify Conversion
-        run: |
-          # Placeholder for verification step
-          echo "Verify conversion fidelity here"
+          python convert.py
 
           
       - name: Configure git
