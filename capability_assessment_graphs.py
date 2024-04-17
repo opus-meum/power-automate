@@ -937,7 +937,7 @@ def add_formatted_textbox(slide, text, left, top, width, height):
 
 # Usage
 slide = prs.slides[8]
-add_formatted_textbox(slide, recommendations['Strategy'], -0.98, 1.7, 7, 1)
+add_formatted_textbox(slide, recommendations['Strategy'], -0.2, 1.7, 7, 1)
 add_formatted_textbox(slide, recommendations['Measurement'], 1.13, 2.2, 7, 1)
 add_formatted_textbox(slide, recommendations['Data'], 1.995, 2.7, 7, 1)
 add_formatted_textbox(slide, recommendations['Talent'], 1.74, 3.2, 7, 1)
@@ -1035,7 +1035,7 @@ p_rec8.alignment = PP_ALIGN.LEFT
 p_rec8.font.name = 'Avenir Next'
 
 slide = prs.slides[7]
-txBox_rec82 = slide.shapes.add_textbox(Inches(7), Inches(1.1), Inches(2), Inches(0.5)) #0.6, 1.35
+txBox_rec82 = slide.shapes.add_textbox(Inches(3), Inches(1.2), Inches(2), Inches(0.5)) #0.6, 1.35
 tf_rec82 = txBox_rec82.text_frame
 
 if len(cleaned_words[5:]) > 1:
@@ -1049,7 +1049,7 @@ p_rec82.font.color.rgb = RGBColor(66, 83, 105)
 p_rec82.alignment = PP_ALIGN.LEFT
 p_rec82.font.name = 'Avenir Next'
 
-if len(cleaned_words[7:]) == 1:
+if len(cleaned_words[5:]) == 1:
     tf_rec82.text = 'and ' + cleaned_words[-1] +'.'
     
 p_rec82 = tf_rec82.paragraphs[0]
