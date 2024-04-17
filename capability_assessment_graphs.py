@@ -932,7 +932,7 @@ def add_formatted_textbox(slide, text, left, top, width, height):
         paragraph.font.bold = False
         paragraph.font.size = Pt(9.5) #10
         paragraph.font.color.rgb = RGBColor(66, 83, 105)
-        paragraph.alignment = PP_ALIGN.LEFT
+        paragraph.alignment = PP_ALIGN.RIGHT
         paragraph.font.name = 'Avenir Next'
 
 # Usage
@@ -974,7 +974,7 @@ add_formatted_textbox(slide, reco_te_1, 2.9, 1.3, 7, 1)
 ##------------------- recommendations automated <<--------------------##
 
 slide = prs.slides[0]
-txBox = slide.shapes.add_textbox(Inches(5.95), Inches(0.5), Inches(2), Inches(0.5)) # Inches(8.95),
+txBox = slide.shapes.add_textbox(Inches(9), Inches(0.5), Inches(2), Inches(0.5)) # Inches(8.95),
 tf = txBox.text_frame
 tf.text = str(company)
 tf.text = str(company).upper()
@@ -983,7 +983,7 @@ p = tf.paragraphs[0]
 p.font.bold = False
 p.font.size = Pt(32) #32
 p.font.color.rgb = RGBColor(66, 83, 105)
-p.alignment = PP_ALIGN.LEFT
+p.alignment = PP_ALIGN.RIGHT
 p.font.name = 'Avenir Next'
 
 # Add Relativ to the slide
