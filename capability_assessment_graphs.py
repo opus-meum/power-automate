@@ -1035,7 +1035,7 @@ p_rec8.alignment = PP_ALIGN.LEFT
 p_rec8.font.name = 'Avenir Next'
 
 slide = prs.slides[7]
-txBox_rec82 = slide.shapes.add_textbox(Inches(1), Inches(1.2), Inches(2), Inches(0.5)) #0.6, 1.35
+txBox_rec82 = slide.shapes.add_textbox(Inches(5), Inches(1.2), Inches(2), Inches(0.5)) #0.6, 1.35
 tf_rec82 = txBox_rec82.text_frame
 
 if len(cleaned_words[5:]) > 1:
