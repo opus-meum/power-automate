@@ -914,7 +914,7 @@ reco_te_1 = reco_['Technology'][values[0]-1]
 ##------------------- recommendations automated <<--------------------##
 
    # Load the presentation
-prs = Presentation('Capability Assessment Report Template.pptx')  
+prs = Presentation('Capability Assessment Report Template-pdf.pptx')  
 #company='Ehlke-Hepworth'
 date_ = 'April 2024'
 relativ = 'Relativ Impact'
