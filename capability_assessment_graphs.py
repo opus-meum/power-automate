@@ -937,13 +937,13 @@ def add_formatted_textbox(slide, text, left, top, width, height):
 
 # Usage
 slide = prs.slides[8]
-add_formatted_textbox(slide, recommendations['Strategy'], -0.97, 1.7, 7, 1)
-add_formatted_textbox(slide, recommendations['Measurement'], 1.2, 2.2, 7, 1)
+add_formatted_textbox(slide, recommendations['Strategy'], 0.5, 1.7, 7, 1)
+add_formatted_textbox(slide, recommendations['Measurement'], 1.18, 2.2, 7, 1)
 add_formatted_textbox(slide, recommendations['Data'], 1.98, 2.7, 7, 1)
 add_formatted_textbox(slide, recommendations['Talent'], 1.74, 3.2, 7, 1)
-add_formatted_textbox(slide, recommendations['Processes'], 2.23, 3.7, 7, 1)
-add_formatted_textbox(slide, recommendations['Reporting'], 0.5, 4.2, 7, 1)
-add_formatted_textbox(slide, recommendations['Technology'], 1.3, 4.7, 7, 1)
+add_formatted_textbox(slide, recommendations['Processes'], 2.225, 3.7, 7, 1)
+add_formatted_textbox(slide, recommendations['Reporting'], 0.47, 4.2, 7, 1)
+add_formatted_textbox(slide, recommendations['Technology'], 1.25, 4.7, 7, 1)
 
 slide = prs.slides[13]
 add_formatted_textbox(slide, reco_st_1, 3, 1.3, 7, 1)
@@ -1018,7 +1018,7 @@ p_date.font.name = 'Avenir Next'
 cleaned_words = [word.replace('\n', ' ') for word in related_words]  # Replace newline characters with spaces
 
 slide = prs.slides[7]
-txBox_rec8 = slide.shapes.add_textbox(Inches(1), Inches(1.1), Inches(2), Inches(0.5)) #(Inches(1.36), Inches(1.165)
+txBox_rec8 = slide.shapes.add_textbox(Inches(1.5), Inches(1.1), Inches(2), Inches(0.5)) #(Inches(1.36), Inches(1.165)
 tf_rec8 = txBox_rec8.text_frame
 if 1 < len(cleaned_words) < 8:
    tf_rec8.text = ', '.join(cleaned_words[:-1]) + ', and ' + cleaned_words[-1] + '.'
