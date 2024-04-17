@@ -937,8 +937,8 @@ def add_formatted_textbox(slide, text, left, top, width, height):
 
 # Usage
 slide = prs.slides[8]
-add_formatted_textbox(slide, recommendations['Strategy'], -0.7, 1.7, 7, 1)
-add_formatted_textbox(slide, recommendations['Measurement'], 1.1, 2.2, 7, 1)
+add_formatted_textbox(slide, recommendations['Strategy'], -0.6, 1.7, 7, 1)
+add_formatted_textbox(slide, recommendations['Measurement'], 1.08, 2.2, 7, 1)
 add_formatted_textbox(slide, recommendations['Data'], 1.995, 2.7, 7, 1)
 add_formatted_textbox(slide, recommendations['Talent'], 1.74, 3.2, 7, 1)
 add_formatted_textbox(slide, recommendations['Processes'], 2.21, 3.7, 7, 1)
@@ -1018,7 +1018,7 @@ p_date.font.name = 'Avenir Next'
 cleaned_words = [word.replace('\n', ' ') for word in related_words]  # Replace newline characters with spaces
 
 slide = prs.slides[7]
-txBox_rec8 = slide.shapes.add_textbox(Inches(6.25), Inches(1.1), Inches(2), Inches(0.5)) #(Inches(1.36), Inches(1.165)
+txBox_rec8 = slide.shapes.add_textbox(Inches(6.25), Inches(1.12), Inches(2), Inches(0.5)) #(Inches(1.36), Inches(1.165)
 tf_rec8 = txBox_rec8.text_frame
 if 1 < len(cleaned_words) < 6:
    tf_rec8.text = ', '.join(cleaned_words[:-1]) + ', and ' + cleaned_words[-1] + '.'
@@ -1035,7 +1035,7 @@ p_rec8.alignment = PP_ALIGN.LEFT
 p_rec8.font.name = 'Avenir Next'
 
 slide = prs.slides[7]
-txBox_rec82 = slide.shapes.add_textbox(Inches(2), Inches(1.25), Inches(2), Inches(0.5)) #0.6, 1.35
+txBox_rec82 = slide.shapes.add_textbox(Inches(1), Inches(1.32), Inches(2), Inches(0.5)) #0.6, 1.35
 tf_rec82 = txBox_rec82.text_frame
 
 if len(cleaned_words[5:]) > 1:
