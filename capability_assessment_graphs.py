@@ -932,18 +932,18 @@ def add_formatted_textbox(slide, text, left, top, width, height):
         paragraph.font.bold = False
         paragraph.font.size = Pt(9.5) #10
         paragraph.font.color.rgb = RGBColor(66, 83, 105)
-        paragraph.alignment = PP_ALIGN.RIGHT
+        paragraph.alignment = PP_ALIGN.LEFT
         paragraph.font.name = 'Avenir Next'
 
 # Usage
 slide = prs.slides[8]
-add_formatted_textbox(slide, recommendations['Strategy'], 0.01, 1.7, 7, 1)
+add_formatted_textbox(slide, recommendations['Strategy'], 0, 1.7, 7, 1)
 add_formatted_textbox(slide, recommendations['Measurement'], 1.13, 2.2, 7, 1)
 add_formatted_textbox(slide, recommendations['Data'], 1.995, 2.7, 7, 1)
 add_formatted_textbox(slide, recommendations['Talent'], 1.74, 3.2, 7, 1)
 add_formatted_textbox(slide, recommendations['Processes'], 2.21, 3.7, 7, 1)
-add_formatted_textbox(slide, recommendations['Reporting'], 0.4, 4.2, 7, 1)
-add_formatted_textbox(slide, recommendations['Technology'], 1.15, 4.7, 7, 1)
+add_formatted_textbox(slide, recommendations['Reporting'], 0.38, 4.2, 7, 1)
+add_formatted_textbox(slide, recommendations['Technology'], 1.13, 4.7, 7, 1)
 
 slide = prs.slides[13]
 add_formatted_textbox(slide, reco_st_1, 3, 1.3, 7, 1)
