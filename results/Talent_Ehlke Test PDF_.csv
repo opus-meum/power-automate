@@ -1,0 +1,5 @@
+Dimension,Nascent,Emerging,Expanding,Optimising,Mature,level,max,max_column,idx
+Equipping,0,0,0,0,1,5.0,5.0,Mature,1
+Impact Performance,0,1,3,0,0,2.5,2.0,Emerging,2
+Team Composition,0,1,0,1,1,3.6666666666666665,4.0,Optimising,3
+Total,0,2,3,1,2,3.6666666666666665,4.0,Optimising,4
