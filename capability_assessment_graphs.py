@@ -943,13 +943,13 @@ def add_formatted_textbox1(slide, text, left, top, width, height):
 
 # Usage
 slide = prs.slides[8]
-add_formatted_textbox1(slide, recommendations['Strategy'], 1, 1.7, 7, 1)
-add_formatted_textbox1(slide, recommendations['Measurement'], 1, 2.2, 7, 1)
-add_formatted_textbox1(slide, recommendations['Data'], 1, 2.7, 7, 1)
-add_formatted_textbox1(slide, recommendations['Talent'], 1, 3.2, 7, 1)
-add_formatted_textbox1(slide, recommendations['Processes'], 1, 3.7, 7, 1)
-add_formatted_textbox1(slide, recommendations['Reporting'], 1, 4.2, 7, 1)
-add_formatted_textbox1(slide, recommendations['Technology'], 1, 4.7, 7, 1)
+add_formatted_textbox1(slide, recommendations['Strategy'], 2, 1.7, 7, 1)
+add_formatted_textbox1(slide, recommendations['Measurement'], 2, 2.2, 7, 1)
+add_formatted_textbox1(slide, recommendations['Data'], 2, 2.7, 7, 1)
+add_formatted_textbox1(slide, recommendations['Talent'], 2, 3.2, 7, 1)
+add_formatted_textbox1(slide, recommendations['Processes'], 2, 3.7, 7, 1)
+add_formatted_textbox1(slide, recommendations['Reporting'], 2, 4.2, 7, 1)
+add_formatted_textbox1(slide, recommendations['Technology'], 2, 4.7, 7, 1)
 
 def add_formatted_textbox(slide, text, left, top, width, height):
     txBox = slide.shapes.add_textbox(Inches(left), Inches(top), Inches(width), Inches(height))
