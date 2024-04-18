@@ -924,6 +924,33 @@ from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN
 
 ##------------------->> recommendations automated --------------------##
+def add_formatted_textbox1(slide, text, left, top, width, height):
+    txBox = slide.shapes.add_textbox(Inches(left), Inches(top), Inches(width), Inches(height))
+    tf = txBox.text_frame
+    tf.text = text
+    tf.margin_top = Inches(0)
+    tf.margin_bottom = Inches(0)
+    tf.margin_left = Inches(0)
+    tf.margin_right = Inches(0)
+    tf.auto_size = None
+          
+    for paragraph in tf.paragraphs:
+        paragraph.font.bold = False
+        paragraph.font.size = Pt(9.5) #10
+        paragraph.font.color.rgb = RGBColor(66, 83, 105)
+        paragraph.alignment = PP_ALIGN.LEFT
+        paragraph.font.name = 'Avenir Next'
+
+# Usage
+slide = prs.slides[8]
+add_formatted_textbox1(slide, recommendations['Strategy'], 1, 1.7, 7, 1)
+add_formatted_textbox1(slide, recommendations['Measurement'], 1, 2.2, 7, 1)
+add_formatted_textbox1(slide, recommendations['Data'], 1, 2.7, 7, 1)
+add_formatted_textbox1(slide, recommendations['Talent'], 1, 3.2, 7, 1)
+add_formatted_textbox1(slide, recommendations['Processes'], 1, 3.7, 7, 1)
+add_formatted_textbox1(slide, recommendations['Reporting'], 1, 4.2, 7, 1)
+add_formatted_textbox1(slide, recommendations['Technology'], 1, 4.7, 7, 1)
+
 def add_formatted_textbox(slide, text, left, top, width, height):
     txBox = slide.shapes.add_textbox(Inches(left), Inches(top), Inches(width), Inches(height))
     tf = txBox.text_frame
@@ -934,17 +961,7 @@ def add_formatted_textbox(slide, text, left, top, width, height):
         paragraph.font.color.rgb = RGBColor(66, 83, 105)
         paragraph.alignment = PP_ALIGN.LEFT
         paragraph.font.name = 'Avenir Next'
-
-# Usage
-slide = prs.slides[8]
-add_formatted_textbox(slide, recommendations['Strategy'], -0.52, 1.7, 7, 1)
-add_formatted_textbox(slide, recommendations['Measurement'], 1.08, 2.2, 7, 1)
-add_formatted_textbox(slide, recommendations['Data'], 1.995, 2.7, 7, 1)
-add_formatted_textbox(slide, recommendations['Talent'], 1.74, 3.2, 7, 1)
-add_formatted_textbox(slide, recommendations['Processes'], 2.21, 3.7, 7, 1)
-add_formatted_textbox(slide, recommendations['Reporting'], 0.38, 4.2, 7, 1)
-add_formatted_textbox(slide, recommendations['Technology'], 1.13, 4.7, 7, 1)
-
+              
 slide = prs.slides[13]
 add_formatted_textbox(slide, reco_st_1, 3, 1.3, 7, 1)
 add_formatted_textbox(slide, reco_st_2, 2.9, 2.2, 7, 1)
@@ -974,7 +991,7 @@ add_formatted_textbox(slide, reco_te_1, 2.9, 1.3, 7, 1)
 ##------------------- recommendations automated <<--------------------##
 
 slide = prs.slides[0]
-txBox = slide.shapes.add_textbox(Inches(6), Inches(0.5), Inches(4), Inches(0.5)) # Inches(8.95),
+txBox = slide.shapes.add_textbox(Inches(7.2), Inches(0.5), Inches(4), Inches(0.5)) # Inches(8.95),
 tf = txBox.text_frame
 tf.text = str(company)
 tf.text = str(company).upper()
@@ -1024,7 +1041,7 @@ p_date.font.name = 'Avenir Next'
 cleaned_words = [word.replace('\n', ' ') for word in related_words]  # Replace newline characters with spaces
 
 slide = prs.slides[7]
-txBox_rec8 = slide.shapes.add_textbox(Inches(4.4), Inches(1.13), Inches(7), Inches(0.5)) #(Inches(1.36), Inches(1.165)
+txBox_rec8 = slide.shapes.add_textbox(Inches(4.4), Inches(1.22), Inches(7), Inches(0.5)) #(Inches(1.36), Inches(1.165)
 tf_rec8 = txBox_rec8.text_frame
 if 1 < len(cleaned_words) < 6:
    tf_rec8.text = ', '.join(cleaned_words[:-1]) + ', and ' + cleaned_words[-1] + '.'
