@@ -943,13 +943,13 @@ def add_formatted_textbox1(slide, text, left, top, width, height):
 
 # Usage
 slide = prs.slides[8]
-add_formatted_textbox1(slide, recommendations['Strategy'], 2, 1.7, 7, 1)
-add_formatted_textbox1(slide, recommendations['Measurement'], 2, 2.2, 7, 1)
-add_formatted_textbox1(slide, recommendations['Data'], 2, 2.7, 7, 1)
-add_formatted_textbox1(slide, recommendations['Talent'], 2, 3.2, 7, 1)
-add_formatted_textbox1(slide, recommendations['Processes'], 2, 3.7, 7, 1)
-add_formatted_textbox1(slide, recommendations['Reporting'], 2, 4.2, 7, 1)
-add_formatted_textbox1(slide, recommendations['Technology'], 2, 4.7, 7, 1)
+add_formatted_textbox1(slide, recommendations['Strategy'], 1.3, 1.7, 7, 1)
+add_formatted_textbox1(slide, recommendations['Measurement'], 1.3, 2.2, 7, 1)
+add_formatted_textbox1(slide, recommendations['Data'], 1.3, 2.7, 7, 1)
+add_formatted_textbox1(slide, recommendations['Talent'], 1.3, 3.2, 7, 1)
+add_formatted_textbox1(slide, recommendations['Processes'], 1.3, 3.7, 7, 1)
+add_formatted_textbox1(slide, recommendations['Reporting'], 1.3, 4.2, 7, 1)
+add_formatted_textbox1(slide, recommendations['Technology'], 1.3, 4.7, 7, 1)
 
 def add_formatted_textbox(slide, text, left, top, width, height):
     txBox = slide.shapes.add_textbox(Inches(left), Inches(top), Inches(width), Inches(height))
@@ -991,7 +991,7 @@ add_formatted_textbox(slide, reco_te_1, 2.9, 1.3, 7, 1)
 ##------------------- recommendations automated <<--------------------##
 
 slide = prs.slides[0]
-txBox = slide.shapes.add_textbox(Inches(7.2), Inches(0.5), Inches(4), Inches(0.5)) # Inches(8.95),
+txBox = slide.shapes.add_textbox(Inches(6.5), Inches(0.5), Inches(4), Inches(0.5)) # Inches(8.95),
 tf = txBox.text_frame
 tf.text = str(company)
 tf.text = str(company).upper()
@@ -1041,7 +1041,7 @@ p_date.font.name = 'Avenir Next'
 cleaned_words = [word.replace('\n', ' ') for word in related_words]  # Replace newline characters with spaces
 
 slide = prs.slides[7]
-txBox_rec8 = slide.shapes.add_textbox(Inches(4.4), Inches(1.22), Inches(7), Inches(0.5)) #(Inches(1.36), Inches(1.165)
+txBox_rec8 = slide.shapes.add_textbox(Inches(4.4), Inches(1.2), Inches(7), Inches(0.5)) #(Inches(1.36), Inches(1.165)
 tf_rec8 = txBox_rec8.text_frame
 if 1 < len(cleaned_words) < 6:
    tf_rec8.text = ', '.join(cleaned_words[:-1]) + ', and ' + cleaned_words[-1] + '.'
