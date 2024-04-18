@@ -1018,7 +1018,7 @@ p_date.font.name = 'Avenir Next'
 cleaned_words = [word.replace('\n', ' ') for word in related_words]  # Replace newline characters with spaces
 
 slide = prs.slides[7]
-txBox_rec8 = slide.shapes.add_textbox(Inches(6.2), Inches(1.115), Inches(7), Inches(0.5)) #(Inches(1.36), Inches(1.165)
+txBox_rec8 = slide.shapes.add_textbox(Inches(4.2), Inches(1.115), Inches(7), Inches(0.5)) #(Inches(1.36), Inches(1.165)
 tf_rec8 = txBox_rec8.text_frame
 if 1 < len(cleaned_words) < 6:
    tf_rec8.text = ', '.join(cleaned_words[:-1]) + ', and ' + cleaned_words[-1] + '.'
@@ -1041,7 +1041,7 @@ p_rec8.alignment = PP_ALIGN.LEFT
 p_rec8.font.name = 'Avenir Next'
 
 slide = prs.slides[7]
-txBox_rec82 = slide.shapes.add_textbox(Inches(0.55), Inches(1.31), Inches(7), Inches(0.5)) #0.6, 1.35
+txBox_rec82 = slide.shapes.add_textbox(Inches(1.5), Inches(1.33), Inches(7), Inches(0.5)) #0.6, 1.35
 tf_rec82 = txBox_rec82.text_frame
 
 if len(cleaned_words[5:]) > 1:
