@@ -91,12 +91,12 @@ jobs:
 
           data = pd.read_csv('Capability Assessment Survey.csv').iloc[-1]
           company = data.iloc[7]
-          #email_sending  = data.iloc[11]
+          email_sending  = data.iloc[11]
           print(company)
           
           message = Mail(
               from_email='ehlke.hepworth@relativ.co.za',
-              to_emails=['ehlke.hepworth@relativ.co.za'], 
+              to_emails=['ehlke.hepworth@relativ.co.za',email_sending], 
               subject=f'Impact Management Capability Assessment Report - {company}',
               
               # Your original string with potential non-printable characters
