@@ -937,13 +937,13 @@ def add_formatted_textbox(slide, text, left, top, width, height):
 
 # Usage
 slide = prs.slides[8]
-add_formatted_textbox(slide, recommendations['Strategy'], -0.52, 1.7, 7, 1)
-add_formatted_textbox(slide, recommendations['Measurement'], 1.08, 2.2, 7, 1)
-add_formatted_textbox(slide, recommendations['Data'], 1.995, 2.7, 7, 1)
-add_formatted_textbox(slide, recommendations['Talent'], 1.74, 3.2, 7, 1)
-add_formatted_textbox(slide, recommendations['Processes'], 2.21, 3.7, 7, 1)
-add_formatted_textbox(slide, recommendations['Reporting'], 0.38, 4.2, 7, 1)
-add_formatted_textbox(slide, recommendations['Technology'], 1.13, 4.7, 7, 1)
+add_formatted_textbox(slide, recommendations['Strategy'], -0.52, 1.7, 9, 1)
+add_formatted_textbox(slide, recommendations['Measurement'], 1.08, 2.2, 9, 1)
+add_formatted_textbox(slide, recommendations['Data'], 1.995, 2.7, 9, 1)
+add_formatted_textbox(slide, recommendations['Talent'], 1.74, 3.2, 9, 1)
+add_formatted_textbox(slide, recommendations['Processes'], 2.21, 3.7, 9, 1)
+add_formatted_textbox(slide, recommendations['Reporting'], 0.38, 4.2, 9, 1)
+add_formatted_textbox(slide, recommendations['Technology'], 1.13, 4.7, 9, 1)
 
 slide = prs.slides[13]
 add_formatted_textbox(slide, reco_st_1, 3, 1.3, 7, 1)
@@ -974,7 +974,7 @@ add_formatted_textbox(slide, reco_te_1, 2.9, 1.3, 7, 1)
 ##------------------- recommendations automated <<--------------------##
 
 slide = prs.slides[0]
-txBox = slide.shapes.add_textbox(Inches(9), Inches(0.5), Inches(2), Inches(0.5)) # Inches(8.95),
+txBox = slide.shapes.add_textbox(Inches(9), Inches(0.5), Inches(7), Inches(0.5)) # Inches(8.95),
 tf = txBox.text_frame
 tf.text = str(company)
 tf.text = str(company).upper()
@@ -988,7 +988,7 @@ p.font.name = 'Avenir Next'
 
 # Add Relativ to the slide
 slide = prs.slides[0]
-txBox_date = slide.shapes.add_textbox(Inches(8.4), Inches(4), Inches(2), Inches(0.5))
+txBox_date = slide.shapes.add_textbox(Inches(8.4), Inches(4), Inches(7), Inches(0.5))
 tf_rel = txBox_date.text_frame
 tf_rel.text = relativ
 tf_rel.text = relativ.upper()
@@ -1002,7 +1002,7 @@ p_rel.font.name = 'Avenir Next'
 
 # Add date to the slide
 slide = prs.slides[0]
-txBox_date = slide.shapes.add_textbox(Inches(8.95), Inches(4.4), Inches(2), Inches(0.5))
+txBox_date = slide.shapes.add_textbox(Inches(8.95), Inches(4.4), Inches(7), Inches(0.5))
 tf_date = txBox_date.text_frame
 tf_date.text = date_
 tf_date.text = date_.upper()
@@ -1018,7 +1018,7 @@ p_date.font.name = 'Avenir Next'
 cleaned_words = [word.replace('\n', ' ') for word in related_words]  # Replace newline characters with spaces
 
 slide = prs.slides[7]
-txBox_rec8 = slide.shapes.add_textbox(Inches(6.2), Inches(1.115), Inches(2), Inches(0.5)) #(Inches(1.36), Inches(1.165)
+txBox_rec8 = slide.shapes.add_textbox(Inches(6.2), Inches(1.115), Inches(9), Inches(0.5)) #(Inches(1.36), Inches(1.165)
 tf_rec8 = txBox_rec8.text_frame
 if 1 < len(cleaned_words) < 6:
    tf_rec8.text = ', '.join(cleaned_words[:-1]) + ', and ' + cleaned_words[-1] + '.'
@@ -1035,7 +1035,7 @@ p_rec8.alignment = PP_ALIGN.LEFT
 p_rec8.font.name = 'Avenir Next'
 
 slide = prs.slides[7]
-txBox_rec82 = slide.shapes.add_textbox(Inches(0.55), Inches(1.31), Inches(2), Inches(0.5)) #0.6, 1.35
+txBox_rec82 = slide.shapes.add_textbox(Inches(0.55), Inches(1.31), Inches(9), Inches(0.5)) #0.6, 1.35
 tf_rec82 = txBox_rec82.text_frame
 
 if len(cleaned_words[5:]) > 1:
