@@ -30,6 +30,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install --reinstall libreoffice
           sudo apt-get install unoconv
+          sudo cp /fonts/* /usr/share/fonts/
+          fcache
+
           python -m pip install --upgrade pip
           python -m pip install pandas
           python -m pip install matplotlib
@@ -96,7 +99,7 @@ jobs:
           
           message = Mail(
               from_email='ehlke.hepworth@relativ.co.za',
-              to_emails=['ehlke.hepworth@relativ.co.za'], 
+              to_emails=['james.h.hepworth@gmail.com'], 
               subject=f'Impact Management Capability Assessment Report - {company}',
               
               # Your original string with potential non-printable characters
