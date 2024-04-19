@@ -1,0 +1,5 @@
+Dimension,Nascent,Emerging,Expanding,Optimising,Mature,level,max,max_column
+Capability Purpose,1,0,0,0,0,1.0,1.0,Nascent
+Capability Stakeholders,1,1,0,0,0,1.5,2.0,Emerging
+Impact Strategy,0,0,0,0,0,0.0,1.0,Nascent
+Total,2,1,0,0,0,1.0,1.0,Nascent
