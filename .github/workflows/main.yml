@@ -96,7 +96,7 @@ jobs:
           
           message = Mail(
               from_email='ehlke.hepworth@relativ.co.za',
-              to_emails=['ehlke.hepworth@relativ.co.za',email_sending], 
+              to_emails=['ehlke.hepworth@relativ.co.za'], 
               subject=f'Impact Management Capability Assessment Report - {company}',
               
               # Your original string with potential non-printable characters
