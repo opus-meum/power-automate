@@ -970,30 +970,30 @@ def add_formatted_textbox(slide, text, left, top, width, height):
         paragraph.font.name = 'Avenir Next'
               
 slide = prs.slides[13]
-add_formatted_textbox(slide, reco_st_1, 2.5, 1.3, 7, 1)
-add_formatted_textbox(slide, reco_st_2, 2.5, 2.2, 7, 1)
-add_formatted_textbox(slide, reco_st_3, 2.5, 2.9, 7, 1)
+add_formatted_textbox(slide, reco_st_1, 2, 1.3, 7, 1)
+add_formatted_textbox(slide, reco_st_2, 2, 2.2, 7, 1)
+add_formatted_textbox(slide, reco_st_3, 2, 2.9, 7, 1)
 slide = prs.slides[17]
-add_formatted_textbox(slide, reco_ta_1, 2.5, 1.2, 7, 1)
-add_formatted_textbox(slide, reco_ta_2, 2.5, 3.1, 7, 1)
-add_formatted_textbox(slide, reco_ta_3, 2.5, 4.05, 7, 1)
+add_formatted_textbox(slide, reco_ta_1, 2, 1.2, 7, 1)
+add_formatted_textbox(slide, reco_ta_2, 2, 3.1, 7, 1)
+add_formatted_textbox(slide, reco_ta_3, 2, 4.05, 7, 1)
 slide = prs.slides[21]
-add_formatted_textbox(slide, reco_pr_1, 2.5, 1.3, 7, 1)
+add_formatted_textbox(slide, reco_pr_1, 2, 1.3, 7, 1)
 slide = prs.slides[25]
-add_formatted_textbox(slide, reco_da_1, 2.5, 1.3, 7, 1)
-add_formatted_textbox(slide, reco_da_2, 2.5, 2.8, 7, 1)
-add_formatted_textbox(slide, reco_da_3, 2.5, 4.3, 7, 1)
+add_formatted_textbox(slide, reco_da_1, 2, 1.3, 7, 1)
+add_formatted_textbox(slide, reco_da_2, 2, 2.8, 7, 1)
+add_formatted_textbox(slide, reco_da_3, 2, 4.3, 7, 1)
 slide = prs.slides[29]
-add_formatted_textbox(slide, reco_me_1, 2.5, 1.3, 7, 1)
-add_formatted_textbox(slide, reco_me_2, 2.5, 2.9, 7, 1)
+add_formatted_textbox(slide, reco_me_1, 2, 1.3, 7, 1)
+add_formatted_textbox(slide, reco_me_2, 2, 2.9, 7, 1)
 slide = prs.slides[30]
-add_formatted_textbox(slide, reco_me_3, 2.5, 1.3, 7, 1)
-add_formatted_textbox(slide, reco_me_4, 2.5, 2.75, 7, 1)
+add_formatted_textbox(slide, reco_me_3, 2, 1.3, 7, 1)
+add_formatted_textbox(slide, reco_me_4, 2, 2.75, 7, 1)
 slide = prs.slides[34]
-add_formatted_textbox(slide, reco_re_1, 2.5, 1.3, 7, 1)
-add_formatted_textbox(slide, reco_re_2, 2.5, 2.1, 7, 1)
+add_formatted_textbox(slide, reco_re_1, 2, 1.3, 7, 1)
+add_formatted_textbox(slide, reco_re_2, 2, 2.1, 7, 1)
 slide = prs.slides[38]
-add_formatted_textbox(slide, reco_te_1, 2.5, 1.3, 7, 1)
+add_formatted_textbox(slide, reco_te_1, 2, 1.3, 7, 1)
 
 ##------------------- recommendations automated <<--------------------##
 
@@ -1048,7 +1048,7 @@ p_date.font.name = 'Avenir Next'
 cleaned_words = [word.replace('\n', ' ') for word in related_words]  # Replace newline characters with spaces
 
 slide = prs.slides[7]
-txBox_rec8 = slide.shapes.add_textbox(Inches(4.4), Inches(1.18), Inches(7), Inches(0.5)) #(Inches(1.36), Inches(1.165)
+txBox_rec8 = slide.shapes.add_textbox(Inches(4.4), Inches(1.16), Inches(7), Inches(0.5)) #(Inches(1.36), Inches(1.165)
 tf_rec8 = txBox_rec8.text_frame
 if 1 < len(cleaned_words) < 6:
    tf_rec8.text = ', '.join(cleaned_words[:-1]) + ', and ' + cleaned_words[-1] + '.'
